@@ -37,7 +37,7 @@ home.stateVersion = "25.11"; # Please read the comment before changing.
 home.packages = [
 #scritps
 (pkgs.callPackage ../../modules/scripts/dontkillsteam.nix {})
-
+(pkgs.callPackage ../../modules/scripts/batterynotify.nix {})
 # # Adds the 'hello' command to your environment. It prints a friendly
 # # "Hello, world!" when run.
 # pkgs.hello
