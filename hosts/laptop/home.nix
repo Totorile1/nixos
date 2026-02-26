@@ -11,6 +11,8 @@ imports = [
 ../../modules/home-manager/ssh.nix
 ../../modules/home-manager/fastfetch.nix
 ../../modules/home-manager/hyprland.nix
+../../modules/home-manager/wlogout.nix # logout utility
+../../modules/home-manager/rofi.nix # launcher and keybindings helper
 ];
 
 

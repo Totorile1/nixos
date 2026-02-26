@@ -38,10 +38,22 @@
   programs.zsh.enable = true;
 	
 # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
+#  services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 # enable hyprland WM
-programs.hyprland.enable = true;
+programs.hyprland = {
+	enable = true;
+	withUWSM = true;
+	xwayland.enable = true;
+};
+
+#enable sddm
+services.displayManager.sddm = {
+	enable = true;
+	wayland.enable = true;
+};
+
+services.upower.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -115,6 +127,14 @@ programs.hyprland.enable = true;
     wget
     tree # shows dir in tree
     zsh # better bash
+    brightnessctl # control brightness
+    pulseaudio # sound server
+    playerctl # controls media player
+    blueman # GTK-based Bluetooth Manager
+    udiskie # removable disk automounter for udisks
+    networkmanagerapplet # NetworkManager control applet
+    cliphist # Wayland clipboard manager
+    wl-clipboard # cli copy/past utilities for Wayland
   ];
 
 # fonts
