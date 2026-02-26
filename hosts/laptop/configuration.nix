@@ -39,7 +39,7 @@
 	
 # Enable the GNOME Desktop Environment.
 #  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+#  services.desktopManager.gnome.enable = true;
 # enable hyprland WM
 programs.hyprland = {
 	enable = true;
@@ -135,6 +135,7 @@ services.upower.enable = true;
     networkmanagerapplet # NetworkManager control applet
     cliphist # Wayland clipboard manager
     wl-clipboard # cli copy/past utilities for Wayland
+    jp # lightweight and flexible cli JSON parser
   ];
 
 # fonts

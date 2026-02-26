@@ -14,7 +14,7 @@
 		"$term" = "kitty";
 		"$editor" = "nvim";
 		"$file" = "nautilius";
-		"$browser" = "firefox" # change to librewolf later
+		"$browser" = "firefox"; # change to librewolf later
 # ▄▀█ █▄░█ █ █▀▄▀█ ▄▀█ ▀█▀ █ █▀█ █▄░█
 # █▀█ █░▀█ █ █░▀░█ █▀█ ░█░ █ █▄█ █░▀█
 
@@ -37,7 +37,12 @@
 # █ █▄░█ █▀█ █░█ ▀█▀
 # █ █░▀█ █▀▀ █▄█ ░█░
 
-# is it needed? Doesnt nixos already handles that?
+		input = {
+			kb_layout = [ "ch" ];
+			follow_mouse = 1;
+			sensitivity = 0;
+			force_no_accel = 1;
+			};
 
 # █▄▀ █▀▀ █▄█ █▄▄ █ █▄░█ █▀▄ █ █▄░█ █▀▀ █▀
 # █░█ ██▄ ░█░ █▄█ █ █░▀█ █▄▀ █ █░▀█ █▄█ ▄█
@@ -76,7 +81,7 @@
 			"$mod+Shift, 9, movetoworkspace, 9"
 			"$mod+Shift, 0, movetoworkspace, 10"
 			"$mod+Ctrl+Alt, Right, movetoworkspace, r+1"
-			"$mod+Ctrl+Alt, Left, movetoworkspacem r-1"
+			"$mod+Ctrl+Alt, Left, movetoworkspace, r-1"
 			"$mod, Backspace, exec, wlogout -b 5 -T 600 -B 600"
 			"$mod+Shift+Ctrl, Left, movewindow, l"
 			"$mod+Shift+Ctrl, Right, movewindow, r"
@@ -135,6 +140,14 @@
 
 # █▀▄▀█ █ █▀ █▀▀
 # █░▀░█ █ ▄█ █▄▄
+
+		misc = {
+			vrr = 0;
+			force_default_wallpaper = 0;
+		};
+		xwayland = {
+			force_zero_scaling = true;
+		};
 
 # █▀▄▀█ █▀█ █▄░█ █ ▀█▀ █▀█ █▀█
 # █░▀░█ █▄█ █░▀█ █ ░█░ █▄█ █▀▄

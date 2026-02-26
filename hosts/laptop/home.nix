@@ -4,6 +4,7 @@
 # every import imports a specific module for an app. This module contains the enabling of this app and its settings.
 # So if you want to add an home-manager app create a module which enables it and configures it and import it.
 imports = [
+# app modules
 ../../modules/home-manager/kitty.nix # terminal # use absolute path with --impure flag or go back to /etc/nixos and use relative
 ../../modules/home-manager/zoxide.nix # better cd
 ../../modules/home-manager/zsh.nix # better bash
@@ -33,6 +34,9 @@ home.stateVersion = "25.11"; # Please read the comment before changing.
 # The home.packages option allows you to install Nix packages into your
 # environment.
 home.packages = [
+#scritps
+(pkgs.callPackage ./modules/scripts/dontkillsteam.nix {})
+
 # # Adds the 'hello' command to your environment. It prints a friendly
 # # "Hello, world!" when run.
 # pkgs.hello
