@@ -10,6 +10,7 @@ imports = [
 ../../modules/home-manager/git.nix
 ../../modules/home-manager/ssh.nix
 ../../modules/home-manager/fastfetch.nix
+../../modules/home-manager/hyprland.nix
 ];
 
 
