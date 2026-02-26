@@ -140,7 +140,9 @@ services.upower.enable = true;
     wl-clipboard # cli copy/past utilities for Wayland
     jp # lightweight and flexible cli JSON parser
     notepad-next
-    #we need to install gnome and kde utils individually as we dont use gnome
+    libnotify # Library that sends desktop notifications to a notification daemon
+    ripgrep #better grepp
+#we need to install gnome and kde utils individually as we dont use gnome
     gnome-calculator
     snapshot
     gnome-characters

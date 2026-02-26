@@ -44,7 +44,6 @@ writeShellApplication {
 
     while true; do
       get_info
-      state="$status-$percentage"
 
       if [[ "$status" == "Discharging" && "$percentage" -le "$CRITICAL" ]]; then
         notify critical "Battery Critically Low" "$percentage% — suspending."
