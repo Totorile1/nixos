@@ -9,7 +9,16 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
-    ];
+#	inputs.nixvim.homeModules.default
+];
+
+
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+
+home-manager.users = {
+  tomasr = { pkgs, ... }: import ./home.nix { inherit pkgs; };
+};
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -114,19 +123,10 @@ services.upower.enable = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  #home manager config from https://www.youtube.com/watch?v=a67Sv4Mbxmc / https://github.com/vimjoyer/flake-starter-config
-  home-manager = {
-  # also pass inputs to home-manager modules
-  extraSpecialArgs = {inherit inputs;};
-  users = {
-    "tomasr" = import ./home.nix;
-  };
-};
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     tree # shows dir in tree
     zsh # better bash
