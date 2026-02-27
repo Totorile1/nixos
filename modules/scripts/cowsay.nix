@@ -68,10 +68,10 @@ do
   echo
   echo 
   echo
-  SIndex=$(( RANDOM % ${#sentences[@]} ))
-  index=$(( RANDOM % ${#cows[@]} ))
-  cow="/usr/share/cowsay/cows/${cows[index]}.cow"
-  cowsay -f "$cow" "${sentences[SIndex]}"
+  SIndex=$(( RANDOM % ''${#sentences[@]} ))
+  index=$(( RANDOM % ''${#cows[@]} ))
+  #cow="/usr/share/cowsay/cows/''${cows[index]}.cow"
+  cowsay -f "''${cows[index]}" "''${sentences[SIndex]}"
   sleep 10
   clear
 done
