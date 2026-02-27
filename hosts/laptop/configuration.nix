@@ -145,6 +145,8 @@ services.upower.enable = true;
     hyprkeys # keybind helper
     cowsay
     cmatrix
+    swww #wallpaper daemon
+    socat # Utility for bidirectional data transfer between two independent data channels (used to communicate between hyprland and swww to change wallpapers dinamically)
 #we need to install gnome and kde utils individually as we dont use gnome
     gnome-calculator
     snapshot
