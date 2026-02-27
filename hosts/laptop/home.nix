@@ -39,6 +39,7 @@ home.packages = [
 (pkgs.callPackage ../../modules/scripts/dontkillsteam.nix {})
 (pkgs.callPackage ../../modules/scripts/batterynotify.nix {})
 (pkgs.callPackage ../../modules/scripts/weather.nix {})
+(pkgs.callPackage ../../modules/scripts/cowsay.nix {})
 # # Adds the 'hello' command to your environment. It prints a friendly
 # # "Hello, world!" when run.
 # pkgs.hello
