@@ -18,6 +18,7 @@ imports = [
 ../../modules/home-manager/neovim.nix # dont use nixvim. broken
 ../../modules/home-manager/rclone.nix 
 ../../modules/home-manager/waybar.nix
+../../modules/home-manager/oh-my-posh # zsh customizer
 ];
 
 
@@ -78,8 +79,11 @@ pkgs.gruvbox-gtk-theme
 # gtk config
 gtk.theme = {
 enable = true;
+Gruvbox-GTK-Theme-BL-MB = {
+enable = true;
 name = "Gruvbox-GTK-Theme-BL-MB";
 package = pkgs.gruvbox-gtk-theme;
+};
 };
 
 # ssh config

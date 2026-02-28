@@ -3,7 +3,6 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, libs, inputs, ... }:
-
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -152,6 +151,7 @@ libreoffice
 gruvbox-gtk-theme
 hyprpicker
 powertop
+telnet
 #we need to install gnome and kde utils individually as we dont use gnome
     gnome-calculator
     snapshot
