@@ -14,7 +14,7 @@ custom-cat() {
   fi
 }
 
-    fastfetch\n''
+    fastfetch''\n''
     ;
     shellAliases = {
 	".." = "z ..";

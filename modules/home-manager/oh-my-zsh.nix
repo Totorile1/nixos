@@ -9,6 +9,13 @@
 	"alias-finder"
 	"colored-man-pages"
 	"colorize"
-    ];
+	"command-not-found"
+	"dirhistory"
+	"fzf"
+	"git"
+	"rclone"
+	"safe-paste"
+	"sudo"
+];
     };
 }
