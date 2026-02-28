@@ -1,26 +1,28 @@
 # https://discourse.nixos.org/t/what-is-the-best-option-for-power-management/63406/2
 {
-  config,
-  lib,
-  vars,
   ...
-}: let
-  cfg = config.custom;
-  hasBattery =
-    lib.any (x: lib.strings.hasPrefix "BAT" x)
-    (builtins.attrNames (builtins.readDir "/sys/class/power_supply"));
-in {
-  options.custom = {
-    battery.enable = lib.mkOption {
-      default = hasBattery;
-      description = "Enable better battery support";
-      type = lib.types.bool;
-    };
-  };
+}: 
 
-  config = lib.mkIf cfg.battery.enable {
+# we just activate tlp unconditonally
+
+#let
+#  cfg = config.custom;
+
+#hasBattery =
+#    lib.any (x: lib.strings.hasPrefix "BAT" x)
+#    (builtins.attrNames (builtins.readDir "/sys/class/power_supply"));
+#in 
+{
+#  options.custom = {
+#     battery.enable = lib.mkOption {
+#     default = hasBattery;
+#     description = "Enable better battery support";
+#     type = lib.types.bool;
+#    };
+#  };
+
+#  config = lib.mkIf cfg.battery.enable {
     powerManagement.powertop.enable = true; # enable powertop auto tuning on startup.
-
     services.system76-scheduler.settings.cfsProfiles.enable = true; # Better scheduling for CPU cycles - thanks System76!!!
     services.thermald.enable = true; # Enable thermald, the temperature management daemon. (only necessary if on Intel CPUs)
     services.power-profiles-daemon.enable = false; # Disable GNOMEs power management
@@ -41,5 +43,5 @@ in {
         STOP_CHARGE_THRESH_BAT0 = 81;
       };
     };
-  };
+#  };
 }

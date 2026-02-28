@@ -151,7 +151,6 @@ gcc # GNU C compiler
 libreoffice
 gruvbox-gtk-theme
 hyprpicker
-power-profiles-daemon
 #we need to install gnome and kde utils individually as we dont use gnome
     gnome-calculator
     snapshot
