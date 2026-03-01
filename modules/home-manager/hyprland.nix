@@ -116,7 +116,7 @@ in
 			"$mod+Shift, 0, movetoworkspace, 10"
 			"$mod+Ctrl+Alt, Right, movetoworkspace, r+1"
 			"$mod+Ctrl+Alt, Left, movetoworkspace, r-1"
-			"$mod, Backspace, exec, wlogout -b 5 -T 600 -B 600"
+			"$mod, Backspace, exec, wlogout -b 4 -T 600 -B 600"
 			"$mod+Shift+Ctrl, Left, movewindow, l"
 			"$mod+Shift+Ctrl, Right, movewindow, r"
 			"$mod+Shift+Ctrl, Up, movewindow, u"
