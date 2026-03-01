@@ -52,7 +52,7 @@ imports = [
 # environment.
 home.packages = [
 #scritps
-(pkgs.callPackage ../../modules/scripts/dontkillsteam.nix {})
+(pkgs.callPackage ../../modules/scripts/dontkillsteam.nix {}) # kill app (if it is steam put it in some background
 (pkgs.callPackage ../../modules/scripts/batterynotify.nix {})
 (pkgs.callPackage ../../modules/scripts/weather.nix {})
 (pkgs.callPackage ../../modules/scripts/cowsay.nix {})
@@ -60,8 +60,9 @@ home.packages = [
 (pkgs.callPackage ../../modules/scripts/mountkdrive.nix {})
 (pkgs.callPackage ../../modules/scripts/weatherwaybar.nix {})
 (pkgs.callPackage ../../modules/scripts/colorpicker.nix {})
-(pkgs.callPackage ../../modules/scripts/killall.nix {})
+(pkgs.callPackage ../../modules/scripts/killall.nix {}) # kill all windows except focused window
 (pkgs.callPackage ../../modules/scripts/launch.nix {}) # necessary for the apps i launch with hyprland at every start
+(pkgs.callPackage ../../modules/scripts/gitnotify.nix {})
 #pkgs
 pkgs.gruvbox-gtk-theme
 # # Adds the 'hello' command to your environment. It prints a friendly

@@ -197,7 +197,7 @@ in
 			"sleep 1 && custom-wallpaper"
 			"custom-mountkdrive"
 			"waybar"
-
+            "custom-gitnotify"
 
 			#########################
 			# login autostart
