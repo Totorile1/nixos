@@ -23,7 +23,7 @@ imports = [
 ../../modules/home-manager/oh-my-zsh.nix # another zsh customizer
 ../../modules/home-manager/hypridle.nix
 ../../modules/home-manager/swaylock.nix
-../../modules/home-manager/anki.nix
+../../modules/home-manager/anki.nix # we use only for some settings. see ../../modules/nixos/anki.nix for activating
 ];
 
 

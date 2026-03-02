@@ -11,6 +11,7 @@
 	../../modules/nixos/battery.nix
     #../../modules/nixos/ly.nix
     ../../modules/nixos/lyminimal.nix
+    ../../modules/nixos/anki.nix
   ];
 
 home-manager = {
