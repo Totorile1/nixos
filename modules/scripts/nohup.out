@@ -1,0 +1,18 @@
+[76518, Main Thread] WARNING: Theme parsing error: gtk.css:1048:16: 'border-spacing' is not a valid property name: 'glib warning', file /build/firefox-147.0.4/toolkit/xre/nsSigHandlers.cpp:201
+
+(librewolf:76518): Gtk-WARNING **: 13:51:55.317: Theme parsing error: gtk.css:1048:16: 'border-spacing' is not a valid property name
+[Parent 76518, Main Thread] WARNING: Theme parsing error: gtk.css:1048:16: 'border-spacing' is not a valid property name: 'glib warning', file /build/firefox-147.0.4/toolkit/xre/nsSigHandlers.cpp:201
+
+(librewolf:76518): Gtk-WARNING **: 13:51:55.420: Theme parsing error: gtk.css:1048:16: 'border-spacing' is not a valid property name
+[Parent 76518, Main Thread] WARNING: Theme parsing error: gtk.css:1048:16: 'border-spacing' is not a valid property name: 'glib warning', file /build/firefox-147.0.4/toolkit/xre/nsSigHandlers.cpp:201
+
+(librewolf:76518): Gtk-WARNING **: 13:51:55.455: Theme parsing error: gtk.css:1048:16: 'border-spacing' is not a valid property name
+[77025, Main Thread] WARNING: Theme parsing error: gtk.css:1048:16: 'border-spacing' is not a valid property name: 'glib warning', file /build/firefox-147.0.4/toolkit/xre/nsSigHandlers.cpp:201
+
+(librewolf:77025): Gtk-WARNING **: 13:52:10.941: Theme parsing error: gtk.css:1048:16: 'border-spacing' is not a valid property name
+[Parent 77025, Main Thread] WARNING: Theme parsing error: gtk.css:1048:16: 'border-spacing' is not a valid property name: 'glib warning', file /build/firefox-147.0.4/toolkit/xre/nsSigHandlers.cpp:201
+
+(librewolf:77025): Gtk-WARNING **: 13:52:11.043: Theme parsing error: gtk.css:1048:16: 'border-spacing' is not a valid property name
+[Parent 77025, Main Thread] WARNING: Theme parsing error: gtk.css:1048:16: 'border-spacing' is not a valid property name: 'glib warning', file /build/firefox-147.0.4/toolkit/xre/nsSigHandlers.cpp:201
+
+(librewolf:77025): Gtk-WARNING **: 13:52:11.078: Theme parsing error: gtk.css:1048:16: 'border-spacing' is not a valid property name

@@ -24,6 +24,7 @@ imports = [
 ../../modules/home-manager/hypridle.nix
 ../../modules/home-manager/swaylock.nix
 ../../modules/home-manager/anki.nix # we use only for some settings. see ../../modules/nixos/anki.nix for activating
+../../modules/home-manager/librewolf.nix # privacy browser
 ];
 
 
@@ -66,7 +67,7 @@ home.packages = [
 (pkgs.callPackage ../../modules/scripts/launch.nix {}) # necessary for the apps i launch with hyprland at every start
 (pkgs.callPackage ../../modules/scripts/gitnotify.nix {})
 (pkgs.callPackage ../../modules/scripts/tomato.nix {})
-
+(pkgs.callPackage ../../modules/scripts/librewolfprofiles.nix {})
 #pkgs
 pkgs.gruvbox-gtk-theme
 # # Adds the 'hello' command to your environment. It prints a friendly
