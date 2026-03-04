@@ -147,14 +147,6 @@ home.sessionVariables = {
     EDITOR = "neovim";
     # Git update function
     # Prompts for commit message; defaults if empty
-    GIT_UPDATE = ''
- echo 'Enter commit message: '
-read msg
-if [ -z "$msg" ]; then
-  msg="Update NixOS configuration"
-fi
-git add . && git commit -m "$msg" && git push origin main   
-    '';
   };
 
 
