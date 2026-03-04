@@ -21,7 +21,7 @@ in
 		"$term" = "kitty";
 		"$editor" = "nvim";
 		"$file" = "nautilus";
-		"$browser" = "kitty --name \"Select LibreWolf profile\" --hold custom-librewolfprofiles"; 
+		"$browser" = "kitty --class \"custom-librewolfprofiles\" --name \"Select LibreWolf profile\" --hold custom-librewolfprofiles"; 
 # ▄▀█ █▄░█ █ █▀▄▀█ ▄▀█ ▀█▀ █ █▀█ █▄░█
 # █▀█ █░▀█ █ █░▀░█ █▀█ ░█░ █ █▄█ █░▀█
 	animations = {
@@ -406,7 +406,8 @@ in
 "float,class:^(com.github.unrud.VideoDownloader)$" # VideoDownloader-Gkk
 "float,class:^(io.gitlab.adhami3310.Impression)$" # Impression-Gtk
 "float,class:^(io.missioncenter.MissionCenter)$" # MissionCenter-Gtk
-"float,title:^(custom-librewolfprofiles)$"
+"float,class:^(custom-librewolfprofiles)$"
+"size 400 175, class:^(custom-librewolfprofiles)$"
 # add a float for tomato when in kitty
 #"plugin:imgborders:noimgborders, tag:noborder"
 		];

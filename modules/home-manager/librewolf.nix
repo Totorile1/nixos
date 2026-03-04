@@ -118,6 +118,8 @@
     };
     policies = {
       ExtensionSettings = {
+        # the extension id should be from the manifesto and not a random name.
+        # if you dont know it. Put a random name. It will fail. Go to about:polices#error and the error will give you the correct id. 
         "enhancerforyoutube@maximerf.addons.mozilla.org" = {
           installation_mode = "normal_installed";
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/enhancer-for-youtube/latest.xpi";
@@ -128,7 +130,7 @@
           installation_mode = "force_installed";
         };
 
-        "AdNauseam@dhowe" = {
+        "adnauseam@rednoise.org" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/adnauseam/latest.xpi";
           installation_mode = "force_installed";
         };
@@ -136,14 +138,15 @@
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
           installation_mode = "blocked";
         };
-        "Gruvbox@YeetFrog" = {
+        "{08d5243b-4236-4a27-984b-1ded22ce01c3}" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/file/3729287/gruvboxgruvboxgruvboxgruvboxgr-1.0.xpi";
           installation_mode = "force_installed";
         };
-        "TrackMeNot@DanielHowe" = {
+        "trackmenot@mrl.nyu.edu" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/trackmenot/latest.xpi";
           installation_mode = "force_installed";
         };
+      };
       };
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
@@ -174,6 +177,10 @@
           "amazondotcom-es".metaData.hidden = true;
           "bing".metaData.hidden = true;
           "ebay".metaData.hidden = true;
+          "metager".metaData.hidden = true;
+          "mojeek".metaData.hidden = true;
+          "seerex".metaData.hidden = true;
+          "perplexity".metaData.hidden = true;
           "startpage" = {
             urls = [
               {
