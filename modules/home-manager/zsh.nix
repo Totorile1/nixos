@@ -24,6 +24,7 @@ custom-cat() {
 	l = "ls -CF";
 	ls = "ls -hA -s --color";
 	cat = "custom-cat";
-};
+    pomodoro = "kitty -e 'tomato'";
+  };
   };
 }

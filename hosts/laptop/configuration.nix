@@ -182,6 +182,7 @@ tomato-c # pomodoro timer
 pavucontrol # PulseAudio Volume Control
 hyprshot
 hyprcursor
+vial # Open-source GUI and QMK fork for configuring your keyboard in real time
 ];
 
 # fonts

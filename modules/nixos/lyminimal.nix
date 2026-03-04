@@ -10,7 +10,7 @@
       # Basic TUI settings
       clear_password = true;
       default_input = "password";
-      fg = "0xdecda600";
+      fg = "0x00cd6400";
       full_color = true;
       hide_borders = false;
       hide_key_hints = true;
@@ -31,7 +31,7 @@
       #text_in_center = false;
 
       # Animation: Conway’s Game of Life (optional, comment out for minimal setup)
-      gameoflife_fg = "0xdecda600";
+      gameoflife_fg = "0x00cd6a00";
 
       gameoflife_frame_delay = 3;
       gameoflife_entropy_interval = 10;
@@ -40,7 +40,7 @@
       # Optional commands (leave null or comment if unused)
       hibernate_cmd = null;
       inactivity_cmd = null;
-      #login_cmd = "exec /run/current-system/sw/bin/hyprland";
+      #login_cmd = "exec hyprland";
       logout_cmd = null;
       sleep_cmd = null;
 
