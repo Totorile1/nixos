@@ -170,122 +170,122 @@
       # userChrome = builtins.readFile ./userChrome.css;
       # userContent = builtins.readFile ./userChrome.css;
       extensions = {
-        force = true;
-        settings = {
-          "adnauseam@rednoise.org".settings = {
-            # Core behavior
-            filteringEnabled = true;
-        
-            hidingAds = true;
-            blockingMalware = true;
-            clickingAds = true;
-        
-            # Privacy
-            disableClickingForDNT = true;
-            blockSocialMediaWidgets = false;
-        
-            # Filter lists
-            selectedFilterLists = [
-              "adnauseam-filters"
-              "easylist"
-              "easyprivacy"
-              "ublock-badware"
-              "ublock-privacy"
-              "ublock-unbreak"
-            ];
-        
-            # Advanced
-            advancedUserEnabled = false;
-            dynamicFilteringEnabled = false;
-        
-            # UI
-            showIconBadge = true;
-            parseTextAds = true;
-            eventLogging = false;
-          };
-            "trackmenot@mrl.nyu.edu".settings = {
-              enabled = true;
+        #force = true;
+        #settings = {
+        #  "adnauseam@rednoise.org".settings = {
+        #    # Core behavior
+        #    filteringEnabled = true;
+        #
+        #    hidingAds = true;
+        #    blockingMalware = true;
+        #    clickingAds = true;
+        #
+        #    # Privacy
+        #    disableClickingForDNT = true;
+        #    blockSocialMediaWidgets = false;
+        #
+        #    # Filter lists
+        #    selectedFilterLists = [
+        #      "adnauseam-filters"
+        #      "easylist"
+        #      "easyprivacy"
+        #      "ublock-badware"
+        #      "ublock-privacy"
+        #      "ublock-unbreak"
+        #    ];
+        #
+        #    # Advanced
+        #    advancedUserEnabled = false;
+        #    dynamicFilteringEnabled = false;
+        #
+        #    # UI
+        #    showIconBadge = true;
+        #    parseTextAds = true;
+        #    eventLogging = false;
+        #  };
+        #    "trackmenot@mrl.nyu.edu".settings = {
+        #      enabled = true;
 
-              # Query behavior
-              runAtStartup = true;
-              useTab = false;               # don't open visible tab
-              showQueries = false;          # don't display fake queries
+        #      # Query behavior
+        #      runAtStartup = true;
+        #      useTab = false;               # don't open visible tab
+        #      showQueries = false;          # don't display fake queries
 
-              # Frequency (seconds between bursts)
-              timeout = 600;                # 10 minutes
-              burstEnabled = true;
-              burstTimeout = 20;           # burst interval
-              burstCount = 5;
+        #      # Frequency (seconds between bursts)
+        #      timeout = 600;                # 10 minutes
+        #      burstEnabled = true;
+        #      burstTimeout = 20;           # burst interval
+        #      burstCount = 5;
 
-              # Query source
-              useRssFeeds = true;           # use dynamic trending feeds
-              useUserQueries = false;       # don't mix your real queries
-              useBlackList = true;
+        #      # Query source
+        #      useRssFeeds = true;           # use dynamic trending feeds
+        #      useUserQueries = false;       # don't mix your real queries
+        #      useBlackList = true;
 
-              # Search engines to generate noise for
-              searchEngines = {
-                google = true;
-                bing = false;
-                yahoo = false;
-                baidu = false;
-                duckduckgo = false;
-              };
+        #      # Search engines to generate noise for
+        #      searchEngines = {
+        #        google = true;
+        #        bing = false;
+        #        yahoo = false;
+        #        baidu = false;
+        #        duckduckgo = false;
+        #      };
 
-              # Logging
-              enableLogging = false;
-            };
-              "sponsorBlocker@ajay.app".settings = {
+        #      # Logging
+        #      enableLogging = false;
+        #    };
+        #      "sponsorBlocker@ajay.app".settings = {
 
-                # Core behavior
-                isEnabled = true;
-                autoSkip = false;
-                showSkipNotice = true;
-                # this does not work
-                # Segment categories (auto-skip behavior)
-                categoryChooser = {
-                  Sponsor = {
-                    enabled = true;
-                    skipOption = "manualSkip";
-                  };
-                  intro = {
-                    enabled = true;
-                    actionType = 2;
-                  };
-                  outro = {
-                    enabled = true;
-                    actionType = 2;
-                  };
-                  selfpromo = {
-                    enabled = true;
-                    actionType = 2;
-                  };
-                  interaction = {
-                    enabled = true;
-                    actionType = 1; # 1 = manual skip
-                  };
-                  music_offtopic = {
-                    enabled = false;
-                    actionType = 0;
-                  };
-                  preview = {
-                    enabled = false;
-                    actionType = 0;
-                  };
-                };
+        #        # Core behavior
+        #        isEnabled = true;
+        #        autoSkip = false;
+        #        showSkipNotice = true;
+        #        # this does not work
+        #        # Segment categories (auto-skip behavior)
+        #        categoryChooser = {
+        #          Sponsor = {
+        #            enabled = true;
+        #            skipOption = "manualSkip";
+        #          };
+        #          intro = {
+        #            enabled = true;
+        #            actionType = 2;
+        #          };
+        #          outro = {
+        #            enabled = true;
+        #            actionType = 2;
+        #          };
+        #          selfpromo = {
+        #            enabled = true;
+        #            actionType = 2;
+        #          };
+        #          interaction = {
+        #            enabled = true;
+        #            actionType = 1; # 1 = manual skip
+        #          };
+        #          music_offtopic = {
+        #            enabled = false;
+        #            actionType = 0;
+        #          };
+        #          preview = {
+        #            enabled = false;
+        #            actionType = 0;
+        #          };
+        #        };
 
-                # Privacy
-                disableTelemetry = true;
-                showDonationLink = false;
+        #        # Privacy
+        #        disableTelemetry = true;
+        #        showDonationLink = false;
 
-                # UX
-                showUpsells = false;
-                hideSkipButtonPlayerControls = false;
+        #        # UX
+        #        showUpsells = false;
+        #        hideSkipButtonPlayerControls = false;
 
-                # Advanced
-                useLocalCache = true;
-                trackViewCount = false;
-          };
-        };
+        #        # Advanced
+        #        useLocalCache = true;
+        #        trackViewCount = false;
+        #  };
+        #};
       };
       bookmarks = {
         force = true;
@@ -407,122 +407,122 @@
       # userChrome = builtins.readFile ./userChrome.css;
       # userContent = builtins.readFile ./userChrome.css;
       extensions = {
-        force = true;
-        settings = {
-          "adnauseam@rednoise.org".settings = {
-            # Core behavior
-            filteringEnabled = true;
-        
-            hidingAds = true;
-            blockingMalware = true;
-            clickingAds = true;
-        
-            # Privacy
-            disableClickingForDNT = true;
-            blockSocialMediaWidgets = false;
-        
-            # Filter lists
-            selectedFilterLists = [
-              "adnauseam-filters"
-              "easylist"
-              "easyprivacy"
-              "ublock-badware"
-              "ublock-privacy"
-              "ublock-unbreak"
-            ];
-        
-            # Advanced
-            advancedUserEnabled = false;
-            dynamicFilteringEnabled = false;
-        
-            # UI
-            showIconBadge = true;
-            parseTextAds = true;
-            eventLogging = false;
-          };
-            "trackmenot@mrl.nyu.edu".settings = {
-              enabled = true;
+        #force = false;
+        #settings = {
+        #  "adnauseam@rednoise.org".settings = {
+        #    # Core behavior
+        #    filteringEnabled = true;
+        #
+        #    hidingAds = true;
+        #    blockingMalware = true;
+        #    clickingAds = true;
+        #
+        #    # Privacy
+        #    disableClickingForDNT = true;
+        #    blockSocialMediaWidgets = false;
+        #
+        #    # Filter lists
+        #    selectedFilterLists = [
+        #      "adnauseam-filters"
+        #      "easylist"
+        #      "easyprivacy"
+        #      "ublock-badware"
+        #      "ublock-privacy"
+        #      "ublock-unbreak"
+        #    ];
+        #
+        #    # Advanced
+        #    advancedUserEnabled = false;
+        #    dynamicFilteringEnabled = false;
+        #
+        #    # UI
+        #    showIconBadge = true;
+        #    parseTextAds = true;
+        #    eventLogging = false;
+        #  };
+        #    "trackmenot@mrl.nyu.edu".settings = {
+        #      enabled = true;
 
-              # Query behavior
-              runAtStartup = true;
-              useTab = false;               # don't open visible tab
-              showQueries = false;          # don't display fake queries
+        #      # Query behavior
+        #      runAtStartup = true;
+        #      useTab = false;               # don't open visible tab
+        #      showQueries = false;          # don't display fake queries
 
-              # Frequency (seconds between bursts)
-              timeout = 600;                # 10 minutes
-              burstEnabled = true;
-              burstTimeout = 20;           # burst interval
-              burstCount = 5;
+        #      # Frequency (seconds between bursts)
+        #      timeout = 600;                # 10 minutes
+        #      burstEnabled = true;
+        #      burstTimeout = 20;           # burst interval
+        #      burstCount = 5;
 
-              # Query source
-              useRssFeeds = true;           # use dynamic trending feeds
-              useUserQueries = false;       # don't mix your real queries
-              useBlackList = true;
+        #      # Query source
+        #      useRssFeeds = true;           # use dynamic trending feeds
+        #      useUserQueries = false;       # don't mix your real queries
+        #      useBlackList = true;
 
-              # Search engines to generate noise for
-              searchEngines = {
-                google = true;
-                bing = false;
-                yahoo = false;
-                baidu = false;
-                duckduckgo = false;
-              };
+        #      # Search engines to generate noise for
+        #      searchEngines = {
+        #        google = true;
+        #        bing = false;
+        #        yahoo = false;
+        #        baidu = false;
+        #        duckduckgo = false;
+        #      };
 
-              # Logging
-              enableLogging = false;
-            };
-              "sponsorBlocker@ajay.app".settings = {
+        #      # Logging
+        #      enableLogging = false;
+        #    };
+        #      "sponsorBlocker@ajay.app".settings = {
 
-                # Core behavior
-                isEnabled = true;
-                autoSkip = false;
-                showSkipNotice = true;
-                # this does not work
-                # Segment categories (auto-skip behavior)
-                categoryChooser = {
-                  Sponsor = {
-                    enabled = true;
-                    skipOption = "manualSkip";
-                  };
-                  intro = {
-                    enabled = true;
-                    actionType = 2;
-                  };
-                  outro = {
-                    enabled = true;
-                    actionType = 2;
-                  };
-                  selfpromo = {
-                    enabled = true;
-                    actionType = 2;
-                  };
-                  interaction = {
-                    enabled = true;
-                    actionType = 1; # 1 = manual skip
-                  };
-                  music_offtopic = {
-                    enabled = false;
-                    actionType = 0;
-                  };
-                  preview = {
-                    enabled = false;
-                    actionType = 0;
-                  };
-                };
+        #        # Core behavior
+        #        isEnabled = true;
+        #        autoSkip = false;
+        #        showSkipNotice = true;
+        #        # this does not work
+        #        # Segment categories (auto-skip behavior)
+        #        categoryChooser = {
+        #          Sponsor = {
+        #            enabled = true;
+        #            skipOption = "manualSkip";
+        #          };
+        #          intro = {
+        #            enabled = true;
+        #            actionType = 2;
+        #          };
+        #          outro = {
+        #            enabled = true;
+        #            actionType = 2;
+        #          };
+        #          selfpromo = {
+        #            enabled = true;
+        #            actionType = 2;
+        #          };
+        #          interaction = {
+        #            enabled = true;
+        #            actionType = 1; # 1 = manual skip
+        #          };
+        #          music_offtopic = {
+        #            enabled = false;
+        #            actionType = 0;
+        #          };
+        #          preview = {
+        #            enabled = false;
+        #            actionType = 0;
+        #          };
+        #        };
 
-                # Privacy
-                disableTelemetry = true;
-                showDonationLink = false;
+        #        # Privacy
+        #        disableTelemetry = true;
+        #        showDonationLink = false;
 
-                # UX
-                showUpsells = false;
-                hideSkipButtonPlayerControls = false;
+        #        # UX
+        #        showUpsells = false;
+        #        hideSkipButtonPlayerControls = false;
 
-                # Advanced
-                useLocalCache = true;
-                trackViewCount = false;
-          };
-        };
+        #        # Advanced
+        #        useLocalCache = true;
+        #        trackViewCount = false;
+        #  };
+        #};
       };
       search = {
         force = true;

@@ -10,5 +10,5 @@ sudo nixos-rebuild switch --flake ~/nixos/#laptop
 ```
 
 ### Things that don't work reliably and need manual setting.
-- Some Librewolf's extension's settings, such as SponsorBlock
+- Librewolf's extension's settings
 - Librewolf's bookmarks

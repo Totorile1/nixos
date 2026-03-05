@@ -8,7 +8,6 @@ biber.noarch
 dolphin.x86_64   may be customized or nautilus cust
 gimp.x86_64                                        
 hyprcursor.x86_64                                  
-librewolf ?
 ollama.x86_64                                      
 plymouth.x86_64                                    
 python3.x86_64                                     
@@ -22,9 +21,5 @@ texlive-bibtex.x86_64
 thunderbird.x86_64    
 tor.x86_64               
 torbrowser-launcher.noarch
-Google Chrome needed for Framework 16 rgb macropad
 replace sddm by ly
 
-
-write bookmarks
-fix the sponsorblock config
