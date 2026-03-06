@@ -323,6 +323,14 @@
           "google".metaData.hidden = true;
           "startpage".metaData.hidden = true;
           "duckduckgo".metaData.hidden = true;
+          "Wikitionary" = {
+            urls = [
+              {
+                template = "https://fr.wiktionary.org/w/index.php?search={searchTerms}";
+              }
+            ];
+            definedAliases = [ "dict" ];
+          };
           "quant" = {
             urls = [
               {

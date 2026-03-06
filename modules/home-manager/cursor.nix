@@ -5,5 +5,6 @@
     enable = true;
     package = pkgs.capitaine-cursors-themed;
     name = "Capitaine Cursors (Gruvbox)";
+    size = 32;
   };
 }

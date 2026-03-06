@@ -5,12 +5,27 @@
     enable = true;
     settings = {
       # Core animation
-      animation = "gameoflife"; # none or doom or matrix or gameoflife or a dur file
-
+      animation = "colormix"; # none or doom or matrix or gameoflife or a dur file
+# Ly supports 24-bit true color with styling, which means each color is a 32-bit value.
+# The format is 0xSSRRGGBB, where SS is the styling, RR is red, GG is green, and BB is blue.
+# Here are the possible styling options:
+# TB_BOLD      0x01000000
+# TB_UNDERLINE 0x02000000
+# TB_REVERSE   0x04000000
+# TB_ITALIC    0x08000000
+# TB_BLINK     0x10000000
+# TB_HI_BLACK  0x20000000
+# TB_BRIGHT    0x40000000
+# TB_DIM       0x80000000
+# Programmatically, you'd apply them using the bitwise OR operator (|), but because Ly's
+# configuration doesn't support using it, you have to manually compute the color value.
+# Note that, if you want to use the default color value of the terminal, you can use the
+# special value 0x00000000. This means that, if you want to use black, you *must* use
+# the styling option TB_HI_BLACK (the RGB values are ignored when using this option).
       # Basic TUI settings
       clear_password = true;
       default_input = "password";
-      fg = "0x00cd6400";
+      fg = "0x01cd6400";
       full_color = true;
       hide_borders = false;
       hide_key_hints = true;
@@ -22,6 +37,13 @@
       save = true;
       service_name = "ly";
 
+      bigclock = "en";
+      clock = "%H:%M";
+
+      colormix_col1 = "0x08FB4934"; 
+      colormix_col2 = "0x08FABD2F";
+      colormix_col3 = "0x08FE8019";
+
       # Box appearance
       #border_fg = "0x00FFFFFF";
       blank_box = true;
@@ -31,7 +53,7 @@
       #text_in_center = false;
 
       # Animation: Conway’s Game of Life (optional, comment out for minimal setup)
-      gameoflife_fg = "0x00cd6a00";
+      gameoflife_fg = "0x01cd6a00";
 
       gameoflife_frame_delay = 3;
       gameoflife_entropy_interval = 10;
@@ -41,7 +63,7 @@
       hibernate_cmd = null;
       inactivity_cmd = null;
       #login_cmd = "exec hyprland";
-      logout_cmd = null;
+      #logout_cmd = null;
       sleep_cmd = null;
 
       # System commands keys
