@@ -59,7 +59,7 @@
         "privacy.clearOnShutdown.cookies" = false;
         "browser.discovery.enabled" = false; # disable discovery
         "browser.search.suggest.enabled" = true; # disable search suggestions
-        "browser.contentblocking.category" = "custom"; # set tracking protection to custom
+        "browser.contentblocking.category" = "standart"; # set tracking protection to standart to not interfer with adnauseam
         "dom.private-attribution.submission.enabled" = false; # stop doing dumb stuff mozilla
         "browser.protections_panel.infoMessage.seen" = true; # disable tracking protection info
 

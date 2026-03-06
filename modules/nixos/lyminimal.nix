@@ -40,7 +40,7 @@
       bigclock = "en";
       clock = "%H:%M";
 
-      colormix_col1 = "0x08FB4934"; 
+      colormix_col1 = "0x08E85D04"; 
       colormix_col2 = "0x08FABD2F";
       colormix_col3 = "0x08FE8019";
 
@@ -62,7 +62,7 @@
       # Optional commands (leave null or comment if unused)
       hibernate_cmd = null;
       inactivity_cmd = null;
-      #login_cmd = "exec hyprland";
+      login_cmd = "start-hyprland";
       #logout_cmd = null;
       sleep_cmd = null;
 
