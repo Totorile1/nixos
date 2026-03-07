@@ -80,7 +80,7 @@ in
 		# if hyprexpo plugin enabled bind = $mainMod, Space, hyprexpo:expo, toggle
 #bind = Ctrl+$mainMod, 1, exec, pgrep -x ollama > /dev/null || ollama serve & notify-send -u normal -t 3000 "Running Deepseek-r1 with 1.5b parameters" "" &  kitty -e sh -c "ollama run deepseek-r1:1.5b"
 #bind = Ctrl+$mainMod, 2, exec, pgrep -x ollama > /dev/null || ollama serve & notify-send -u normal -t 3000 "Running Deepseek-r1 with 8b parameters" "" &  kitty -e sh -c "ollama run deepseek-r1:8b"
-
+        # exec custom-performance
 
 		bind = [
 			#hyprland/utility keybindings
@@ -214,7 +214,15 @@ in
 			"[workspace 1 silent] sleep 1 && kitty -o font_size=1 -e sh -c 'cmatrix -br'"
 			######################
 			######################
-		];
+          ];
+
+# gestures (also keybindings)
+        gesture = [
+          "3, right, move, +col"
+          "3, left, move, -col"
+        ];
+
+
 # █░░ ▄▀█ █▄█ █▀█ █░█ ▀█▀ █▀
 # █▄▄ █▀█ ░█░ █▄█ █▄█ ░█░ ▄█
 
@@ -342,7 +350,10 @@ in
         workspace = [
             "1, layout:master"
             "2, layout:scrolling, layoutopt:direction:right"
-            "special, layout:monocle"
+            "name:special, layout:scrolling"
+            # used for smart gaps along some windowrules
+            "w[tv1], gapsout:0, gapsin:0"
+            "f[1], gapsout:0, gapsin:0"
         ];
 
 
@@ -404,6 +415,10 @@ in
 "float on, match:class ^(eog)$"
 "float on, size 400 175, match:class ^(custom-librewolfprofiles)$"
 "float on, size 600 600, match:initial_title ^(custom-pomodoro)$"
+"border_size 0, match:float 0, match:workspace w[tv1]"
+"rounding 0, match:float 0, match:workspace w[tv1]"
+"border_size 0, match:float 0, match:workspace f[1]"
+"rounding 0, match:float 0, match:workspace f[1]"
 ];
 # add a float for tomato when in kitty
 #"plugin:imgborders:noimgborders, tag:noborder"
