@@ -1,10 +1,10 @@
-{ writeShellApplication, hyprland, jq,... }:
+{ writeShellApplication, hyprland, jq, ... }:
 
 writeShellApplication {
 	name = "custom-killall";
 	runtimeInputs = [
 		hyprland
-		jq
+        jq
 	];
 	text = ''
   active_workspace_id=$(hyprctl activeworkspace -j | jq -r '.id')

@@ -1,7 +1,7 @@
-{ writeShellApplication, hyprland, jq, ... }:
+{ writeShellApplication, hyprland, jq, ...}:
 
 writeShellApplication {
-	name = "custom-dontkillsteam";
+name = "custom-dontkillsteam";
 	runtimeInputs = [
 		hyprland
 		jq

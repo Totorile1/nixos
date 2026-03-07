@@ -135,23 +135,22 @@ in
 			"$mod, F11, exec, hyprshot -m  window"
 			", F11, exec, hyprshot -m output"
 			"$mod_SHIFT, S, exec, hyprshot -m region --clipboard only"
-			# framework 16 rgb macropad
-            "Ctrl+Alt, 1, exec, swaync-client -t" # pos 4 1
-			"Ctrl+$mod, 3, exec, pavucontrol" # pos 1 3
-			"Ctrl+$mod, 5, exec, gnome-characters" # pos 2 3
-			"Ctrl+$mod, 6, exec, custom-killall" # pos 1 1 
-			# reloads the autostart programs # pos 3 1
+            # framework 16 rgb macropad
+            "Ctrl+$mod, 6, exec, custom-killall" # pos 1 1 killall apps except focused one
+            ", F13, exec, custom-performance" # pos 2 1 start performance mode
+ 			# reloads the autostart programs # pos 3 1
 			"Ctrl+$mod, 4, exec, sleep 1 && kitty -o font_size=16 -e sh -c 'custom-weather'"
 			"Ctrl+$mod, 4, exec, sleep 1 && kitty -o font_size=11 -e sh -c 'custom-cowsay'"
 			"Ctrl+$mod, 4, exec, kitty -e 'custom-launch'"
 			"Ctrl+$mod, 4, exec, sleep 1 && kitty -o font_size=5 -e btm --theme gruvbox --disable-click --disable_advanced_kill --enable_cache_memory -g -R -T "
 			"Ctrl+$mod, 4, exec, sleep 1 && kitty -o font_size=1 -e sh -c 'cmatrix -br'"
-            # exec a little kitty floating window with tomato executed (pomodoro app)
-        # exec the hyprpicker -> copy
+            "Ctrl+Alt, 1, exec, swaync-client -t" # pos 4 1 notification center
+			"Ctrl+$mod, 3, exec, pavucontrol" # pos 1 2 audiocontrol
+            "Ctrl+$mod, 5, exec, gnome-characters" # pos 2 2 special chars
+            "Ctrl+Alt, 2, exec, hyprpicker | tee >(wl-copy) | cliphist store" # pos 3 2 colorpicker
+            "Ctrl+Alt, 0, exec, custom-tomato" # pos 1 3 pomodoro app
 		# if hyprexpo plugin enabled bind = $mainMod, Space, hyprexpo:expo, toggle
-#bind = Ctrl+$mainMod, 1, exec, pgrep -x ollama > /dev/null || ollama serve & notify-send -u normal -t 3000 "Running Deepseek-r1 with 1.5b parameters" "" &  kitty -e sh -c "ollama run deepseek-r1:1.5b"
-#bind = Ctrl+$mainMod, 2, exec, pgrep -x ollama > /dev/null || ollama serve & notify-send -u normal -t 3000 "Running Deepseek-r1 with 8b parameters" "" &  kitty -e sh -c "ollama run deepseek-r1:8b"
-        # exec custom-performance
+        # maybe exec sudo framework-tools-tui
 
             #plugins keybindings
             #"$mod, SPACE, overview:toggle, "
