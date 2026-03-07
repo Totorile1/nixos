@@ -164,7 +164,6 @@ wl-clipboard # cli copy/past utilities for Wayland
 jp # lightweight and flexible cli JSON parser
 notepad-next
 libnotify # Library that sends desktop notifications to a notification daemon
-ripgrep #better grepp
 hyprkeys # keybind helper
 cowsay
 cmatrix

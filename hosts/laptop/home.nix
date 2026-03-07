@@ -26,6 +26,7 @@ imports = [
 ../../modules/home-manager/anki.nix # we use only for some settings. see ../../modules/nixos/anki.nix for activating
 ../../modules/home-manager/librewolf.nix # privacy browser
 ../../modules/home-manager/cursor.nix # cursor (the icon not the app)
+../../modules/home-manager/ripgrep.nix # better grep
 ];
 
 
