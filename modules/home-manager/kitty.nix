@@ -6,7 +6,7 @@
     #font.name = nerd-fonts._0xproto;
     #font.size = "10";
     extraConfig = ''
-font	nerd-fonts._0xproto
+# font	nerd-fonts._0xproto # this key dont work and causes errors
 font_size	14
 bold_font        auto
 italic_font      auto
