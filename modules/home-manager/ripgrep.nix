@@ -8,7 +8,6 @@
       "-."
       "-p"
       "-n"
-      "-c"
     ];
   };
   programs.ripgrep-all = {

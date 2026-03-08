@@ -72,6 +72,7 @@ home.packages = [
 (pkgs.callPackage ../../modules/scripts/librewolfprofiles.nix {})
 (pkgs.callPackage ../../modules/scripts/performance-mode.nix {})
 (pkgs.callPackage ../../modules/scripts/btm.nix {})
+(pkgs.callPackage ../../modules/scripts/manix.nix {})
 #pkgs
 pkgs.gruvbox-gtk-theme
 # # Adds the 'hello' command to your environment. It prints a friendly
