@@ -23,3 +23,9 @@ tor.x86_64
 torbrowser-launcher.noarch
 replace sddm by ly
 maybe configure a bit ripgrep? majuscules
+
+
+things to do?
+deadnix and aljandra to clean up the repo
+maybe setup nixos-cli
+setup manix 
