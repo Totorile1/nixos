@@ -27,6 +27,7 @@ custom-cat() {
     pomodoro = "custom-tomato";
     librewolf = "kitty --class \"custom-librewolfprofiles\" --name \"Select LibreWolf profile\" --hold custom-librewolfprofiles";
     manix = "custom-manix";
+    man = "custom-man";
   };
   };
 }

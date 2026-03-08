@@ -16,6 +16,7 @@
   ];
 
 
+documentation.man.generateCaches = true; # used for the man script
 
 # grub theme
 boot.loader.grub = {
