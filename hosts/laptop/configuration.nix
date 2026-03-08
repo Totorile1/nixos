@@ -15,6 +15,13 @@
     ../../modules/nixos/udevsimple.nix
   ];
 
+  nix.nixPath = [
+    "nixpkgs=${inputs.nixpkgs.outPath}"
+    "home-manager=${inputs.home-manager.outPath}"
+  ]; #manix is unhappy without this
+
+
+
 home-manager = {
 	useGlobalPkgs = true;
 	useUserPackages = true;
@@ -192,6 +199,9 @@ usbutils # used for lsusb
 # used for the framework 16 laptop
 framework-tool
 framework-tool-tui
+
+#some nix tools
+manix
 ];
 
 # fonts
