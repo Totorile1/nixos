@@ -1,7 +1,9 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   services.batsignal = {
     enable = true;
-};
+  };
 }

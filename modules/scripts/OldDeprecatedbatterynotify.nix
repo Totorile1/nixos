@@ -1,14 +1,14 @@
-{ writeShellApplication
-, libnotify
-, systemd
+{
+  writeShellApplication,
+  libnotify,
+  systemd,
 }:
-
 writeShellApplication {
   name = "custom-olddeprecatedbatterynotify";
 
   runtimeInputs = [
-    libnotify   # provides notify-send
-    systemd     # provides systemctl
+    libnotify # provides notify-send
+    systemd # provides systemctl
   ];
 
   text = ''

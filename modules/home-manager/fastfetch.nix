@@ -1,7 +1,9 @@
-{ config, pkgs, ... }:
-
 {
-# Adapted from https://github.com/dacrab/fastfetch-config/blob/main/config.jsonc
+  config,
+  pkgs,
+  ...
+}: {
+  # Adapted from https://github.com/dacrab/fastfetch-config/blob/main/config.jsonc
   programs.fastfetch = {
     enable = true;
 
@@ -12,7 +14,6 @@
       };
 
       modules = [
-
         # ───────────── Hardware ─────────────
 
         {
@@ -161,14 +162,14 @@
 
         #{
         #  type = "custom";
-	#  format = ''
-	#	  {#0} {#1} {#2} {#3} {#4} {#5} {#6} {#7}
-	#	  '';
-	#} #for some reason dont work
-	{
-	  type = "colors";
-	  symbol = "diamond";
-	}
+        #  format = ''
+        #	  {#0} {#1} {#2} {#3} {#4} {#5} {#6} {#7}
+        #	  '';
+        #} #for some reason dont work
+        {
+          type = "colors";
+          symbol = "diamond";
+        }
 
         "break"
       ];

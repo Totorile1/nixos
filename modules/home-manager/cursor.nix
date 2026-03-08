@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
 {
+  config,
+  pkgs,
+  ...
+}: {
   home.pointerCursor = {
     hyprcursor.enable = true;
     enable = true;

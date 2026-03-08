@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs.ripgrep = {
     enable = true;
     arguments = [
@@ -11,7 +13,6 @@
     ];
   };
   programs.ripgrep-all = {
-      enable = true;
+    enable = true;
   };
-
 }
