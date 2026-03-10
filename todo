@@ -43,6 +43,8 @@ with quickshell:
 
   battery dashboard https://www.reddit.com/r/hyprland/comments/1rkiajd/a_beautiful_battery_system_dashboard_on_hyprland/
 
+  have a small terminal popup for some usages (like custom-launch)
+
   some meteo center with dates, etc
 
   show name of the app
@@ -52,3 +54,5 @@ with quickshell:
   maybe some kind of overview?
 
   see what people did with quickshell and take inspiration
+
+  work on quickshell color palette to match gruvbox
