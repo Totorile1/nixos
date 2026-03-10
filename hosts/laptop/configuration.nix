@@ -203,8 +203,11 @@
     # used for the framework 16 laptop
     framework-tool
     framework-tool-tui
-
-    #some nix tools
+    
+    krita # image edition
+    yt-dlp# some youtube downloader
+    vlc
+#some nix tools
     manix
     deadnix
     alejandra
