@@ -228,6 +228,9 @@ in {
       pseudotile = true;
       preserve_split = true;
     };
+    scrolling = {
+      column_width = 0.45;
+    };
 
     # █▀▄▀█ █ █▀ █▀▀
     # █░▀░█ █ ▄█ █▄▄

@@ -1,13 +1,6 @@
-use hyprland
-transfer everything
-list to things to transfere:
-
-some cursor-themed
 audacity.x86_64       
 biber.noarch                                       
 dolphin.x86_64   may be customized or nautilus cust
-gimp.x86_64                                        
-hyprcursor.x86_64                                  
 ollama.x86_64                                      
 plymouth.x86_64                                    
 python3.x86_64                                     

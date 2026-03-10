@@ -22,7 +22,8 @@
     #../../modules/home-manager/neovim2.nix # ./neovim2.nix uses vim plug instead of the nix repository as with ./neovim.nix see the begining of neovim2 for an explanation
     ../../modules/home-manager/rclone.nix
     ../../modules/home-manager/waybar.nix
-    #../../modules/home-manager/oh-my-posh.nix # zsh customizer
+    ../../modules/home-manager/quickshell.nix # used for widgets. Maybe it will replace waybar
+#../../modules/home-manager/oh-my-posh.nix # zsh customizer
     ../../modules/home-manager/oh-my-zsh.nix # another zsh customizer
     ../../modules/home-manager/hypridle.nix
     ../../modules/home-manager/swaylock.nix

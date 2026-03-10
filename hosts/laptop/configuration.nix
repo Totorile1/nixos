@@ -22,6 +22,8 @@
 
   documentation.man.generateCaches = true; # used for the man script
 
+qt.enable = true;
+
   # grub theme
   boot.loader.grub = {
     theme = inputs.nixos-grub-themes.packages.${pkgs.system}.nixos; # if you want to use nixos grub theme
@@ -207,10 +209,14 @@
     krita # image edition
     yt-dlp# some youtube downloader
     vlc
-#some nix tools
+    #some nix tools
     manix
     deadnix
     alejandra
+    # libs or apps for quickshell
+    libsForQt5.qt5.qtgraphicaleffects
+    mprisence
+    kdePackages.qt5compat
   ];
 
   # fonts
