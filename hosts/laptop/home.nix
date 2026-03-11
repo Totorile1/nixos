@@ -75,6 +75,7 @@
     (pkgs.callPackage ../../modules/scripts/btm.nix {})
     (pkgs.callPackage ../../modules/scripts/manix.nix {})
     (pkgs.callPackage ../../modules/scripts/man.nix {})
+    (pkgs.callPackage ../../modules/scripts/trimmer.nix {})
     #pkgs
     pkgs.gruvbox-gtk-theme
     # # Adds the 'hello' command to your environment. It prints a friendly

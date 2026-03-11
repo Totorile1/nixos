@@ -142,7 +142,7 @@ qt.enable = true;
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-older-than 30d"; # every week delete generations older than a month
+    options = "--delete-older-than 7d"; # every week delete generations older than a month
   };
 
   # Install firefox.
