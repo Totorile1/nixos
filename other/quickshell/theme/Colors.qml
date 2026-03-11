@@ -51,6 +51,9 @@ QtObject {
     readonly property color barColor3: border // Left block bar border                                          original color: "#BE850E"
     readonly property color barColor4: background // Right block bar background                                 original color: "#3B253F"
     readonly property color barColor5: border // Right block bar border                                         original color: "#BE850E"
+    readonly property color barColor6: background // left center block bar background
+    readonly property color barColor7: border // left center block bar border
+    readonly property color barColor8: text // left center block bar text color
     readonly property color powerColor1: black // Battery indicator empty color                                 original color: "black"
     readonly property color powerColor2: red //                                                                 original color: "red"
     readonly property color powerColor3: accentYellow // Battery indicator normal color                         original color: "#EEA939"
