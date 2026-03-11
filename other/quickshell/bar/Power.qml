@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Effects
 import Quickshell.Services.UPower
 import Qt5Compat.GraphicalEffects
-
+import "../theme" as Theme
 Item {
     id: root
 
@@ -28,13 +28,13 @@ Item {
     Rectangle {
         id: progressBar
         anchors.fill: parent
-        color: "black"
+        color: Theme.Colors.powerColor1
         Rectangle {
             anchors.bottom: parent.bottom
             anchors.left: parent.left
             anchors.right: parent.right
             height: root.isLaptop ? root.percentage * parent.height : parent.height
-            color: root.isLaptop ? (root.isLow ? "red" : "#EEA939") : "#EEA939"
+            color: root.isLaptop ? (root.isLow ? Theme.Colors.powerColor2 : Theme.Colors.powerColor3) : Theme.Colors.powerColor4
         }
         visible: false
     }

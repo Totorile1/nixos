@@ -6,6 +6,7 @@ import QtQuick.Controls
 import Quickshell
 import Quickshell.Services.Pipewire
 import Quickshell.Widgets
+import "../theme" as Theme
 import "mpris"
 
 MouseArea {
@@ -62,7 +63,7 @@ MouseArea {
             anchor.window: root.bar
             width: 200
             height: 32
-            color: "#9B5B36"
+            color: Theme.Colors.volumeColor1
             Connections {
                 target: root
                 function onXChanged() {
@@ -97,7 +98,7 @@ MouseArea {
                     implicitHeight: 16
                     width: slider.availableWidth
                     height: implicitHeight
-                    color: "#824524"
+                    color: Theme.Colors.volumeColor2
                     opacity: node.audio.muted ? 0.5 : 1
 
                     Rectangle {
@@ -106,7 +107,7 @@ MouseArea {
                         y: anchors.topMargin
                         width: slider.visualPosition * (parent.width - anchors.leftMargin - anchors.rightMargin)
                         height: parent.height - anchors.topMargin - anchors.bottomMargin
-                        color: "#8D804B"
+                        color: Theme.Colors.volumeColor3
                     }
                 }
 
@@ -116,7 +117,7 @@ MouseArea {
                     implicitWidth: 12
                     implicitHeight: 12
                     rotation: 45
-                    color: "#8D804B"
+                    color: Theme.Colors.volumeColor4
                 }
             }
 

@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Shapes
-
+import "../theme" as Theme
 Item {
     id: root
 
@@ -30,9 +30,9 @@ Item {
         ShapePath {
             id: path
             capStyle: ShapePath.RoundCap
-            strokeColor: "#DAC99B"
+            strokeColor: Theme.Colors.ropeColor1
             strokeWidth: 10
-            fillColor: "transparent"
+            fillColor: Theme.Colors.ropeColor2
         }
     }
 

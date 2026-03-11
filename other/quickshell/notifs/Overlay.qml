@@ -4,6 +4,7 @@ import QtQuick
 import Quickshell
 import Quickshell.Wayland
 import Quickshell.Services.Notifications
+import "../theme" as Theme
 import "."
 
 PanelWindow {
@@ -14,7 +15,7 @@ PanelWindow {
 
     WlrLayershell.namespace: "shell:notifications"
     exclusionMode: ExclusionMode.Ignore
-    color: "transparent"
+    color: Theme.Colors.notifsOverlayColor1
 
     anchors {
         left: true

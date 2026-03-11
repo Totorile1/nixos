@@ -5,6 +5,7 @@ import QtQuick.Layouts
 import QtQuick.Effects
 import Quickshell
 import Quickshell.Services.SystemTray
+import "../../theme" as Theme
 import ".."
 import "../.."
 import "../../components"
@@ -121,11 +122,11 @@ Rectangle {
 
                                 implicitWidth: Math.max(1, menuView.implicitWidth)
                                 implicitHeight: Math.max(1, menuView.implicitHeight)
-                                color: "transparent"
+                                color: Theme.Colors.sysTrayColor1
 
                                 Rectangle {
                                     anchors.fill: parent
-                                    color: "#9B5B36"
+                                    color: Theme.Colors.sysTrayColor2
                                     MenuView {
                                         id: menuView
                                         anchors.fill: parent

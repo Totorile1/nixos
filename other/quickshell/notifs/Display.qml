@@ -3,6 +3,7 @@
 import QtQuick
 import QtQuick.Layouts
 import Quickshell.Services.Notifications
+import "../theme" as Theme
 
 Item {
     id: root
@@ -32,7 +33,7 @@ Item {
         Rectangle {
             id: bannerRect
 
-            color: "#3B253F"
+            color: Theme.Colors.background
             Layout.fillWidth: true
             implicitHeight: textColumn.height
             Layout.leftMargin: (width / trumpetTop.sourceSize.width) * 2 + 3
@@ -70,7 +71,7 @@ Item {
                   wrapMode: Text.Wrap
                   font.pointSize: 18
                   font.bold: true
-                  color: "#9292B6"
+                  color: Theme.Colors.displayColor1
               }
               
               Text {
@@ -79,7 +80,7 @@ Item {
                   wrapMode: Text.Wrap
                   font.pointSize: 14
                   font.bold: false
-                  color: "#9292B6"
+                  color: Theme.Colors.displayColor2
               }
             }
         }

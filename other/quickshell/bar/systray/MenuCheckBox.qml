@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Shapes
+import "../../theme" as Theme
 import "../.."
 
 Rectangle {
@@ -7,7 +8,7 @@ Rectangle {
     implicitHeight: 18
     implicitWidth: 18
     radius: 3
-    color: checkState == Qt.Checked ? "#C5E3EE" : "#90ACAD"
+    color: checkState == Qt.Checked ? Theme.Colors.menuCheckBoxChecked1 : Theme.Colors.menuCheckBoxChecked2
 
     Shape {
         visible: checkState == Qt.Checked
@@ -18,8 +19,8 @@ Rectangle {
         ShapePath {
             strokeWidth: 2
             capStyle: ShapePath.RoundCap
-            joinStyle: ShapePath.RoundJoin
-            fillColor: "transparent"
+          joinStyle: ShapePath.RoundJoin
+          fillColor: Theme.Colors.menuCheckBoxShapePath
 
             startX: start.x
             startY: start.y

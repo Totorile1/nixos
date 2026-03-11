@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import Quickshell.Io
+import "../theme" as Theme
 import ".."
 
 Text {
@@ -8,12 +9,12 @@ Text {
     font.family: "BigBlueTermPlusNerdFont"
     font.pointSize: 16
     font.bold: true
-    color: "white"
+    color: Theme.Colors.timeColor1
     opacity: 0.5
 
     Process {
         id: dateProc
-        command: ["date", "+%H:%M"]
+        command: ["date", "+%Y-%m-%d\(%a\)\ %T"]
         running: true
         stdout: SplitParser {
             onRead: data => timetxt.text = data

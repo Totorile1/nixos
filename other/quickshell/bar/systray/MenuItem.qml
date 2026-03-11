@@ -3,6 +3,7 @@ import QtQuick.Layouts
 import Quickshell
 import Quickshell.Widgets
 import Quickshell.DBusMenu
+import "../../theme" as Theme
 import "../.."
 
 MouseArea {
@@ -34,7 +35,7 @@ MouseArea {
         anchors.fill: parent
         visible: root.containsMouse || childrenRevealer.expanded
 
-        color: "#824524"
+        color: Theme.Colors.menuItemColor1
     }
     ColumnLayout {
         id: row
@@ -71,7 +72,7 @@ MouseArea {
 
             Text {
                 text: entry.text
-                color: entry.enabled ? "white" : "#bbbbbb"
+                color: entry.enabled ? Theme.Colors.menuItemColor2 : Theme.Colors.menuItemColor3
             }
 
             Item {

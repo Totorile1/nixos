@@ -9,6 +9,7 @@ import Quickshell.Widgets
 import Quickshell.Wayland
 import Quickshell.Hyprland
 import Quickshell.Services.Mpris
+import "../../theme" as Theme
 import "../.."
 import ".."
 
@@ -148,7 +149,7 @@ MouseArea {
             elide: Text.ElideRight
             width: Math.min(parent.width - 20, implicitWidth)
             font.family: "BigBlueTermPlusNerdFont"
-            color: "white"
+            color: Theme.Colors.playersLabel
         }
     }
 }

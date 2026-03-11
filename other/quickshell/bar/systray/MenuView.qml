@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
+import "../../theme" as Theme
 
 ColumnLayout {
     id: root
@@ -60,7 +61,7 @@ ColumnLayout {
 
             property var separator: Component {
                 Rectangle {
-                    color: "#824524"
+                    color: Theme.Colors.menuViewColor
                     implicitHeight: 4
                 }
             }

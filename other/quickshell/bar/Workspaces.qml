@@ -4,6 +4,7 @@ import QtQuick
 import QtQuick.Effects
 import QtQuick.Layouts
 import Quickshell.Hyprland
+import "../theme" as Theme
 
 MouseArea {
     id: root
@@ -81,7 +82,7 @@ MouseArea {
                     anchors.fill: parent
                     anchors.margins: 2
                     radius: width / 2
-                    color: wsItem.exists ? "#C0DB4C" : "#59622D"
+                    color: wsItem.exists ? Theme.Colors.workspacesColor1 : Theme.Colors.workspacesColor2
                 }
                 Image {
                     anchors.fill: parent

@@ -1,4 +1,5 @@
 import QtQuick
+import "../../theme" as Theme
 import "../.."
 
 Rectangle {
@@ -6,7 +7,7 @@ Rectangle {
     implicitHeight: 18
     implicitWidth: 18
     radius: width / 2
-    color: checkState == Qt.Checked ? "#C5E3EE" : "#90ACAD"
+    color: checkState == Qt.Checked ? Theme.Colors.menuRadioButtonColor1 : Theme.Colors.menuRadioButtonColor2
 
     Rectangle {
         x: parent.width * 0.25

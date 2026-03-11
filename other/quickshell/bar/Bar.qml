@@ -5,6 +5,7 @@ import QtQuick.Layouts
 import Quickshell.Wayland
 import "mpris" as Mpris
 import "systray" as SysTray
+import "../theme" as Theme
 import ".."
 
 PanelWindow {
@@ -32,7 +33,7 @@ PanelWindow {
     }
     exclusiveZone: 48
     implicitHeight: 72
-    color: "transparent"
+    color: Theme.Colors.barColor1
     mask: barRegion
 
     Region {
@@ -61,12 +62,12 @@ PanelWindow {
 
             implicitWidth: left.width + left.anchors.leftMargin + left.anchors.rightMargin
             implicitHeight: left.height
-            color: "#3B253F"
+            color: Theme.Colors.barColor2
 
             Rectangle {
                 z: -1
                 anchors.fill: parent
-                color: "#BE850E"
+                color: Theme.Colors.barColor3
                 anchors.margins: -4
             }
             Image {
@@ -112,12 +113,12 @@ PanelWindow {
 
             implicitWidth: right.width + right.anchors.leftMargin + right.anchors.rightMargin
             implicitHeight: right.height
-            color: "#3B253F"
+            color: Theme.Colors.barColor4
 
             Rectangle {
                 z: -1
                 anchors.fill: parent
-                color: "#BE850E"
+                color: Theme.Colors.barColor5
                 anchors.margins: -4
             }
             Image {

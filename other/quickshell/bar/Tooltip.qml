@@ -3,6 +3,7 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import Quickshell
 import Quickshell.Hyprland
+import "../theme" as Theme
 import "root:/"
 
 Scope {
@@ -113,7 +114,7 @@ Scope {
             //implicitWidth: Math.max(700, tooltipItem.largestAnimWidth) // max due to qtwayland glitches
             //implicitHeight: Math.max(700, tooltipItem.largestAnimHeight) // max due to qtwayland glitches
             visible: true
-            color: "transparent"
+            color: Theme.Colors.tooltipColor1
             //color: "#20ff0000"
 
             mask: Region {
@@ -154,7 +155,7 @@ Scope {
                 // bkg
                 Rectangle {
                     anchors.fill: parent
-                    color: "#3B253F"
+                    color: Theme.Colors.tooltipColor2
                 }
 
                 readonly property var targetWidth: shownItem?.implicitWidth ?? 0

@@ -3,6 +3,7 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import Quickshell
 import Quickshell.Hyprland
+import "../theme" as Theme
 import "root:/"
 
 Scope {
@@ -118,7 +119,7 @@ Scope {
                 return h;
             }
             visible: true
-            color: "transparent"
+            color: Theme.Colors.tooltipBackupColor1
             //color: "#20ff0000"
 
             mask: Region {
@@ -136,14 +137,14 @@ Scope {
             }
 
             /*Rectangle {
-				color: "#10ff0000"
+				color: Theme.Colors.tooltipBackupColor2
 				//y: tooltipItem.highestAnimY
 				height: tooltipItem.lowestAnimY - tooltipItem.highestAnimY
 				width: parent.width
 			}
 
 			Rectangle {
-				color: "#1000ff00"
+				color: Theme.Colors.tooltipBackupColor3
 				//y: tooltipItem.highestAnimY
 				height: popup.height
 				width: parent.width
@@ -173,7 +174,7 @@ Scope {
                 // bkg
                 Rectangle {
                     anchors.fill: parent
-                    color: "red"
+                    color: Theme.Colors.tooltipBackupColor4
                 }
 
                 readonly property var targetWidth: shownItem?.implicitWidth ?? 0

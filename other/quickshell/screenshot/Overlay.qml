@@ -4,6 +4,7 @@ import QtQuick
 import Quickshell
 import Quickshell.Io
 import Quickshell.Wayland
+import "../theme" as Theme
 import "../components"
 
 // TODO: make configurable: cursor visibility, screen freeze
@@ -76,11 +77,11 @@ PanelWindow {
             ctx.reset();
 
             // Background
-            ctx.fillStyle = "#44000000";
+            ctx.fillStyle = Theme.Colors.screenshotOverlayColor1;
             ctx.fillRect(0, 0, root.width, root.height);
 
             // Border
-            ctx.fillStyle = "#824524";
+            ctx.fillStyle = Theme.Colors.screenshotOverlayColor2;
             ctx.fillRect(root.left - borderExtendX, root.top - borderWidthH, root.right - root.left + borderExtendX * 2, borderWidthH);
             ctx.fillRect(root.left - borderExtendX, root.bottom, root.right - root.left + borderExtendX * 2, borderWidthH);
             ctx.fillRect(root.left - borderWidthV, root.top - borderExtendY, borderWidthV, root.bottom - root.top + borderExtendY * 2);

@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Shapes
 import Quickshell
+import "../../theme" as Theme
 
 Item {
 	property bool expanded: false;
@@ -37,7 +38,7 @@ Item {
 			strokeWidth: 2
 			capStyle: ShapePath.RoundCap
 			joinStyle: ShapePath.MiterJoin
-			fillColor: "transparent"
+			fillColor: Theme.Colors.menuChildrenRevealerShapePath
 
 			startX: xStart
 			startY: yStart
