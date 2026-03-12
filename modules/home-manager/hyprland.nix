@@ -135,7 +135,6 @@ in {
       #", F11, exec, hyprshot -m output"
       #"$mod_SHIFT, S, exec, hyprshot -m region --clipboard only"
       "$mod_SHIFT, S, exec, qs ipc call screenshot toggle"
-      "Ctrl+$mod_SHIFT, S, exec, qs, ipc call screenshotsave toggle"
       # framework 16 rgb macropad
       "Ctrl+$mod, 6, exec, custom-killall" # pos 1 1 killall apps except focused one
       "Ctrl+Alt, 7, exec, custom-performance" # pos 2 1 start performance mode
