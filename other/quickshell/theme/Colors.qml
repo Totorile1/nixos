@@ -78,4 +78,5 @@ QtObject {
     readonly property color notifsOverlayColor1: transparent //                                                 original color: "transparent"
     readonly property color screenshotOverlayColor1: "#44000000" //                                             original color: "#44000000"
     readonly property color screenshotOverlayColor2: woodBrown //                                               original color: "#824524"
-}
+    readonly property color notificationCenterColor1: "black"
+  }
