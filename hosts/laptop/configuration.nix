@@ -8,7 +8,10 @@
   libs,
   inputs,
   ...
-}: {
+}: 
+
+
+{
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -158,6 +161,7 @@
   environment.systemPackages = with pkgs; [
     # use pkgs-unstable if you want the package from the unstable channel
     #we need to install gnome and kde utils individually as we dont use gnome
+    kdePackages.dolphin
     gnome-calculator
     snapshot
     gnome-characters
@@ -222,10 +226,7 @@
     libsForQt5.qt5.qtgraphicaleffects
     mprisence
     kdePackages.qt5compat
-
-    #latex
-    texliveMedium
-    
+    gif-for-cli
   ];
 
   # fonts

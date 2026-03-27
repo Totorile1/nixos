@@ -82,11 +82,18 @@
     (pkgs.callPackage ../../modules/scripts/QSnotifyhistory.nix {})
 #pkgs
     pkgs.gruvbox-gtk-theme
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
-
-    # # It is sometimes useful to fine-tune packages, for example, by applying
+    (pkgs.texliveMedium.withPackages (
+      ps: with ps; [
+        # these few pkgs are used in the CV template
+        titlesec # allows creating custom \section
+        marvosym # some symboles
+        ebgaramond # Use the EB Garamond font
+        microtype # To enable letterspacing
+        fontaxes
+      #(setq org-latex-compiler "lualatex")
+      #(setq org-preview-latex-default-process 'dvisvgm)
+  ]))
+   # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?

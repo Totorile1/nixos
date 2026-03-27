@@ -23,6 +23,7 @@ things to do?
 
 Review windowrules when only one window
 
+setup lsp in neovim
 
 Setup obsidian (plugsins, etc.)
   maybe setup some vaults in obsidian.nix. It seams that it cant direclty use kdrive as a vault.

@@ -4,7 +4,7 @@
     enable = true;
     settings = {
       # Core animation
-      animation = "colormix"; # none or doom or matrix or gameoflife or a dur file
+      animation = "gameoflife"; # none or doom or matrix or gameoflife or a dur file
       # Ly supports 24-bit true color with styling, which means each color is a 32-bit value.
       # The format is 0xSSRRGGBB, where SS is the styling, RR is red, GG is green, and BB is blue.
       # Here are the possible styling options:
@@ -27,9 +27,9 @@
       fg = "0x01cd6400";
       full_color = true;
       hide_borders = false;
-      hide_key_hints = true;
+      hide_key_hints = false;
       hide_keyboard_locks = true;
-      hide_version_string = true;
+      hide_version_string = false;
       input_len = 34;
       lang = "en";
       numlock = false;
@@ -52,7 +52,7 @@
       #text_in_center = false;
 
       # Animation: Conway’s Game of Life (optional, comment out for minimal setup)
-      gameoflife_fg = "0x01cd6a00";
+      gameoflife_fg = "0x40FFFFFF";
 
       gameoflife_frame_delay = 3;
       gameoflife_entropy_interval = 10;
