@@ -161,7 +161,6 @@
   environment.systemPackages = with pkgs; [
     # use pkgs-unstable if you want the package from the unstable channel
     #we need to install gnome and kde utils individually as we dont use gnome
-    kdePackages.dolphin
     gnome-calculator
     snapshot
     gnome-characters

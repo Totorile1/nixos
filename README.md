@@ -20,3 +20,4 @@ sudo nixos-rebuild switch --flake ~/nixos/#laptop
 ### Things that don't work reliably and need manual setting.
 - Librewolf's extension's settings
 - Librewolf's bookmarks
+- Thunderbird's email servers

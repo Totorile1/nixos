@@ -32,6 +32,7 @@
     ../../modules/home-manager/cursor.nix # cursor (the icon not the app)
     ../../modules/home-manager/ripgrep.nix # better grep
     ../../modules/home-manager/obsidian.nix
+    ../../modules/home-manager/thunderbird.nix # email client
   ];
 
   #programs.nixvim = {
@@ -82,6 +83,7 @@
     (pkgs.callPackage ../../modules/scripts/QSnotifyhistory.nix {})
 #pkgs
     pkgs.gruvbox-gtk-theme
+    pkgs.biber
     (pkgs.texliveMedium.withPackages (
       ps: with ps; [
         # these few pkgs are used in the CV template
@@ -90,6 +92,30 @@
         ebgaramond # Use the EB Garamond font
         microtype # To enable letterspacing
         fontaxes
+        # these few pkgs were used for my TM
+        svg
+        catchfile
+        caption
+        transparent
+        cfr-lm
+        svn-prov
+        nfssext-cfr
+        hyphenat
+        csquotes
+        enumitem
+        chngcntr
+        tcolorbox
+        pdfcol
+        wrapfig
+        tocloft
+        lastpage
+        biblatex
+        biblatex-iso690
+        libertine
+        minted
+        upquote
+        lipsum
+        footmisc
       #(setq org-latex-compiler "lualatex")
       #(setq org-preview-latex-default-process 'dvisvgm)
   ]))
