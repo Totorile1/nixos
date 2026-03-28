@@ -217,6 +217,11 @@
     krita # image edition
     yt-dlp# some youtube downloader
     vlc
+    (pkgs-unstable.python314.withPackages (ps: with ps; [
+      matplotlib
+      networkx
+      scipy
+    ]))
     #some nix tools
     manix
     deadnix
