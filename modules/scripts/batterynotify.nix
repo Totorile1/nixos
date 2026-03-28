@@ -38,8 +38,8 @@ in
       # Runs full time in background
       x=0
       while true; do
-          Battery_Status="$(cat /sys/class/power_supply/BAT*/status)"
-          Battery_Capacity=$(cat /sys/class/power_supply/BAT*/capacity)
+          Battery_Status="$(\cat /sys/class/power_supply/BAT*/status)"
+          Battery_Capacity=$(\cat /sys/class/power_supply/BAT*/capacity)
 
           case "$Battery_Status" in
               "Discharging")
