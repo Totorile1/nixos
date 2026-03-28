@@ -11,13 +11,13 @@ Before applying this configuration on another system, make sure to:
 
 Requirements: `git` installed. Then run:
 
-\`\`\`bash
+```bash
 cd
 git clone https://github.com/Totorile1/nixos.git
 cd nixos
 sudo cp /etc/nixos/hardware-configuration.nix ./hosts/laptop/hardware-configuration
 sudo nixos-rebuild switch --flake ~/nixos/#laptop
-\`\`\`
+```
 
 ### Things That Don't Work Reliably and need manual setup
 
@@ -29,7 +29,7 @@ sudo nixos-rebuild switch --flake ~/nixos/#laptop
 
 ## Configuration Structure
 
-\`\`\`text
+```text
 nixos/
 ├── assets/                # Images, icons, wallpapers, sounds
 ├── hosts/laptop/          # Host-specific NixOS config
@@ -43,7 +43,7 @@ nixos/
 ├── flake.nix
 ├── flake.lock
 └── README.md
-\`\`\`
+```
 
 > The `quickshell` configuration is written in **QML** (`other/quickshell`) and is automatically copied to `~/.config/quickshell` on deployment.  
 
