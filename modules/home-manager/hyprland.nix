@@ -19,6 +19,7 @@ in {
     "$mod" = "SUPER";
     "$term" = "kitty";
     "$editor" = "nvim";
+    "$notes" = "kitty --class \"custom-obsidianvaults\" --name \"Select Obsidian vault\" --hold custom-obsidianvaults";
     "$file" = "nautilus";
     "$browser" = "kitty --class \"custom-librewolfprofiles\" --name \"Select LibreWolf profile\" --hold custom-librewolfprofiles";
     # ▄▀█ █▄░█ █ █▀▄▀█ ▄▀█ ▀█▀ █ █▀█ █▄░█
@@ -127,6 +128,7 @@ in {
       "$mod, T, exec, $term"
       "$mod, E, exec, $file"
       "$mod, F, exec, $browser"
+      "$mod, N, exec, $notes"
       "$mod+Shift, A, exec, rofi -show drun"
       "$mod, Q, exec, custom-dontkillsteam"
       #"Ctrl+Alt, W, exec, pkill waybar || waybar"
@@ -414,6 +416,7 @@ in {
       "float on, match:class ^(vlc)$"
       "float on, match:class ^(eog)$"
       "float on, size 400 175, match:class ^(custom-librewolfprofiles)$"
+      "float on, size 400 175, match:class ^(custom-obsidianvaults)$"
       "float on, size 600 600, match:initial_class ^(custom-pomodoro)$"
       "float on, size 1500 800, match:initial_class ^(custom-bottom)$"
       "border_size 2, match:float 0, match:workspace w[tv1]"
