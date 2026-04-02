@@ -1,13 +1,16 @@
 {
   config,
   pkgs,
+  pkgs-unstable,
   ...
 }: {
   programs.neovim = {
     enable = true;
     vimAlias = true;
     viAlias = true;
+    package = pkgs-unstable.neovim-unwrapped; # for some reason you must use the unwrapped version
     plugins = [
+      pkgs-unstable.vimPlugins.vivify-vim
       pkgs.vimPlugins.vimtex
       pkgs.vimPlugins.zoxide-vim
       pkgs.vimPlugins.gruvbox

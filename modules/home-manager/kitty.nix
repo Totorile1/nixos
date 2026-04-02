@@ -31,8 +31,11 @@
       color8      #578F73
 
       # red
-      color1      #FFF0CC
-      color9      #F0DBAA
+      #color1      #FFF0CC
+      #color9      #F0DBAA
+      # we need actual red colors
+      color1       #CC241D
+      color9       #9D0006
 
       # green
       color2      #FFEECC

@@ -204,7 +204,7 @@
     grim # Grab images from a Wayland compositor Used for quickshell screenshot tool
     xdg-utils
     mailcap
-
+    pkgs-unstable.vimPluginsUpdater # used for building plugins
     hyprcursor
     vial # Open-source GUI and QMK fork for configuring your keyboard in real time
     mplayer # Movie player that supports many video formats
@@ -222,12 +222,14 @@
       networkx
       scipy
     ]))
+    iamb # matrix client
     direnv
     vivify # for nvimnotes
     # utils for dev
     pkg-config
     gdb
     raylib glfw # raylib and some dependecies
+    rembg # background remover
     #some nix tools
     manix
     deadnix
