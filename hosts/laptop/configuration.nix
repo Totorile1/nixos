@@ -240,11 +240,20 @@
     mprisence
     kdePackages.qt5compat
     gif-for-cli
+    # lsp
+    texlab
+    clang-tools
+    python311Packages.python-lsp-server
+    lua-language-server
+    pylint
+    black
   ];
 
   # fonts
   fonts.packages = with pkgs; [
     nerd-fonts._0xproto
+    cinzel
+    times-newer-roman
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
