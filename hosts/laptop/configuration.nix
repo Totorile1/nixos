@@ -247,6 +247,7 @@
     lua-language-server
     pylint
     black
+    nixd
   ];
 
   # fonts

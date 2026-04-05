@@ -242,7 +242,12 @@ vim.lsp.config("lua_ls", { cmd = { "lua-language-server" }, filetypes = { "lua" 
     usePlaceholders = true,
     completeUnimported = true,
     semanticHighlighting = true}
-})
+      })
+      vim.lsp.config("nixd", {
+        cmd = { "nixd" },
+        filetyypes = { "nix" },
+        on_attach = on_attach,
+      })
 vim.lsp.config("pylsp", {
     cmd = { "pylsp" },
     filetypes = { "python" },
@@ -258,7 +263,7 @@ vim.lsp.config("pylsp", {
 })
 vim.lsp.config("texlab", { cmd = { "texlab" }, filetypes = { "tex" }, on_attach = on_attach })
 
-vim.lsp.enable({ "lua_ls", "clangd", "pylsp", "texlab" })
+vim.lsp.enable({ "lua_ls", "clangd", "pylsp", "texlab", "nixd"})
       -- =========================
       -- DASHBOARD
       -- =========================
