@@ -5,7 +5,7 @@
 
 ⚠️ **Important Notes**  
 Before applying this configuration on another system, make sure to:
-- Update the `hostName`.
+- Update the `hostName` (in `configuration.nix` and `home.nix`).
 - If your computer **is not a laptop**, set `isLaptop = false` in `~/nixos/other/quickshell/bar/Power.qml`.  
   *(This is hardcoded because `UPowerDevice.isLaptopBattery` didn’t work.)*
 
@@ -45,7 +45,7 @@ nixos/
 └── README.md
 ```
 
-> The `quickshell` configuration is written in **QML** (`other/quickshell`) and is automatically copied to `~/.config/quickshell` on deployment.  
+> other/quickshell is the older quickshell configuration.  
 
 ---
 
@@ -92,10 +92,8 @@ nixos/
 
 **Daemons:** `upower`, `pipewire`, `pulseaudio`, `brightnessctl`, `playerctl`, `blueman`, `udiskie`, `networkmanager-applet`, `swww` wallpaper daemon  
 
-### Screenshots & Notifications
-- [`grim`](https://github.com/emersion/grim) (with `quickshell`) screenshots  
-- [`quickshell`](https://github.com/Totorile1/quickshell) notifications, top bar, and widgets  
-- [`wlogout`](https://github.com/ArtsyMacaw/wlogout) logout/shutdown widget  
+### Screenshots, Notifications, Bar and much more!
+- [caelestia-shell](https://github.com/caelestia-dots/shell)
 
 ---
 
@@ -161,6 +159,8 @@ If you **don’t have the physical macropad**, the table below shows which keybi
 | ------------ | -------------------------------------------- |
 | Row 1, Col 1 | Kill all apps except focused (`Ctrl+$mod+6`) |
 | Row 2, Col 1 | Performance mode (`Ctrl+Alt+7`)              |
+| Row 3, Col 1 | Do not disturb (`Ctrl+$mod+4`                |
+| Row 4, Col 1 | Notification center (`Ctrl+Alt+1`)           |
 | Row 3, Col 2 | Special characters (`Ctrl+$mod+3`)           |
 | Row 3, Col 3 | Color picker (`Ctrl+Alt+8`)                  |
 | Row 4, Col 1 | Notification center toggle (`Ctrl+Alt+1`)    |

@@ -27,8 +27,8 @@
     ../../modules/home-manager/caelestia.nix # caelestia shell is based on quickshell
 #../../modules/home-manager/oh-my-posh.nix # zsh customizer
     ../../modules/home-manager/oh-my-zsh.nix # another zsh customizer
-    ../../modules/home-manager/hypridle.nix
-    ../../modules/home-manager/swaylock.nix
+    #../../modules/home-manager/hypridle.nix
+    #../../modules/home-manager/swaylock.nix
     ../../modules/home-manager/anki.nix # we use only for some settings. see ../../modules/nixos/anki.nix for activating
     ../../modules/home-manager/librewolf.nix # privacy browser
     ../../modules/home-manager/cursor.nix # cursor (the icon not the app)

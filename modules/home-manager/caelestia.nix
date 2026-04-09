@@ -5,11 +5,15 @@
   caelestia-shell,
   ...
 }: {
+
+  home.file.".face" = { # this is were caelestia will search for profiles pictures
+    source = ../../assets/sisyphePFP.png;
+  };
   # set profile picture in ~/.face
   programs.caelestia = {
   enable = true;
   systemd = {
-    enable = false; # if you prefer starting from your compositor
+    enable = false;# if you prefer starting from your compositor
     target = "graphical-session.target";
     environment = [];
   };
@@ -22,7 +26,7 @@
           scale = 1;
         };
       };
-      font = {
+      /*font = {
         family = {
           clock = "Rubik"; # (TODO figure out those fonts)
           material = "Material Symboles Rounded";
@@ -32,7 +36,7 @@
         size = {
           scale = 1;
         };
-      };
+      };*/
       padding = {
         scale = 1;
       };
@@ -117,7 +121,7 @@
         };
         invertColors = false;
       };
-      enabled = true; #ptet changer ca pour wallpaper
+      enabled = false; #default true
       visualiser = {
         blur = false;
         enabled = false;
@@ -133,8 +137,8 @@
         showOnHover = true;
       };
       clock = {
-        background = false;
-        showDate = false;
+        background = true;
+        showDate = true;
         showIcon = true;
       };
       dragThreshold = 20;
@@ -189,7 +193,7 @@
       };
       showOnHover = true;
       status = {
-        showAudio = false;
+        showAudio = true;
         showBattery = true;
         showBluetooth = true;
         showKbLayout = false;
@@ -199,10 +203,10 @@
         showLockStatus = true;
       };
       tray = {
-        background = false;
+        background = true; # default true
         compact = false;
         iconSubs = [];
-        recolour = false;
+        recolour = true;
       };
       workspaces = {
         activeIndicator = true;
@@ -247,23 +251,23 @@
           icon = "calculate";
           description = "Do simple math equations (powered by Qalc)";
           command = [ "autocomplete" "calc" ];
-          enabled = true;
+          enabled = false; # default true
           dangerous = false;
         }
         {
-          name = "Scheme"; # to remove
+          name = "Scheme";
           icon = "palette";
           description = "Change the current colour scheme";
           command = [ "autocomplete" "scheme" ];
-          enabled = true;
+          enabled = false; # default true
           dangerous = false;
         }
         {
-          name = "Wallpaper"; # to remove
+          name = "Wallpaper";
           icon = "image";
           description = "Change the current wallpaper";
           command = [ "autocomplete" "wallpaper" ];
-          enabled = true;
+          enabled = false; # default true
           dangerous = false;
         }
         {
@@ -279,31 +283,31 @@
           icon = "opacity";
           description = "Change shell transparency";
           command = [ "autocomplete" "transparency" ];
-          enbaled = false;
+          enabled = false;
           dangerous = false;
         }
         {
-          name = "Random";  # to remove
+          name = "Random";
           icon = "casino";
           description = "Switch to a random wallpaper";
           command = [ "caelestia" "wallpaper" "-r" ];
-          enabled = true;
+          enabled = false; # default true
           dangerous = false;
         }
         {
-          name = "Light"; # to remove
+          name = "Light";
           icon = "light_mode";
           description = "Change the scheme to light mode";
           command = [ "setMode" "light" ];
-          enabled = true;
+          enabled = false; # default true
           dangerous = false;
         }
         {
-          name = "Dark"; # to remove
+          name = "Dark";
           icon = "dark_mode";
           description = "Change the scheme to dark mode";
           command = [ "setMode" "dark" ];
-          enabled = true;
+          enabled = false; # default true
           dangerous = false;
         }
         {
@@ -339,11 +343,11 @@
           dangerous = false;
         }
         {
-          name = "Settings"; # to remove -- > we want to do every config with nix
+          name = "Settings";
           icon = "settings";
           description = "Configure the shell";
           command = [ "caelestia" "shell" "controlCenter" "open" ];
-          enabled = true;
+          enabled = false; # default true
           dangerous = false;
         }
       ];
@@ -374,9 +378,9 @@
       defaultExpireTimeout = 5000;
       expantThreshold = 20;
       openeExpanded = false;
-      expire = false;
+      expire = true;
     };
-    osd = { # whats that
+    osd = { # thats the slider for brightness and sound
       enabled = true;
       enableBrightness = true;
       enableMicrophone = false;
@@ -428,7 +432,7 @@
     # is there a way to get some system info?
     utilities = {
       enabled = true;
-      maxToasts = 4; # what's that?
+      maxToasts = 4; # toats are like notification but on the botto left
       toasts = {
         audioInputChanged = true;
         audioOutputChanged = true;
@@ -478,7 +482,7 @@
         enabled = true; # should remap my performance mode
       }
       {
-        id = "dnd"; # what's that?
+        id = "dnd"; #do not disturb
         enabled = true;
       }
       {
@@ -487,10 +491,98 @@
       }
     ];
   };
-  cli = {
+  cli = { # default config https://github.com/caelestia-dots/cli?tab=readme-ov-file#configuring
     enable = true; # Also add caelestia-cli to path
     settings = {
-      theme.enableGtk = true;
+      record = {
+        extraArgs = [];
+      };
+      wallpaper = {
+        postHook = ""; # default "echo $WALLPAPER_PATH"
+      };
+      theme = {
+        enableTerm = true;
+        enableHypr = true;
+        enableDiscord = true;
+        enableSpicetify = true;
+        enableFuzzel = true; #what's that?
+        enablleBtop = false; # default true
+        enableQt = true;
+      };
+      toggles = {
+        communication = {
+          discord = {
+            enable = false; # default true
+            match = [
+              {
+                class = "discord";
+              }
+            ];
+            whatsapp = {
+              enable = true;
+              match = [
+                {
+                  class = "whatsapp";
+                }
+              ];
+            };
+          };
+        };
+        music = {
+          spotify = {
+            enable = false; # default true
+            match = [
+              {
+                class = "Spotify";
+              }
+              {
+                initialTitle = "Spotify";
+              }
+              {
+                initialTitle = "Spotify Free";
+              }
+            ];
+            command = [ "spicetify" "watch" "-s" ];
+            move = true;
+          };
+          feishin = {
+            enable = true;
+            match = [
+              {
+                class = "feishin";
+              }
+            ];
+            move = true;
+          };
+        };
+        sysmon = {
+          btop = {
+            enable = true;
+            match = [
+              {
+                class = "btop";
+                title = "btop";
+                workspace = {
+                  name = "special:sysmon";
+                };
+              }
+            ];
+            command = [ "foot" "-a" "btop" "-T" "btop" "fish" "-C" "exec btop" ]; # maybe switch to btm and kitty?
+          };
+        };
+        todo = {
+          todoist = {
+            enable = false; # default true
+            match = [
+              {
+                class = "Todoist";
+              }
+            ];
+            command = [ "todoist" ];
+            move = true;
+          };
+        };
+      };
     };
   };
 };

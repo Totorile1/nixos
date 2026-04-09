@@ -83,6 +83,13 @@
   # zsh dont want to work if it is not initialzed here.
   programs.zsh.enable = true;
 
+  security.wrappers.gsr-kms-server = { # to remove the password prompt when using gpu-screen-recorder
+  owner = "root";
+  group = "root";
+  capabilities = "cap_sys_admin+ep";
+  source = "${pkgs.gpu-screen-recorder}/bin/gsr-kms-server";
+};
+
   # Enable the GNOME Desktop Environment.
   #  services.displayManager.gdm.enable = true;
   #  services.desktopManager.gnome.enable = true;
@@ -167,7 +174,7 @@
     gnome-characters
     gnome-disk-utility
     kdePackages.okular
-    nautilus
+    kdePackages.dolphin
     gnome-font-viewer
     wget
     tree # shows dir in tree
@@ -244,6 +251,12 @@
     pylint
     black
     nixd
+    # for caelestia
+    gpu-screen-recorder
+    fuzzel
+    papirus-icon-theme
+    papirus-folders
+    power-profiles-daemon
   ];
 
   # fonts
