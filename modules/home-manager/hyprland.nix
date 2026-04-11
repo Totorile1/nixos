@@ -208,6 +208,7 @@ in {
       "wl-paste --type image --watch cliphist store" # clipboard store image data
       "custom-batterynotify"
       "custom-batterywarning"
+      "qtbatticon" # custom battery tray
       #wallpapers/b
       "swww img ${wallpaper}"
       "swww-daemon"
@@ -215,9 +216,9 @@ in {
       "custom-mountkdrive"
       #"waybar"
       "custom-gitnotify"
-      "custom-obsidianbackup" # backups the obsidian notes to kdrive and to a timed hidden dir (~/.Notes.backup/)
-      "QS-notifycache" # builds the cache that will be used for the notification history
-
+      #"custom-obsidianbackup" # backups the obsidian notes to kdrive and to a timed hidden dir (~/.Notes.backup/)
+      #"QS-notifycache" # builds the cache that will be used for the notification history
+      "sleep 2 & caelestia-shell" #works better if it sleeps a bit before
       /* We stopped using that ######################### maybe we should desactivate those scripts
       # login autostart
       #######################

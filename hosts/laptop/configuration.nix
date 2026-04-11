@@ -256,7 +256,10 @@
     fuzzel
     papirus-icon-theme
     papirus-folders
-    power-profiles-daemon
+    #power-profiles-daemon #we use tlp
+  stalonetray
+  libappindicator
+  snixembed
   ];
 
   # fonts

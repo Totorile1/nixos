@@ -4,7 +4,11 @@
   pkgs-unstable,
   caelestia-shell,
   ...
-}: {
+}:
+let 
+  sisyphe = ../../assets/sisyphe.gif;
+  pepe-music = ../../assets/pepe-music.gif;
+in {
 
   home.file.".face" = { # this is were caelestia will search for profiles pictures
     source = ../../assets/sisyphePFP.png;
@@ -13,13 +17,13 @@
   programs.caelestia = {
   enable = true;
   systemd = {
-    enable = false;# if you prefer starting from your compositor
+    enable = false; # if we launch it form here, the keybinds don't work
     target = "graphical-session.target";
     environment = [];
   };
   settings = { # default config https://github.com/caelestia-dots/shell?tab=readme-ov-file#example-configuration
     appearance = {
-      mediaGifSpeedAdjustment = 300;
+      mediaGifSpeedAdjustment = 500;
       sessionGifSpeed = 0.7;
       anim = {
         duration = {
@@ -173,7 +177,7 @@
         }
         {
           id = "statusIcon";
-          enbaled = true;
+          enabled = true;
         }
         {
           id = "power";
@@ -193,14 +197,14 @@
       };
       showOnHover = true;
       status = {
-        showAudio = true;
-        showBattery = true;
-        showBluetooth = true;
+        showAudio = false;
+        showBattery = false; # use powerprofile daemon
+        showBluetooth = false;
         showKbLayout = false;
         showMicrophone = false;
-        showNetwork = true;
+        showNetwork = false;
         showWifi = true;
-        showLockStatus = true;
+        showLockStatus = false;
       };
       tray = {
         background = true; # default true
@@ -387,8 +391,8 @@
       hideDelay = 2000;
     };
     paths = {
-      mediaGif = "root:/assets/bongocat.gif";
-      sessionGif = "root:/assets/kurukuru.gif";
+      mediaGif = pepe-music; # default "root:/assets/bongocat.gif"
+      sessionGif = sisyphe; # default "root:/assets/kurukuru.gif"
       noNotifsPic = "root:/assets/dino.png";
       lockNoNotifsPic = "root:/assets/dino.png";
       wallpaperDir = "~/Pictures/Wallpapers";

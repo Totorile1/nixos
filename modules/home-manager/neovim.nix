@@ -255,6 +255,9 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
     vim.keymap.set("n", "<leader>e3", vim.diagnostic.open_float, { desc = "Show diagnostic" })
     vim.keymap.set("n", "<leader>e4", vim.diagnostic.setloclist, { desc = "Diagnostic list" })
 
+      vim.diagnostic.config({
+  update_in_insert = false, -- i don't get any new error when in insert
+    })
       require("better-diagnostic-virtual-text").setup({
     ui = {
         wrap_line_after = false, -- wrap the line after this length to avoid the virtual text is too long

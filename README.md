@@ -36,6 +36,7 @@ nixos/
 ├── modules/
 │   ├── home-manager/      # User-level configurations (apps, shell, WM, plugins)
 │   ├── nixos/             # System-level modules (daemons, services, udev, ly)
+│   ├── qt/                # qt modules (qtbatticon)
 │   └── scripts/           # Custom scripts called from keybinds or tools
 ├── other/
 │   ├── kblayouts/         # Framework 16 RGB macropad layout
@@ -208,6 +209,7 @@ All moving macros with `<Space>`, `g`, and the recording with `q` are disabled.
 
 ## Useful Information
 
+- `qtbatticon` is a custom battery icon tray, because `cbatticon` and `batticonplus` did not work. Click on it to get more info about the battery.
 - `man` and `manix` use `fzf` for fuzzy search of pages.  
 - `pkgs-unstable` can be used for unstable nixpkgs packages.  
 - Nix garbage collection runs weekly, deleting generations older than 7 days.  
