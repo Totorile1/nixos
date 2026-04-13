@@ -257,6 +257,7 @@
     papirus-icon-theme
     papirus-folders
     inkscape
+    birdtray # thunderbird tray app
   ];
 
   # fonts

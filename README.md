@@ -21,8 +21,11 @@ sudo nixos-rebuild switch --flake ~/nixos/#laptop
 
 - Librewolf's extension settings
 - Librewolf's bookmarks
-- Thunderbird's email servers
+- Thunderbird's email servers and settings and birdtray's settings[^1]
 - Inkscape's settings
+
+
+[^1]: You must change in Advanced settings Thunderbird command line to the result of `where thunderbird`.
 
 ---
 

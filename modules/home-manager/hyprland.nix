@@ -209,6 +209,7 @@ in {
       "custom-batterynotify"
       "custom-batterywarning"
       "qtbatticon" # custom battery tray
+      "birdtray" # thunderbird tray app
       #wallpapers/b
       "swww img ${wallpaper}"
       "swww-daemon"
