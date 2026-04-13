@@ -24,6 +24,7 @@
         fi
       }
       eval "$(direnv hook zsh)"
+      export PATH="$PATH:$HOME/NoteWrapper/result/bin" # some project im coding
             fastfetch''\n'';
     shellAliases = {
       ".." = "z ..";
@@ -32,7 +33,7 @@
       la = "custom-eza";
       l = "custom-eza";
       eza = "custom-eza";
-      ls = "\\eza"; # ls -> normal ls. eza more info
+      ls = "\\eza -a"; # ls -> normal ls. eza gives more info
       tree = "\\eza -hlTF --color=always --hyperlink --group-directories-first --show-symlinks --icons=always --git --no-permissions";
       cat = "custom-cat";
       pomodoro = "custom-tomato";
