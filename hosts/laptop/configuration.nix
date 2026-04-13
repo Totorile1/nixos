@@ -8,10 +8,7 @@
   libs,
   inputs,
   ...
-}: 
-
-
-{
+}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -23,11 +20,10 @@
     ../../modules/nixos/udevsimple.nix
   ];
 
-
-  programs.nix-ld.enable=true; #Run unpatched dynamic binaries on NixOS. For example lets run ./a.out from gcc
+  programs.nix-ld.enable = true; #Run unpatched dynamic binaries on NixOS. For example lets run ./a.out from gcc
 
   documentation.man.generateCaches = true; # used for the man script
-  
+
   hardware.bluetooth.enable = true;
 
   qt.enable = true;
@@ -83,12 +79,13 @@
   # zsh dont want to work if it is not initialzed here.
   programs.zsh.enable = true;
 
-  security.wrappers.gsr-kms-server = { # to remove the password prompt when using gpu-screen-recorder
-  owner = "root";
-  group = "root";
-  capabilities = "cap_sys_admin+ep";
-  source = "${pkgs.gpu-screen-recorder}/bin/gsr-kms-server";
-};
+  security.wrappers.gsr-kms-server = {
+    # to remove the password prompt when using gpu-screen-recorder
+    owner = "root";
+    group = "root";
+    capabilities = "cap_sys_admin+ep";
+    source = "${pkgs.gpu-screen-recorder}/bin/gsr-kms-server";
+  };
 
   # Enable the GNOME Desktop Environment.
   #  services.displayManager.gdm.enable = true;
@@ -160,7 +157,6 @@
     options = "--delete-older-than 7d"; # every week delete generations older than a month
   };
 
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true; # Nonfree packages: Obsidian
 
@@ -221,20 +217,22 @@
     framework-tool
     framework-tool-tui
     krita # image edition
-    yt-dlp# some youtube downloader
+    yt-dlp # some youtube downloader
     vlc
-    (pkgs-unstable.python314.withPackages (ps: with ps; [
-      matplotlib
-      networkx
-      scipy
-    ]))
+    (pkgs-unstable.python314.withPackages (ps:
+      with ps; [
+        matplotlib
+        networkx
+        scipy
+      ]))
     iamb # matrix client
     direnv
     vivify # for nvimnotes
     # utils for dev
     pkg-config
     gdb
-    raylib glfw # raylib and some dependecies
+    raylib
+    glfw # raylib and some dependecies
     rembg # background remover
     #some nix tools
     manix

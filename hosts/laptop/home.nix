@@ -17,7 +17,7 @@
     ../../modules/home-manager/hyprland.nix
     #../../modules/home-manager/wlogout.nix # logout utility
     ../../modules/home-manager/rofi.nix # used for keybinds and for clipboard
-    #notifications are now manager with quickshell../../modules/home-manager/swaync.nix # notification daemon 
+    #notifications are now manager with quickshell../../modules/home-manager/swaync.nix # notification daemon
     ../../modules/home-manager/neovim.nix # dont use nixvim. broken
     #../../modules/home-manager/neovim2.nix # ./neovim2.nix uses vim plug instead of the nix repository as with ./neovim.nix see the begining of neovim2 for an explanation
     ../../modules/home-manager/rclone.nix
@@ -25,7 +25,7 @@
     #../../modules/home-manager/quickshell.nix # used for widgets, waybar and notifications # i migrated to caelestia-shell
     inputs.caelestia-shell.homeManagerModules.default
     ../../modules/home-manager/caelestia.nix # caelestia shell is based on quickshell
-#../../modules/home-manager/oh-my-posh.nix # zsh customizer
+    #../../modules/home-manager/oh-my-posh.nix # zsh customizer
     ../../modules/home-manager/oh-my-zsh.nix # another zsh customizer
     #../../modules/home-manager/hypridle.nix
     #../../modules/home-manager/swaylock.nix
@@ -88,45 +88,47 @@
     #(pkgs.callPackage ../../modules/scripts/QSsysinfo.nix {})
     #(pkgs.callPackage ../../modules/scripts/QSnotifycache.nix {})
     #(pkgs.callPackage ../../modules/scripts/QSnotifyhistory.nix {})
-#pkgs
+    #pkgs
     pkgs.gruvbox-gtk-theme
     pkgs.biber
     (pkgs.texliveMedium.withPackages (
-      ps: with ps; [
-        # these few pkgs are used in the CV template
-        titlesec # allows creating custom \section
-        marvosym # some symboles
-        ebgaramond # Use the EB Garamond font
-        microtype # To enable letterspacing
-        fontaxes
-        # these few pkgs were used for my TM
-        svg
-        catchfile
-        caption
-        transparent
-        cfr-lm
-        svn-prov
-        nfssext-cfr
-        hyphenat
-        csquotes
-        enumitem
-        chngcntr
-        tcolorbox
-        pdfcol
-        wrapfig
-        tocloft
-        lastpage
-        biblatex
-        biblatex-iso690
-        libertine
-        minted
-        upquote
-        lipsum
-        footmisc
-      #(setq org-latex-compiler "lualatex")
-      #(setq org-preview-latex-default-process 'dvisvgm)
-  ]))
-   # # It is sometimes useful to fine-tune packages, for example, by applying
+      ps:
+        with ps; [
+          # these few pkgs are used in the CV template
+          titlesec # allows creating custom \section
+          marvosym # some symboles
+          ebgaramond # Use the EB Garamond font
+          microtype # To enable letterspacing
+          fontaxes
+          # these few pkgs were used for my TM
+          svg
+          catchfile
+          caption
+          transparent
+          cfr-lm
+          svn-prov
+          nfssext-cfr
+          hyphenat
+          csquotes
+          enumitem
+          chngcntr
+          tcolorbox
+          pdfcol
+          wrapfig
+          tocloft
+          lastpage
+          biblatex
+          biblatex-iso690
+          libertine
+          minted
+          upquote
+          lipsum
+          footmisc
+          #(setq org-latex-compiler "lualatex")
+          #(setq org-preview-latex-default-process 'dvisvgm)
+        ]
+    ))
+    # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?

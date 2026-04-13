@@ -5,7 +5,6 @@
   ripgrep,
   ...
 }:
-
 writeShellApplication {
   name = "custom-obsidianvaults";
   runtimeInputs = [
@@ -42,5 +41,5 @@ writeShellApplication {
     # Exit the kitty terminal after selection
     pkill -f "kitty.*Select Obsidian vault"
     exit
-    '';
+  '';
 }

@@ -149,15 +149,17 @@ in {
       "Ctrl+Alt, 7, exec, caelestia shell gameMode toggle"
       # reloads the autostart programs # pos 3 1
       # we passed to caelestia-shell and stoped using that
-      /*"Ctrl+$mod, 4, exec, sleep 1 && kitty -o font_size=16 -e sh -c 'custom-weather'"
+      /*
+        "Ctrl+$mod, 4, exec, sleep 1 && kitty -o font_size=16 -e sh -c 'custom-weather'"
       "Ctrl+$mod, 4, exec, sleep 1 && kitty -o font_size=11 -e sh -c 'custom-cowsay'"
       "Ctrl+$mod, 4, exec, kitty -e 'custom-launch'"
       "Ctrl+$mod, 4, exec, sleep 1 && kitty -o font_size=5 -e btm --theme gruvbox --disable-click --disable_advanced_kill --enable_cache_memory -g -R -T "
       "Ctrl+$mod, 4, exec, sleep 1 && kitty -o font_size=1 -e sh -c 'cmatrix -br'"
-      #"Ctrl+Alt, 1, exec, swaync-client -t" # pos 4 1 notification center 
-      "Ctrl+Alt, 1, exec, qs ipc call notifications toggle" */
+      #"Ctrl+Alt, 1, exec, swaync-client -t" # pos 4 1 notification center
+      "Ctrl+Alt, 1, exec, qs ipc call notifications toggle"
+      */
       "Ctrl+Alt, 1, exec, caelestia shell drawers toggle sidebar"
-      "Ctrl+$mod, 4, exec, caelestia shell notifs toggleDnd" 
+      "Ctrl+$mod, 4, exec, caelestia shell notifs toggleDnd"
       "Ctrl+$mod, 3, exec, pavucontrol" # pos 1 2 audiocontrol
       "Ctrl+$mod, 5, exec, gnome-characters" # pos 2 2 special chars
       "Ctrl+Alt, 8, exec, hyprpicker | tee >(wl-copy) | cliphist store" # pos 3 2 colorpicker
@@ -220,7 +222,8 @@ in {
       #"custom-obsidianbackup" # backups the obsidian notes to kdrive and to a timed hidden dir (~/.Notes.backup/)
       #"QS-notifycache" # builds the cache that will be used for the notification history
       "sleep 2 & caelestia-shell" #works better if it sleeps a bit before
-      /* We stopped using that ######################### maybe we should desactivate those scripts
+      /*
+         We stopped using that ######################### maybe we should desactivate those scripts
       # login autostart
       #######################
       "[workspace 1 silent]  sleep 1 && kitty -o font_size=16 -e sh -c 'custom-weather'"
@@ -229,7 +232,8 @@ in {
       "[workspace 1 silent] sleep 1 && kitty -o font_size=5 -e btm --theme gruvbox --disable-click --disable_advanced_kill --enable_cache_memory -g -R -T "
       "[workspace 1 silent] sleep 1 && kitty -o font_size=1 -e sh -c 'cmatrix -br'"
       ######################
-      ######################*/
+      ######################
+      */
     ];
 
     # gestures (also keybindings)

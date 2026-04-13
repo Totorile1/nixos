@@ -1,7 +1,4 @@
-{
-  writeShellApplication,
-  ...
-}:
+{writeShellApplication, ...}:
 writeShellApplication {
   name = "QS-notifyhistory";
   runtimeInputs = [

@@ -5,7 +5,6 @@
   rsync,
   ...
 }:
-
 writeShellApplication {
   name = "custom-obsidianbackup";
   runtimeInputs = [
