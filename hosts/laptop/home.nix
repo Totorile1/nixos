@@ -152,6 +152,7 @@
       package = pkgs.gruvbox-gtk-theme;
     };
   };
+  # to resolve this https://wiki.nixos.org/wiki/Home_Manager#I_cannot_set_GNOME_or_Gtk_themes_via_Home_Manager
 
   # ssh config
 

@@ -273,6 +273,9 @@
   #   enableSSHSupport = true;
   # };
 
+  # to resolve this https://wiki.nixos.org/wiki/Home_Manager#I_cannot_set_GNOME_or_Gtk_themes_via_Home_Manager
+  programs.dconf.enable = true;
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.

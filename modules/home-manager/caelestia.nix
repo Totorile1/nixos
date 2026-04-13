@@ -8,6 +8,11 @@
   sisyphe = ../../assets/sisyphe.gif;
   pepe-music = ../../assets/pepe-music.gif;
 in {
+  home.file.".local/state/caelestia/wallpaper/path.txt" = { # dummy file. Does nothing. Prevent an error
+    enable = true;
+    text = "${sisyphe}";
+
+  };
   home.file.".face" = {
     # this is were caelestia will search for profiles pictures
     source = ../../assets/sisyphePFP.png;
