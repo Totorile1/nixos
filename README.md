@@ -6,8 +6,6 @@
 ⚠️ **Important Notes**  
 Before applying this configuration on another system, make sure to:
 - Update the `hostName` (in `configuration.nix` and `home.nix`).
-- If your computer **is not a laptop**, set `isLaptop = false` in `~/nixos/other/quickshell/bar/Power.qml`.  
-  *(This is hardcoded because `UPowerDevice.isLaptopBattery` didn’t work.)*
 
 Requirements: `git` installed. Then run:
 
@@ -24,6 +22,7 @@ sudo nixos-rebuild switch --flake ~/nixos/#laptop
 - Librewolf's extension settings
 - Librewolf's bookmarks
 - Thunderbird's email servers
+- Inkscape's settings
 
 ---
 
@@ -81,7 +80,7 @@ nixos/
 - [`nautilus`](https://wiki.gnome.org/Apps/Nautilus) file manager  
 - [`okular`](https://okular.kde.org/) document & image viewer  
 - [`vlc`](https://www.videolan.org/vlc/) media player  
-- [`krita`](https://krita.org/) image editing  
+- [`krita`](https://krita.org/) and [`inkscape`](https://inkscape.org/) for image editing  and drawing
 - [`anki`](https://apps.ankiweb.net/) flashcards for learning  
 - [`texlive`](https://www.tug.org/texlive/) LaTeX distribution  
 - [`biber`](https://ctan.org/pkg/biber) bibliography for LaTeX  

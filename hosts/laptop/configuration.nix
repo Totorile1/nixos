@@ -256,6 +256,7 @@
     fuzzel
     papirus-icon-theme
     papirus-folders
+    inkscape
   ];
 
   # fonts
