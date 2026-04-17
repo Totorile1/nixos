@@ -68,8 +68,8 @@ in {
         apps = {
           terminal = ["kitty"]; # default foot
           audio = ["pavucontrol"];
-          playback = ["mpv"]; # what's that?
-          explorer = ["nautilus"]; # default thunar
+          playback = ["vlc"]; # what's that?
+          explorer = ["dolphin"]; # default thunar
         };
         battery = {
           wanLevels = [
