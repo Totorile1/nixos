@@ -36,7 +36,7 @@
     #../../modules/home-manager/obsidian.nix obsidian was replaced with a custom solution
     ../../modules/home-manager/thunderbird.nix # email client
     ../../modules/home-manager/eza.nix # ls replacement
-
+    ../../modules/home-manager/vivify.nix # neovim markdown viewer (has also config for qutebrowser
     ../../modules/other/desktopEntries.nix # creates .desktop files
   ];
 
