@@ -20,6 +20,16 @@
     ../../modules/nixos/udevsimple.nix
   ];
 
+  # this 4 settings should make nixpkgs-review not crash my laptop
+  swapDevices = [{
+      device = "/swapfile";
+      size = 16384; # 16 GB
+    }
+  ];
+  nix.settings.max-jobs = 2;
+  nix.settings.cores = 2;
+  boot.kernel.sysctl."vm.swappiness" = 10;
+
   programs.nix-ld.enable = true; #Run unpatched dynamic binaries on NixOS. For example lets run ./a.out from gcc
 
   documentation.man.generateCaches = true; # used for the man script
