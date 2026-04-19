@@ -227,7 +227,6 @@
       ]))
     iamb # matrix client
     direnv
-    vivify # for nvimnotes
     # utils for dev
     pkg-config
     gdb
@@ -258,6 +257,13 @@
     papirus-folders
     inkscape
     birdtray # thunderbird tray app
+    #vivify # for NoteWrapper
+    # this is more up to date
+    (callPackage ../../modules/packages/vivify.nix {})
+    (callPackage ../../modules/packages/sbb-tui.nix {})
+    pkgs-unstable.nixpkgs-review
+    pkgs-unstable.nixfmt-tree
+    pkgs-unstable.treefmt
   ];
 
   # fonts

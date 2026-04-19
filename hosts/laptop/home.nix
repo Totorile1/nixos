@@ -84,6 +84,7 @@
     (pkgs.callPackage ../../modules/scripts/man.nix {})
     (pkgs.callPackage ../../modules/scripts/trimmer.nix {})
     (pkgs.callPackage ../../modules/qt/qtbatticon.nix {})
+
     #(pkgs.callPackage ../../modules/scripts/obsidianbackup.nix {}) # periodically syncs obsidian's note to kdrive
     #(pkgs.callPackage ../../modules/scripts/obsidianprofiles.nix {}) # fzf vault selector # obsidian was replaced with a custom solution
     # no longer used scripts for quickshell. see caelestia-shell
