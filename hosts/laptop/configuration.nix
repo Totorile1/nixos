@@ -183,7 +183,7 @@
     kdePackages.dolphin
     gnome-font-viewer
     wget
-    tree # shows dir in tree
+    #tree # shows dir in tree # we use eza now
     zsh # better bash
     brightnessctl # control brightness
     pulseaudio # sound server
@@ -274,6 +274,7 @@
     pkgs-unstable.nixpkgs-review
     pkgs-unstable.nixfmt-tree
     pkgs-unstable.treefmt
+    helix
   ];
 
   # fonts
