@@ -1,4 +1,3 @@
-/* old version
 { pkgs, python3Packages, ... }:
 
 pkgs.writers.writePython3Bin "custom-syllabes" {
@@ -23,7 +22,7 @@ for w in text.split():
     total += len(parts)
 
 print(f"{total} ({'/'.join(chunks)})")
-''*/
+''
 /* used IPA but had a deprecated dependency
 { pkgs, python3Packages, ... }:
 
@@ -58,7 +57,7 @@ for word in text.split():
 
 print(f"{total} ({' | '.join(chunks)})")
 ''*/
-{ pkgs, ... }:
+/*{ pkgs, ... }:
 
 let
   lexique = pkgs.fetchurl {
@@ -171,4 +170,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-''
+''*/
