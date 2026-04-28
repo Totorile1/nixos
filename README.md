@@ -183,11 +183,11 @@ If you **don’t have the physical macropad**, the table below shows which keybi
 | `§`           | Cheatsheet            |
 | `<leader>1`   | Open fold             |
 | `<leader>2`   | Close fold            |
-| `<leader>e1`  | Previous error        |
-| `<leader>e2`  | Next error            |
-| `<leader>e3`  | See error message     |
-| `<leader>e4`  | See list of errors    |
-| `<leader>e5`  | Show correction       |
+| `<leader>e4`  | Previous error        |
+| `<leader>e5`  | Next error            |
+| `<leader>e1`  | See error message     |
+| `<leader>e3`  | See list of errors    |
+| `<leader>e2`  | Show correction       |
 | `<leader>e<Tab>` | Stop grammar LSP    |
 | `<leader>f1`  | Telescope files       |
 | `<leader>f2`  | Telescope grep        |
@@ -199,6 +199,8 @@ If you **don’t have the physical macropad**, the table below shows which keybi
 | `<leader>g4`  | Go to implementation  |
 | `<leader>g5`  | Show references       |
 | `<leader><leader>` | Launch runner (terminal) |
+| `<leader>r1` | Run fugit |
+| `t` | Count syllabes (french) |
 
 All moving macros with `<Space>`, `g`, and the recording with `q` are disabled.
 ---

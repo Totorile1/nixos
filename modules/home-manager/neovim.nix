@@ -249,11 +249,11 @@
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
           -- Diagnostics
-          vim.keymap.set("n", "<leader>e1", function() vim.diagnostic.jump({ prev=true, count = 1 }) end, { desc = "Previous diagnostic" })
-          vim.keymap.set("n", "<leader>e2", function() vim.diagnostic.jump({ prev=false, count = 1 }) end, { desc = "Next diagnostic" })
-          vim.keymap.set("n", "<leader>e3", vim.diagnostic.open_float, { desc = "Show diagnostic" })
-          vim.keymap.set("n", "<leader>e4", vim.diagnostic.setloclist, { desc = "Diagnostic list" })
-          vim.keymap.set("n", "<leader>e5", vim.lsp.buf.code_action, { desc = "Show correction" })
+          vim.keymap.set("n", "<leader>e4", function() vim.diagnostic.jump({ prev=true, count = 1 }) end, { desc = "Previous diagnostic" })
+          vim.keymap.set("n", "<leader>e5", function() vim.diagnostic.jump({ prev=false, count = 1 }) end, { desc = "Next diagnostic" })
+          vim.keymap.set("n", "<leader>e1", vim.diagnostic.open_float, { desc = "Show diagnostic" })
+          vim.keymap.set("n", "<leader>e3", vim.diagnostic.setloclist, { desc = "Diagnostic list" })
+          vim.keymap.set("n", "<leader>e2", vim.lsp.buf.code_action, { desc = "Show correction" })
 
           vim.keymap.set("n", "<leader>e<Tab>", function()
             local clients = vim.lsp.get_clients({ name = "ltex" })
@@ -364,7 +364,8 @@
                 "maldoror",
                 "evariste",
                 "galois",
-                "arno"
+                "arno",
+                "dessacrer",
               },
             },
           },
@@ -480,6 +481,13 @@
             --==================
             vim.keymap.set('n', '<leader>r1', '<cmd>Fugit2<CR>', { desc = 'Open git helper' })
 
+            vim.keymap.set("n", "t", function()
+              local line = vim.api.nvim_get_current_line()
+            
+              local result = vim.fn.system({ "custom-syllabes" }, line)
+            
+              print(vim.trim(result))
+            end, { desc = "Count syllables (current line)" })
             -- =========================
             -- telescope
             -- =======================
