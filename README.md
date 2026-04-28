@@ -187,6 +187,8 @@ If you **don’t have the physical macropad**, the table below shows which keybi
 | `<leader>e2`  | Next error            |
 | `<leader>e3`  | See error message     |
 | `<leader>e4`  | See list of errors    |
+| `<leader>e5`  | Show correction       |
+| `<leader>e<Tab>` | Stop grammar LSP    |
 | `<leader>f1`  | Telescope files       |
 | `<leader>f2`  | Telescope grep        |
 | `<leader>f3`  | Telescope buffers     |

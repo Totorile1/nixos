@@ -245,6 +245,7 @@
     clang-tools
     python311Packages.python-lsp-server
     lua-language-server
+    ltex-ls-plus
     pylint
     black
     nixd

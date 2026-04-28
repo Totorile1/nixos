@@ -253,6 +253,23 @@
           vim.keymap.set("n", "<leader>e2", function() vim.diagnostic.jump({ prev=false, count = 1 }) end, { desc = "Next diagnostic" })
           vim.keymap.set("n", "<leader>e3", vim.diagnostic.open_float, { desc = "Show diagnostic" })
           vim.keymap.set("n", "<leader>e4", vim.diagnostic.setloclist, { desc = "Diagnostic list" })
+          vim.keymap.set("n", "<leader>e5", vim.lsp.buf.code_action, { desc = "Show correction" })
+
+          vim.keymap.set("n", "<leader>e<Tab>", function()
+            local clients = vim.lsp.get_clients({ name = "ltex" })
+          
+            if #clients > 0 then
+              -- Stop LTeX
+              for _, client in ipairs(clients) do
+                client.stop()
+              end
+              print("LTeX OFF")
+            else
+              -- Start LTeX
+              vim.cmd("LspStart ltex")
+              print("LTeX ON")
+            end
+          end, { desc = "Toggle LTeX" })
 
             vim.diagnostic.config({
         update_in_insert = false, -- i don't get any new error when in insert
@@ -298,7 +315,7 @@
             })
       vim.lsp.config("nixd", {
               cmd = { "nixd" },
-              filetyypes = { "nix" },
+              filetypes = { "nix" },
               on_attach = on_attach,
             })
       vim.lsp.config("pylsp", {
@@ -315,8 +332,46 @@
           }
       })
       vim.lsp.config("texlab", { cmd = { "texlab" }, filetypes = { "tex" }, on_attach = on_attach })
+      vim.lsp.config("ltex", {
+        cmd = { "ltex-ls-plus" },
+        filetypes = { "markdown", "text", "tex", "plaintex" },
+        on_attach = on_attach,
+      
+        settings = {
+          ltex = {
+            language = "fr",
+      
+            enabled = {
+              "markdown",
+              "text",
+              "tex",
+              "plaintex",
+            },
+      
+            completionEnabled = true,
+            diagnosticSeverity = "information",
+      
+            additionalRules = {
+              enablePickyRules = false,
+              motherTongue = "fr",
+            },
+      
+            dictionary = {
+              ["fr"] = {
+                "icelle",
+                "icelui",
+                "iceux",
+                "maldoror",
+                "evariste",
+                "galois",
+                "arno"
+              },
+            },
+          },
+        },
+      })
 
-      vim.lsp.enable({ "lua_ls", "clangd", "pylsp", "texlab", "nixd"})
+      vim.lsp.enable({ "lua_ls", "clangd", "pylsp", "texlab", "nixd", "ltex"})
             -- =========================
             -- DASHBOARD
             -- =========================
