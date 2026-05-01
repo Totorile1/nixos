@@ -300,7 +300,7 @@
       -- LSP server setup
       vim.lsp.config("lua_ls", { cmd = { "lua-language-server" }, filetypes = { "lua" }, root_dir = vim.fs.dirname, on_attach = on_attach })
           vim.lsp.config("clangd", {
-            cmd = { "clangd" },
+            cmd = { "clangd", "--header-insertion=never" },
             filetypes = { "c","cpp","objc","objcpp" },
             on_attach = on_attach ,
               init_options = {
