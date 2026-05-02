@@ -21,6 +21,7 @@
     ../../hostsModules/laptop/nixos/udev.nix
     ../../hostsModules/laptop/nixos/disk.nix
     ../../modules/nixos/printer.nix
+    ../../hostsModules/laptop/nixos/ollama.nix # llm config
   ];
 
 
