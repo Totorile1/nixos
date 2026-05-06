@@ -148,6 +148,10 @@
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/trackmenot/latest.xpi";
           installation_mode = "force_installed";
         };
+        "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/file/4749958/bitwarden_password_manager-latest.xpi";
+          installation_mode = "force_installed";
+        };
       };
       DisableTelemetry = true;
       DisableFirefoxStudies = true;

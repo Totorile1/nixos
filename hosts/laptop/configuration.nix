@@ -267,6 +267,7 @@
     pkgs-unstable.nixfmt-tree
     pkgs-unstable.treefmt
     pkgs-unstable.tor-browser
+    pkgs-unstable.bitwarden-desktop
   ];
 
   # fonts
