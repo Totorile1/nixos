@@ -38,7 +38,7 @@
       #  "https://metrics.internal.contre.io/d/cUITC74Vksd/podman-revamped?orgId=1&from=2026-02-23T19:29:26.304Z&to=2026-02-23T19:59:26.304Z&timezone=browser&var-Filters=&var-namespace=alloy&var-level=error&var-level=debug&var-level=info&var-level=warn&refresh=5s&kiosk=true"; # disable welcome page
       "browser.newtabpage.enabled" = true; # disable new tab page
       "full-screen-api.ignore-widgets" = true; # fullscreen within window
-      "browser.toolbars.bookmarks.visibility" = "always"; # hide bookmarks toolbar
+      "browser.toolbars.bookmarks.visibility" = "never"; # hide bookmarks toolbar
       "browser.aboutConfig.showWarning" = false; # disable warning about about:config
       "media.videocontrols.picture-in-picture.video-toggle.enabled" = false; # disable picture in picture button
 
@@ -146,6 +146,10 @@
         };
         "trackmenot@mrl.nyu.edu" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/trackmenot/latest.xpi";
+          installation_mode = "force_installed";
+        };
+        "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/file/4749958/bitwarden_password_manager-latest.xpi";
           installation_mode = "force_installed";
         };
       };
@@ -296,7 +300,13 @@
             name = "Nixos Config";
             tags = ["github"];
             keyword = "github";
-            url = "https://github.com/Totorile1/nixos";
+            url = "https://github.com/tomasriveral/nixos";
+          }
+          {
+            name = "Public AI";
+            tags = ["ai" "chatgpt" "apertus"];
+            keyword = "apertus";
+            url = "https://chat.publicai.co/";
           }
         ];
       };

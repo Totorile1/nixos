@@ -20,6 +20,9 @@
     ../../modules/nixos/nixUtils.nix
     ../../hostsModules/laptop/nixos/udev.nix
     ../../hostsModules/laptop/nixos/disk.nix
+    ../../modules/nixos/printer.nix
+    ../../hostsModules/laptop/nixos/ollama.nix # llm config
+      ../../modules/nixos/mullvad.nix # vpn config
   ];
 
 
@@ -50,10 +53,21 @@
     extraSpecialArgs = {inherit inputs pkgs-unstable;};
   };
 
+  services.dbus.enable = true;
+  security.polkit.enable = true;
+
   environment.pathsToLink = [
     "/share/applications"
     "/share/xdg-desktop-portal"
   ];
+  xdg.portal = {
+    enable = true;
+
+    extraPortals = [
+      pkgs.xdg-desktop-portal-wlr
+      pkgs.xdg-desktop-portal-gtk
+    ];
+  };
   # removes uxterm
   services.xserver.excludePackages = [pkgs.xterm];
   # Bootloader.
@@ -120,8 +134,6 @@
   # Configure console keymap
   console.keyMap = "fr_CH";
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -156,7 +168,7 @@
   
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true; # Nonfree packages: Obsidian
+  nixpkgs.config.allowUnfree = true; # Nonfree packages: hplipWithPlugin
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -243,6 +255,7 @@
     clang-tools
     python311Packages.python-lsp-server
     lua-language-server
+    ltex-ls-plus
     pylint
     black
     nixd
@@ -262,7 +275,8 @@
     pkgs-unstable.nixpkgs-review
     pkgs-unstable.nixfmt-tree
     pkgs-unstable.treefmt
-    kakoune
+    pkgs-unstable.tor-browser
+    pkgs-unstable.bitwarden-desktop
   ];
 
   # fonts

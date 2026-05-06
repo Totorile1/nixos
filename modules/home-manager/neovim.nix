@@ -249,10 +249,27 @@
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
           -- Diagnostics
-          vim.keymap.set("n", "<leader>e1", function() vim.diagnostic.jump({ prev=true, count = 1 }) end, { desc = "Previous diagnostic" })
-          vim.keymap.set("n", "<leader>e2", function() vim.diagnostic.jump({ prev=false, count = 1 }) end, { desc = "Next diagnostic" })
-          vim.keymap.set("n", "<leader>e3", vim.diagnostic.open_float, { desc = "Show diagnostic" })
-          vim.keymap.set("n", "<leader>e4", vim.diagnostic.setloclist, { desc = "Diagnostic list" })
+          vim.keymap.set("n", "<leader>e4", function() vim.diagnostic.jump({ prev=true, count = 1 }) end, { desc = "Previous diagnostic" })
+          vim.keymap.set("n", "<leader>e5", function() vim.diagnostic.jump({ prev=false, count = 1 }) end, { desc = "Next diagnostic" })
+          vim.keymap.set("n", "<leader>e1", vim.diagnostic.open_float, { desc = "Show diagnostic" })
+          vim.keymap.set("n", "<leader>e3", vim.diagnostic.setloclist, { desc = "Diagnostic list" })
+          vim.keymap.set("n", "<leader>e2", vim.lsp.buf.code_action, { desc = "Show correction" })
+
+          vim.keymap.set("n", "<leader>e<Tab>", function()
+            local clients = vim.lsp.get_clients({ name = "ltex" })
+          
+            if #clients > 0 then
+              -- Stop LTeX
+              for _, client in ipairs(clients) do
+                client.stop()
+              end
+              print("LTeX OFF")
+            else
+              -- Start LTeX
+              vim.cmd("LspStart ltex")
+              print("LTeX ON")
+            end
+          end, { desc = "Toggle LTeX" })
 
             vim.diagnostic.config({
         update_in_insert = false, -- i don't get any new error when in insert
@@ -283,18 +300,22 @@
       -- LSP server setup
       vim.lsp.config("lua_ls", { cmd = { "lua-language-server" }, filetypes = { "lua" }, root_dir = vim.fs.dirname, on_attach = on_attach })
           vim.lsp.config("clangd", {
-            cmd = { "clangd" },
+            cmd = { "clangd", "--header-insertion=never" },
             filetypes = { "c","cpp","objc","objcpp" },
             on_attach = on_attach ,
               init_options = {
+
           clangdFileStatus = true,
           usePlaceholders = true,
           completeUnimported = false, -- this adds a bunch of #include even thought they are #included in another header file
+          headerInsertion = false,
+          headerInsertionDecorators = false,
+          addDependencyHeaders = false,
           semanticHighlighting = true}
             })
-            vim.lsp.config("nixd", {
+      vim.lsp.config("nixd", {
               cmd = { "nixd" },
-              filetyypes = { "nix" },
+              filetypes = { "nix" },
               on_attach = on_attach,
             })
       vim.lsp.config("pylsp", {
@@ -311,8 +332,47 @@
           }
       })
       vim.lsp.config("texlab", { cmd = { "texlab" }, filetypes = { "tex" }, on_attach = on_attach })
+      vim.lsp.config("ltex", {
+        cmd = { "ltex-ls-plus" },
+        filetypes = { "markdown", "text", "tex", "plaintex" },
+        on_attach = on_attach,
+      
+        settings = {
+          ltex = {
+            language = "fr",
+      
+            enabled = {
+              "markdown",
+              "text",
+              "tex",
+              "plaintex",
+            },
+      
+            completionEnabled = true,
+            diagnosticSeverity = "information",
+      
+            additionalRules = {
+              enablePickyRules = false,
+              motherTongue = "fr",
+            },
+      
+            dictionary = {
+              ["fr"] = {
+                "icelle",
+                "icelui",
+                "iceux",
+                "maldoror",
+                "evariste",
+                "galois",
+                "arno",
+                "dessacrer",
+              },
+            },
+          },
+        },
+      })
 
-      vim.lsp.enable({ "lua_ls", "clangd", "pylsp", "texlab", "nixd"})
+      vim.lsp.enable({ "lua_ls", "clangd", "pylsp", "texlab", "nixd", "ltex"})
             -- =========================
             -- DASHBOARD
             -- =========================
@@ -421,6 +481,13 @@
             --==================
             vim.keymap.set('n', '<leader>r1', '<cmd>Fugit2<CR>', { desc = 'Open git helper' })
 
+            vim.keymap.set("n", "t", function()
+              local line = vim.api.nvim_get_current_line()
+            
+              local result = vim.fn.system({ "custom-syllabes" }, line)
+            
+              print(vim.trim(result))
+            end, { desc = "Count syllables (current line)" })
             -- =========================
             -- telescope
             -- =======================
