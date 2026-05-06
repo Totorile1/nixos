@@ -22,6 +22,7 @@
     ../../hostsModules/laptop/nixos/disk.nix
     ../../modules/nixos/printer.nix
     ../../hostsModules/laptop/nixos/ollama.nix # llm config
+      ../../modules/nixos/mullvad.nix # vpn config
   ];
 
 
@@ -59,6 +60,14 @@
     "/share/applications"
     "/share/xdg-desktop-portal"
   ];
+  xdg.portal = {
+    enable = true;
+
+    extraPortals = [
+      pkgs.xdg-desktop-portal-wlr
+      pkgs.xdg-desktop-portal-gtk
+    ];
+  };
   # removes uxterm
   services.xserver.excludePackages = [pkgs.xterm];
   # Bootloader.

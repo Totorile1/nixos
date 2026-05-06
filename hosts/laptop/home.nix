@@ -42,7 +42,7 @@
     ../../modules/home-manager/vivify.nix # neovim markdown viewer (has also config for qutebrowser
     #../../modules/home-manager/micro.nix # micro text editor. Not main editor (used for testing for notewrapper)
     ../../modules/home-manager/sbb-tui.nix # cff TUI app
-
+    ../../modules/home-manager/mullvad.nix # mullvad vpn
 
     ../../modules/other/desktopEntries.nix # creates .desktop files
   ];
