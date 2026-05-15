@@ -1,3 +1,5 @@
+⚠️ Documentation outdated.
+
 # NixOS Configuration
 ![NixOS configuration](/assets/example.png)
 
