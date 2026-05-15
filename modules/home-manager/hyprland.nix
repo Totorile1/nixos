@@ -217,7 +217,7 @@ in {
       "swww img ${wallpaper}"
       "swww-daemon"
       "sleep 1 && custom-wallpaper"
-      "custom-mountkdrive"
+      "custom-checkKdrive && custom-mountkdrive" # checks if the remote works and mount it
       #"waybar"
       "custom-gitnotify"
       "custom-checkMatrix" # checks if matrix-commander-rs is connected which is important for other stuff
