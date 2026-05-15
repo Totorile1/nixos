@@ -19,23 +19,32 @@ pkgs.writeShellApplication {
     FLAKE="$FLAKE_DIR#laptop"
     TIME=$(date -u +"%Y-%m-%dT%H-%M-%SZ")
 
-    git -C "$FLAKE_DIR" pull
-    git -C "$FLAKE_DIR" tag "pre-autoupdate-$TIME"
+    ERROR_FILE=$(mktemp)
 
-    nix flake update --flake "$FLAKE_DIR"
-
-    if sudo nixos-rebuild switch --flake "$FLAKE"; then
+    if sudo nixos-rebuild switch --flake "$FLAKE" 2> "$ERROR_FILE"; then
       git -C "$FLAKE_DIR" restore .
       git -C "$FLAKE_DIR" add flake.lock
       git -C "$FLAKE_DIR" commit -m "flake: autoupdate $TIME"
       git -C "$FLAKE_DIR" push
 
       notify-send "Flake autoupdate" "Rebuild OK"
-      matrix-commander-rs -m "Flake rebuild succesfull.<br><a href=\"https://matrix.to/#/@notificationbot_0000:matrix.org\">@notificationbot_0000</a>" --html -r "\!7j-78_02dHROeLj4Ns8F12eo4IiZGv4zNsQ_1-WlyIU"
+
+      matrix-commander-rs -m "Flake rebuild succesfull.<br><a href=\"https://matrix.to/#/@notificationbot_0000:matrix.org\">@notificationbot_0000</a>" \
+        --html \
+        -r "\!7j-78_02dHROeLj4Ns8F12eo4IiZGv4zNsQ_1-WlyIU"
+
     else
+      ERROR_MSG=$(cat "$ERROR_FILE")
+
       notify-send -u critical "Flake autoupdate" "FAILED"
-      matrix-commander-rs -m "Flake rebuild FAILED"
-      git reset --hard "pre-autoupdate-$TIME"
+
+      matrix-commander-rs -m "Flake rebuild failed.<br>Error: <pre>$ERROR_MSG</pre><br><a href=\"https://matrix.to/#/@notificationbot_0000:matrix.org\">@notificationbot_0000</a>" \
+        --html \
+        -r "\!7j-78_02dHROeLj4Ns8F12eo4IiZGv4zNsQ_1-WlyIU"
+
+      git -C "$FLAKE_DIR" reset --hard "pre-autoupdate-$TIME"
     fi
+
+    rm -f "$ERROR_FILE"
   '';
 }
