@@ -162,6 +162,20 @@
     shell = pkgs.zsh;
   };
 
+  # removes need for password for nixos-rebuild
+    security.sudo.extraRules = [
+    {
+      users = [ "tomasr" ];
+      commands = [
+        {
+          command = "/run/current-system/sw/bin/nixos-rebuild";
+          options = [ "NOPASSWD" ];
+        }
+      ];
+    }
+  ];
+
+
   #adds nixos experimental features:
   nix.settings.experimental-features = ["nix-command" "flakes"];
 

@@ -10,7 +10,6 @@ pkgs.writeShellApplication {
     nixos-rebuild
     matrix-commander-rs
     libnotify
-    sudo
   ];
 
   text = ''
