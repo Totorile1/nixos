@@ -85,6 +85,8 @@
     (pkgs.callPackage ../../modules/scripts/man.nix {})
     (pkgs.callPackage ../../modules/scripts/trimmer.nix {})
     (pkgs.callPackage ../../modules/scripts/syllabes.nix {}) # python script to get number of syllabes in french
+    (pkgs.callPackage ../../modules/scripts/checkKdrive.nix {})
+
     (pkgs.callPackage ../../hostsModules/laptop/qt/qtbatticon.nix {})
     #pkgs
     pkgs.gruvbox-gtk-theme

@@ -105,6 +105,7 @@
     source = "${pkgs.gpu-screen-recorder}/bin/gsr-kms-server";
   };
 
+
   # Enable the GNOME Desktop Environment.
   #  services.displayManager.gdm.enable = true;
   #  services.desktopManager.gnome.enable = true;
