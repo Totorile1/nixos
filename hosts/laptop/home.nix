@@ -71,8 +71,6 @@
     
     # checks if matrix-commander-rs is installed and logged in
     (pkgs.callPackage ../../hostsModules/laptop/scripts/checkMatrix.nix {})
-    # autoupdate the flake and send notification to system and to matrix
-    (pkgs.callPackage ../../hostsModules/laptop/scripts/autoUpdate.nix {})
 
     (pkgs.callPackage ../../modules/scripts/weather.nix {})
     (pkgs.callPackage ../../modules/scripts/wallpaper.nix {})

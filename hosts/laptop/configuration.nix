@@ -22,7 +22,8 @@
     ../../hostsModules/laptop/nixos/disk.nix
     ../../modules/nixos/printer.nix
     ../../hostsModules/laptop/nixos/ollama.nix # llm config
-      ../../modules/nixos/mullvad.nix # vpn config
+    ../../modules/nixos/mullvad.nix # vpn config
+    ../../hostsModules/laptop/nixos/autoUpdate.nix # auto update the flakes. Handles notification via libnotify and matrix-commander-rs
   ];
 
 
