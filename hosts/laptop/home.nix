@@ -68,6 +68,10 @@
     (pkgs.callPackage ../../modules/scripts/dontkillsteam.nix {}) # kill app (if it is steam put it in some background
     (pkgs.callPackage ../../hostsModules/laptop/scripts/batterynotify.nix {})
     (pkgs.callPackage ../../hostsModules/laptop/scripts/batterywarning.nix {})
+    
+    # checks if matrix-commander-rs is installed and logged in
+    (pkgs.callPackage ../../hostsModules/laptop/scripts/checkMatrix.nix {})
+
     (pkgs.callPackage ../../modules/scripts/weather.nix {})
     (pkgs.callPackage ../../modules/scripts/wallpaper.nix {})
     (pkgs.callPackage ../../modules/scripts/mountkdrive.nix {})

@@ -22,7 +22,8 @@
     ../../hostsModules/laptop/nixos/disk.nix
     ../../modules/nixos/printer.nix
     ../../hostsModules/laptop/nixos/ollama.nix # llm config
-      ../../modules/nixos/mullvad.nix # vpn config
+    ../../modules/nixos/mullvad.nix # vpn config
+    ../../hostsModules/laptop/nixos/autoUpdate.nix # auto update the flakes. Handles notification via libnotify and matrix-commander-rs
   ];
 
 
@@ -162,6 +163,20 @@
     shell = pkgs.zsh;
   };
 
+  # removes need for password for nixos-rebuild
+    security.sudo.extraRules = [
+    {
+      users = [ "tomasr" ];
+      commands = [
+        {
+          command = "/run/current-system/sw/bin/nixos-rebuild";
+          options = [ "NOPASSWD" ];
+        }
+      ];
+    }
+  ];
+
+
   #adds nixos experimental features:
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
@@ -235,7 +250,7 @@
         networkx
         scipy
       ]))
-    iamb # matrix client
+    fluffychat matrix-commander-rs # matrix client
     direnv
     # utils for dev
     pkg-config
@@ -268,10 +283,9 @@
     papirus-folders
     inkscape
     birdtray # thunderbird tray app
-    #vivify # for NoteWrapper
     # this is more up to date
-    (callPackage ../../modules/packages/vivify.nix {})
-    (callPackage ../../modules/packages/sbb-tui.nix {})
+    #(callPackage ../../modules/packages/vivify.nix {})
+    #(callPackage ../../modules/packages/sbb-tui.nix {})
     pkgs-unstable.nixpkgs-review
     pkgs-unstable.nixfmt-tree
     pkgs-unstable.treefmt

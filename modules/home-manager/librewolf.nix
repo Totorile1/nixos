@@ -314,6 +314,18 @@
             keyword = "AI writing";
             url = "https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing";
           }
+          {
+            name = "nixpkgs-review-gha";
+            tags = [ "nixpkgs-review" "gha" ];
+            keyword = "nixpkgs-review";
+            url = "https://github.com/tomasriveral/nixpkgs-review-gha/actions/workflows/review.yml";
+          }
+          {
+            name = "nixpkgs tracker";
+            tags = [ "nixpkgs" "tracker" ];
+            keyword = "nixpkgs tracker";
+            url = "https://nixpk.gs/pr-tracker.html";
+          }
         ];
       };
       search = {
