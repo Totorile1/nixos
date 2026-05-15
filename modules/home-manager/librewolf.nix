@@ -320,6 +320,12 @@
             keyword = "nixpkgs-review";
             url = "https://github.com/tomasriveral/nixpkgs-review-gha/actions/workflows/review.yml";
           }
+          {
+            name = "nixpkgs tracker";
+            tags = [ "nixpkgs" "tracker" ];
+            keyword = "nixpkgs tracker";
+            url = "https://nixpk.gs/pr-tracker.html";
+          }
         ];
       };
       search = {
