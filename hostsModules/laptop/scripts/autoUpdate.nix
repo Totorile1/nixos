@@ -31,7 +31,7 @@ pkgs.writeShellApplication {
 
     if sudo nixos-rebuild switch --flake "$FLAKE" 2> "$ERROR_FILE"; then
     
-      if ! git -C "$FLAKE_DIR" diff --quiet; then
+      if ! git -C "$FLAKE_DIR" diff --quiet -- flake.lock; then
         git -C "$FLAKE_DIR" add flake.lock
         git -C "$FLAKE_DIR" commit -m "flake.lock: autoupdate-$TIME"
         git -C "$FLAKE_DIR" push
