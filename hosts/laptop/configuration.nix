@@ -235,7 +235,7 @@
         networkx
         scipy
       ]))
-    fluffychat # matrix client
+    fluffychat matrix-commander-rs # matrix client
     direnv
     # utils for dev
     pkg-config
