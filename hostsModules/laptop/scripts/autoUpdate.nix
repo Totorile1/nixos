@@ -30,16 +30,21 @@ pkgs.writeShellApplication {
     nix flake update --flake "$FLAKE_DIR"
 
     if sudo nixos-rebuild switch --flake "$FLAKE" 2> "$ERROR_FILE"; then
+    
+      if git -C "$FLAKE_DIR" diff --quiet; then
+        git -C "$FLAKE_DIR" add flake.lock
+        git -C "$FLAKE_DIR" commit -m "flake.lock: autoupdate-$TIME"
+        git -C "$FLAKE_DIR" push
 
-      git -C "$FLAKE_DIR" add flake.lock
-      git -C "$FLAKE_DIR" commit -m "flake.lock: autoupdate-$TIME"
-      git -C "$FLAKE_DIR" push
+        notify-send "Flake autoupdate" "Rebuild OK"
 
-      notify-send "Flake autoupdate" "Rebuild OK"
-
-      matrix-commander-rs --verbose -m "Flake rebuild succesfull.<br><a href=\"https://matrix.to/#/@notificationbot_0000:matrix.org\">@notificationbot_0000</a>" \
-        --html \
-        -r "\!7j-78_02dHROeLj4Ns8F12eo4IiZGv4zNsQ_1-WlyIU"
+        matrix-commander-rs --verbose -m "Flake rebuild succesfull.<br><a href=\"https://matrix.to/#/@notificationbot_0000:matrix.org\">@notificationbot_0000</a>" \
+          --html \
+          -r "\!7j-78_02dHROeLj4Ns8F12eo4IiZGv4zNsQ_1-WlyIU"
+        else
+          notify-send "Flake autoupdate" "No changes"
+          git -C "$FLAKE_DIR" push
+        fi
 
     else
       ERROR_MSG=$(cat "$ERROR_FILE")
@@ -53,7 +58,6 @@ pkgs.writeShellApplication {
       git -C "$FLAKE_DIR" reset --hard "pre-autoupdate-$TIME"
     fi
     
-    git -C "$FLAKE_DIR" push
     rm -f "$ERROR_FILE"
   '';
 }
