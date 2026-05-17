@@ -35,6 +35,7 @@
     ../../modules/nixos/latex.nix
     ../../modules/nixos/development.nix
     ../../modules/nixos/user.nix ../../hostsModules/laptop/nixos/user.nix
+    ../../modules/nixos/notifications.nix
   ];
 
   qt.enable = true;
@@ -59,11 +60,9 @@
     brightnessctl # control brightness
     udiskie # removable disk automounter for udisks
     jp # lightweight and flexible cli JSON parser
-    libnotify # Library that sends desktop notifications to a notification daemon
     cowsay
     cmatrix
     swww #wallpaper daemon
-    socat # Utility for bidirectional data transfer between two independent data channels (used to communicate between hyprland and swww to change wallpapers dinamically)
     libreoffice
     gruvbox-gtk-theme
     powertop
@@ -83,7 +82,7 @@
     # used for the framework 16 laptop
     framework-tool
     framework-tool-tui
-    fluffychat matrix-commander-rs # matrix client
+    fluffychat # matrix client
     # utils for dev
     pkg-config
     gdb

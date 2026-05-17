@@ -66,25 +66,16 @@
   home.packages = [
     #scritps
     (pkgs.callPackage ../../modules/scripts/dontkillsteam.nix {}) # kill app (if it is steam put it in some background
-    (pkgs.callPackage ../../hostsModules/laptop/scripts/batterynotify.nix {})
-    (pkgs.callPackage ../../hostsModules/laptop/scripts/batterywarning.nix {})
-    
-    # checks if matrix-commander-rs is installed and logged in
-    (pkgs.callPackage ../../hostsModules/laptop/scripts/checkMatrix.nix {})
-
     (pkgs.callPackage ../../modules/scripts/weather.nix {})
     (pkgs.callPackage ../../modules/scripts/wallpaper.nix {})
     (pkgs.callPackage ../../modules/scripts/mountkdrive.nix {})
     (pkgs.callPackage ../../modules/scripts/colorpicker.nix {})
     (pkgs.callPackage ../../modules/scripts/killall.nix {}) # kill all windows except focused window
-    (pkgs.callPackage ../../modules/scripts/gitnotify.nix {})
     (pkgs.callPackage ../../modules/scripts/tomato.nix {})
     (pkgs.callPackage ../../modules/scripts/librewolfprofiles.nix {})
     (pkgs.callPackage ../../modules/scripts/btm.nix {})
     (pkgs.callPackage ../../modules/scripts/trimmer.nix {})
     (pkgs.callPackage ../../modules/scripts/syllabes.nix {}) # python script to get number of syllabes in french
-    (pkgs.callPackage ../../modules/scripts/checkKdrive.nix {})
-
     (pkgs.callPackage ../../hostsModules/laptop/qt/qtbatticon.nix {})
     #pkgs
     pkgs.gruvbox-gtk-theme
