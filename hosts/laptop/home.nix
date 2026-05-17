@@ -44,15 +44,12 @@
     ../../modules/home-manager/sbb-tui.nix # cff TUI app
     ../../modules/home-manager/mullvad.nix # mullvad vpn
 
-    ../../modules/other/desktopEntries.nix # creates .desktop files
+    ../../modules/home-manager/other/desktopEntries.nix # creates .desktop files
+    ../../modules/homer-manager/other/user.nix
   ];
 
-
   # Required for Home Manager
-  home.username = "tomasr";
-  home.homeDirectory = "/home/tomasr";
   home.stateVersion = "25.11"; # match your Home Manager release
-
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -60,11 +57,6 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-
-  home.sessionVariables = {
-    EDITOR = "neovim";
-    TERMINAL = "kitty";
-  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
