@@ -59,14 +59,12 @@
     #tree # shows dir in tree # we use eza now
     brightnessctl # control brightness
     udiskie # removable disk automounter for udisks
-    jp # lightweight and flexible cli JSON parser
     cowsay
     cmatrix
     swww #wallpaper daemon
     libreoffice
     gruvbox-gtk-theme
     powertop
-    python313Packages.pygments # used for ccat (comment of colorize plugin from oh-my-zsh)
     fzf
     bottom # Cross-platform graphical process/system monitor with a customizable interface
     cmatrix
@@ -84,10 +82,6 @@
     framework-tool-tui
     fluffychat # matrix client
     # utils for dev
-    pkg-config
-    gdb
-    raylib
-    glfw # raylib and some dependecies
     # for caelestia
     kdePackages.qtdeclarative # provides qmlls and other things
     quickshell # we have it but adding it there solves "WARN qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: App info not found for 'org.quickshell'")"
