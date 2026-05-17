@@ -45,7 +45,7 @@
     ../../modules/home-manager/mullvad.nix # mullvad vpn
 
     ../../modules/home-manager/other/desktopEntries.nix # creates .desktop files
-    ../../modules/homer-manager/other/user.nix
+    ../../modules/home-manager/other/user.nix
   ];
 
   # Required for Home Manager
