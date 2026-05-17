@@ -32,6 +32,7 @@
     ../../modules/nixos/documentation.nix
     ../../modules/nixos/IO.nix
     ../../modules/fonts.nix
+    ../../modules/latex.nix
   ];
 
 
@@ -157,10 +158,8 @@
     glfw # raylib and some dependecies
     cling # c interpreter used for coding
     # lsp
-    texlab
     clang-tools
     python311Packages.python-lsp-server
-    lua-language-server
     ltex-ls-plus
     pylint
     black
