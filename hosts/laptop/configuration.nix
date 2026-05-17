@@ -26,14 +26,13 @@
     ../../hostsModules/laptop/nixos/autoUpdate.nix # auto update the flakes. Handles notification via libnotify and matrix-commander-rs
     ../../hostsModules/laptop/nixos/bootloader.nix
     ../../hostsModules/laptop/nixos/networking.nix # firewall, ssh, networkmanager, etc.
+    ../../modules/nixos/bluetooth.nix
   ];
 
 
   programs.nix-ld.enable = true; #Run unpatched dynamic binaries on NixOS. For example lets run ./a.out from gcc
 
   documentation.man.generateCaches = true; # used for the man script
-
-  hardware.bluetooth.enable = true;
 
   qt.enable = true;
 
@@ -192,7 +191,6 @@
     brightnessctl # control brightness
     pulseaudio # sound server
     playerctl # controls media player
-    blueman # GTK-based Bluetooth Manager
     udiskie # removable disk automounter for udisks
     cliphist # Wayland clipboard manager
     wl-clipboard # cli copy/past utilities for Wayland
