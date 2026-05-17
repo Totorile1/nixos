@@ -1,7 +1,7 @@
 {
   writeShellApplication,
   fzf,
-  pactl,
+  pulseaudio,
   jq,
   ...
 }:
@@ -9,13 +9,14 @@ writeShellApplication {
   name = "custom-changeAudioOutput";
   runtimeInputs = [
     fzf
-    pactl
+    pulseaudio
     jq
   ];
   text = ''
-    $select=pactl -f json list sinks | jq -r '.[].name' | fzf
+    select=$(pactl -f json list sinks | jq -r '.[].name' | fzf)
     if [[ -n "$select" ]]; then
-      pactl set-default-sink $select
+      pactl set-default-sink "$select"
+
     fi
   '';
 }

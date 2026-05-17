@@ -161,8 +161,9 @@ in {
       "Ctrl+Alt, 1, exec, caelestia shell drawers toggle sidebar"
       "Ctrl+$mod, 4, exec, caelestia shell notifs toggleDnd"
       "Ctrl+$mod, 3, exec, pavucontrol" # pos 1 2 audiocontrol
-      "Ctrl+$mod, 5, exec, gnome-characters" # pos 2 2 special chars
-      "Ctrl+Alt, 8, exec, hyprpicker | tee >(wl-copy) | cliphist store" # pos 3 2 colorpicker
+      "Ctrl+Shift+Alt, 0, exec, kitty --hold --class \"custom-changeAudioOutput\" --name \"Select audio output\" zsh -c \"custom-changeAudioOutput\"" # pos 2 2 change audio output fzf 
+      "Ctrl+$mod, 5, exec, gnome-characters" # pos 3 2 special chars
+      "Ctrl+Alt, 8, exec, hyprpicker | tee >(wl-copy) | cliphist store" # pos 4 2 colorpicker
       "Ctrl+Alt, 0, exec, custom-tomato" # pos 1 3 pomodoro app
       "Ctrl+Alt, 2, exec, custom-bottom" # pos 2 3 btm (like htop but cleaner)
       "Ctrl+Alt, 9, exec, anki"
@@ -433,6 +434,7 @@ in {
       "float on, match:class ^(vlc)$"
       "float on, match:class ^(eog)$"
       "float on, size 400 175, match:class ^(custom-librewolfprofiles)$"
+      "float on, size 1050 200, match:class ^(custom-changeAudioOutput)$"
       "float on, size 400 175, match:class ^(custom-obsidianvaults)$"
       "float on, size 600 600, match:initial_class ^(custom-pomodoro)$"
       "float on, size 1500 800, match:initial_class ^(custom-bottom)$"
