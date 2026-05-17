@@ -2,6 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
+  # nixd says that those attributes are not used. The are used in the imported file. Do not remove.
   config,
   pkgs,
   pkgs-unstable,
@@ -43,9 +44,6 @@
     ../../modules/nixos/office.nix
   ];
   
-  # to resolve this https://wiki.nixos.org/wiki/Home_Manager#I_cannot_set_GNOME_or_Gtk_themes_via_Home_Manager
-  programs.dconf.enable = true;
-
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
