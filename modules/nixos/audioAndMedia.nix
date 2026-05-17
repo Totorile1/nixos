@@ -20,6 +20,7 @@
     #media-session.enable = true;
   };
   environment.systemPackages = with pkgs; [
+      (pkgs.callPackage ../../modules/scripts/changeAudioOutput.nix {})
     kdePackages.okular
     kdePackages.dolphin
     pulseaudio # sound server
