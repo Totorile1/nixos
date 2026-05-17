@@ -35,15 +35,33 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
+    
+    pkgs = import nixpkgs {
+      inherit system;
+
+      config.allowUnfreePredicate = pkg:
+        builtins.elem (nixpkgs.lib.getName pkg) [
+          "hplip"
+          "vivify.vim"
+          "cheatsheet.nvim"
+        ];
+      };
+
     pkgs-unstable = import nixpkgs-unstable {
       inherit system;
-      config.allowUnfree = true; #hplipWithPlugins is unfree...
+      
+      config.allowUnfreePredicate = pkg:
+        builtins.elem (nixpkgs.lib.getName pkg) [
+          "hplip"
+          "vivify.vim"
+          "cheatsheet.nvim"
+        ];
     };
+
   in {
     nixosConfigurations = {
       laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs pkgs-unstable;};
+        specialArgs = {inherit inputs pkgs pkgs-unstable;};
         modules = [
           ./hosts/laptop/configuration.nix
         ];
