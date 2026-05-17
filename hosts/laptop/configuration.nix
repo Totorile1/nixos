@@ -36,6 +36,7 @@
     ../../modules/nixos/development.nix
     ../../modules/nixos/user.nix ../../hostsModules/laptop/nixos/user.nix
     ../../modules/nixos/notifications.nix
+    ../../modules/nixos/browser.nix
   ];
 
   qt.enable = true;
@@ -74,7 +75,6 @@
     pkgs-unstable.vimPluginsUpdater # used for building plugins
     hyprcursor
     vial # Open-source GUI and QMK fork for configuring your keyboard in real time
-    chromium # used only to flash the firmware on my framework laptop 16 (keyboard.frame.work) as only chromium based browser support webHID.
     capitaine-cursors-themed # cursor theme
     usbutils # used for lsusb
     # used for the framework 16 laptop
@@ -92,7 +92,6 @@
     # this is more up to date
     #(callPackage ../../modules/packages/vivify.nix {})
     #(callPackage ../../modules/packages/sbb-tui.nix {})
-    pkgs-unstable.tor-browser
     pkgs-unstable.bitwarden-desktop
   ];
 

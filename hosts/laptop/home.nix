@@ -72,7 +72,6 @@
     (pkgs.callPackage ../../modules/scripts/colorpicker.nix {})
     (pkgs.callPackage ../../modules/scripts/killall.nix {}) # kill all windows except focused window
     (pkgs.callPackage ../../modules/scripts/tomato.nix {})
-    (pkgs.callPackage ../../modules/scripts/librewolfprofiles.nix {})
     (pkgs.callPackage ../../modules/scripts/btm.nix {})
     (pkgs.callPackage ../../modules/scripts/trimmer.nix {})
     (pkgs.callPackage ../../modules/scripts/syllabes.nix {}) # python script to get number of syllabes in french
