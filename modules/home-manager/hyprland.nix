@@ -212,7 +212,7 @@ in {
       #"wl-paste --type image --watch cliphist store" # clipboard store image data
       "custom-batterynotify"
       "custom-batterywarning"
-      "birdtray" # thunderbird tray app
+      #"birdtray" # thunderbird tray app # curently broken
       #wallpapers/b
       "swww img ${wallpaper}"
       "swww-daemon"
