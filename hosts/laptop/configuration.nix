@@ -19,7 +19,7 @@
     ../../modules/nixos/anki.nix
     ../../modules/nixos/nixUtils.nix ../../hostsModules/laptop/nixos/nixUtils.nix
     ../../hostsModules/laptop/nixos/udev.nix
-    ../../hostsModules/laptop/nixos/disk.nix
+    ../../modules/nixos/disk.nix ../../hostsModules/laptop/nixos/disk.nix
     ../../modules/nixos/printer.nix
     ../../hostsModules/laptop/nixos/ollama.nix # llm config
     ../../modules/nixos/mullvad.nix # vpn config
