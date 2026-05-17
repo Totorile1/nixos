@@ -237,7 +237,7 @@ in {
       ######################
       */
     ];
-    splash = true; # remove default background on startup
+    splash = false; # remove default background on startup
     # gestures (also keybindings)
     gesture = [
       "3, right, move, +col"
@@ -328,6 +328,7 @@ in {
     # theme
     decoration = {
       dim_special = 0.3;
+      rounding = 18;
       blur = {
         special = true;
         enabled = true;
@@ -338,8 +339,8 @@ in {
       };
     };
     general = {
-      gaps_in = 3;
-      gaps_out = 8;
+      gaps_in = 5;
+      gaps_out = 15;
       border_size = 4;
       "col.active_border" = "rgba(ca6702ff) rgba(ecd3a0ff) 45deg";
       "col.inactive_border" = "rgba(f1dca7d9) rgba(ffe1a8d9) 45deg";
@@ -372,8 +373,8 @@ in {
       "2, layout:scrolling, layoutopt:direction:right"
       "name:special, layout:scrolling"
       # used for smart gaps along some windowrules
-      "w[tv1], gapsout:1, gapsin:1"
-      "f[1], gapsout:1, gapsin:1"
+      #"w[tv1], gapsout:1, gapsin:1"
+      #"f[1], gapsout:1, gapsin:1"
     ];
 
     # █░█░█ █ █▄░█ █▀▄ █▀█ █░█░█   █▀█ █░█ █░░ █▀▀ █▀
@@ -435,10 +436,11 @@ in {
       "float on, size 400 175, match:class ^(custom-obsidianvaults)$"
       "float on, size 600 600, match:initial_class ^(custom-pomodoro)$"
       "float on, size 1500 800, match:initial_class ^(custom-bottom)$"
-      "border_size 2, match:float 0, match:workspace w[tv1]"
-      "rounding 1, match:float 0, match:workspace w[tv1]"
-      "border_size 2, match:float 0, match:workspace f[1]"
-      "rounding 1, match:float 0, match:workspace f[1]"
+      # smart gaps/border is ugly with caelestia-shell
+      #"border_size 2, match:float 0, match:workspace w[tv1]"
+      #"rounding 1, match:float 0, match:workspace w[tv1]"
+      #"border_size 2, match:float 0, match:workspace f[1]"
+      #"rounding 1, match:float 0, match:workspace f[1]"
     ];
     # add a float for tomato when in kitty
     #"plugin:imgborders:noimgborders, tag:noborder"
