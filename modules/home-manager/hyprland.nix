@@ -237,7 +237,7 @@ in {
       ######################
       */
     ];
-    splash = false; # remove default background on startup
+    splash = true; # remove default background on startup
     # gestures (also keybindings)
     gesture = [
       "3, right, move, +col"

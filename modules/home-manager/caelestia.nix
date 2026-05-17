@@ -516,7 +516,7 @@ in {
         };
         theme = {
           enableTerm = false; # we do it manually by adapting our kitty config
-          enableHypr = true;
+          enableHypr = false; # this seems to add the splash
           enableDiscord = true;
           enableSpicetify = true;
           enableFuzzel = true; #what's that?
