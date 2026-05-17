@@ -52,10 +52,8 @@
     gnome-calculator
     snapshot
     gnome-characters
-    gnome-disk-utility
     #tree # shows dir in tree # we use eza now
     brightnessctl # control brightness
-    udiskie # removable disk automounter for udisks
     cowsay
     cmatrix
     libreoffice
@@ -69,9 +67,6 @@
     pkgs-unstable.vimPluginsUpdater # used for building plugins
     vial # Open-source GUI and QMK fork for configuring your keyboard in real time
     usbutils # used for lsusb
-    # used for the framework 16 laptop
-    framework-tool
-    framework-tool-tui
     fluffychat # matrix client
     fuzzel
     birdtray # thunderbird tray app
