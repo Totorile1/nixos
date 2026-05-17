@@ -31,6 +31,7 @@
     ../../modules/nixos/windowManager.nix
     ../../modules/nixos/documentation.nix
     ../../modules/nixos/IO.nix
+    ../../modules/fonts.nix
   ];
 
 
@@ -110,7 +111,6 @@
     snapshot
     gnome-characters
     gnome-disk-utility
-    gnome-font-viewer
     #tree # shows dir in tree # we use eza now
     zsh # better bash
     brightnessctl # control brightness
@@ -176,13 +176,6 @@
     #(callPackage ../../modules/packages/sbb-tui.nix {})
     pkgs-unstable.tor-browser
     pkgs-unstable.bitwarden-desktop
-  ];
-
-  # fonts
-  fonts.packages = with pkgs; [
-    nerd-fonts._0xproto
-    cinzel
-    times-newer-roman
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
