@@ -30,6 +30,7 @@
     ../../modules/nixos/audioAndMedia.nix
     ../../modules/nixos/windowManager.nix
     ../../modules/nixos/documentation.nix
+    ../../modules/nixos/IO.nix
   ];
 
 
@@ -71,18 +72,6 @@
   };
 
   services.upower.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "ch";
-    variant = "fr";
-  };
-
-  # Configure console keymap
-  console.keyMap = "fr_CH";
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.tomasr = {
@@ -126,11 +115,8 @@
     zsh # better bash
     brightnessctl # control brightness
     udiskie # removable disk automounter for udisks
-    cliphist # Wayland clipboard manager
-    wl-clipboard # cli copy/past utilities for Wayland
     jp # lightweight and flexible cli JSON parser
     libnotify # Library that sends desktop notifications to a notification daemon
-    hyprkeys # keybind helper
     cowsay
     cmatrix
     swww #wallpaper daemon
@@ -138,7 +124,6 @@
     gcc # GNU C compiler
     libreoffice
     gruvbox-gtk-theme
-    hyprpicker
     powertop
     python313Packages.pygments # used for ccat (comment of colorize plugin from oh-my-zsh)
     fzf
