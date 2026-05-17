@@ -29,35 +29,40 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
-    
-    pkgs = import nixpkgs {
-      inherit system;
 
-      config.allowUnfreePredicate = pkg:
-        builtins.elem (nixpkgs.lib.getName pkg) [
-          "hplip"
-          "vivify.vim"
-          "cheatsheet.nvim"
-        ];
-      };
+    unfreePkgs = [
+      "hplip"
+      "vivify.vim"
+      "cheatsheet.nvim"
+    ];
+
+    mkUnfreePredicate = pkg:
+      builtins.elem (nixpkgs.lib.getName pkg) unfreePkgs;
 
     pkgs-unstable = import nixpkgs-unstable {
       inherit system;
       
-      config.allowUnfreePredicate = pkg:
-        builtins.elem (nixpkgs.lib.getName pkg) [
-          "hplip"
-          "vivify.vim"
-          "cheatsheet.nvim"
-        ];
+      config.allowUnfreePredicate = mkUnfreePredicate;
     };
 
   in {
     nixosConfigurations = {
       laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs pkgs pkgs-unstable;};
+        specialArgs = {inherit inputs pkgs-unstable;};
         modules = [
           ./hosts/laptop/configuration.nix
+          # solves evaluation warning
+          /*
+          You have set specialArgs.pkgs, which means that options like nixpkgs.config
+          and nixpkgs.overlays will be ignored. If you wish to reuse an already created
+          pkgs, which you know is configured correctly for this NixOS configuration,
+          please import the `nixosModules.readOnlyPkgs` module from the nixpkgs flake or
+          `(modulesPath + "/misc/nixpkgs/read-only.nix"), and set `{ nixpkgs.pkgs = <your pkgs>; }`.
+          This properly disables the ignored options to prevent future surprises.
+          */
+          {
+            nixpkgs.config.allowUnfreePredicate = mkUnfreePredicate;
+          }
         ];
       };
     };
