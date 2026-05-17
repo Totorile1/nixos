@@ -36,11 +36,6 @@
 
   qt.enable = true;
 
-  nix.nixPath = [
-    "nixpkgs=${inputs.nixpkgs.outPath}"
-    "home-manager=${inputs.home-manager.outPath}"
-  ]; #manix is unhappy without this
-
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
@@ -166,8 +161,6 @@
   ];
 
 
-  #adds nixos experimental features:
-  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   
 
@@ -243,10 +236,6 @@
     raylib
     glfw # raylib and some dependecies
     rembg # background remover
-    #some nix tools
-    manix
-    deadnix
-    alejandra
     cling # c interpreter used for coding
     mprisence
     gif-for-cli
@@ -258,7 +247,6 @@
     ltex-ls-plus
     pylint
     black
-    nixd
     # for caelestia
     kdePackages.qtdeclarative # provides qmlls and other things
     quickshell # we have it but adding it there solves "WARN qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: App info not found for 'org.quickshell'")"
@@ -271,9 +259,6 @@
     # this is more up to date
     #(callPackage ../../modules/packages/vivify.nix {})
     #(callPackage ../../modules/packages/sbb-tui.nix {})
-    pkgs-unstable.nixpkgs-review
-    pkgs-unstable.nixfmt-tree
-    pkgs-unstable.treefmt
     pkgs-unstable.tor-browser
     pkgs-unstable.bitwarden-desktop
   ];
