@@ -44,9 +44,6 @@
   programs.fuse.userAllowOther =  true;
   programs.fuse.enable = true;
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true; # Nonfree packages: hplipWithPlugin
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
