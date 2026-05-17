@@ -38,33 +38,17 @@
     ../../modules/nixos/notifications.nix
     ../../modules/nixos/browser.nix
     ../../modules/nixos/theme.nix # install theming packages and some quickshell stuff
+    ../../hostsModules/laptop/nixos/hardwareUtils.nix
+    ../../modules/nixos/otherUtils.nix
   ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    gnome-calculator
-    snapshot
-    gnome-characters
-    #tree # shows dir in tree # we use eza now
-    brightnessctl # control brightness
     libreoffice
-    powertop
-    fzf
-    bottom # Cross-platform graphical process/system monitor with a customizable interface
-    tomato-c # pomodoro timer
-    #hyprshot
-    mailcap
     pkgs-unstable.vimPluginsUpdater # used for building plugins
     vial # Open-source GUI and QMK fork for configuring your keyboard in real time
-    usbutils # used for lsusb
-    fluffychat # matrix client
-    fuzzel
     birdtray # thunderbird tray app
-    # this is more up to date
-    #(callPackage ../../modules/packages/vivify.nix {})
-    #(callPackage ../../modules/packages/sbb-tui.nix {})
-    pkgs-unstable.bitwarden-desktop
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -61,17 +61,6 @@
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
 
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
-  home.packages = [
-    #scritps
-    (pkgs.callPackage ../../modules/scripts/dontkillsteam.nix {}) # kill app (if it is steam put it in some background
-    (pkgs.callPackage ../../modules/scripts/killall.nix {}) # kill all windows except focused window
-    (pkgs.callPackage ../../modules/scripts/tomato.nix {})
-    (pkgs.callPackage ../../modules/scripts/syllabes.nix {}) # python script to get number of syllabes in french
-  ];
-
-
   home.sessionVariables = {
     EDITOR = "neovim";
     # Git update function
