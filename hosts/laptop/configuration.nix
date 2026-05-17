@@ -25,6 +25,7 @@
     ../../modules/nixos/mullvad.nix # vpn config
     ../../hostsModules/laptop/nixos/autoUpdate.nix # auto update the flakes. Handles notification via libnotify and matrix-commander-rs
     ../../hostsModules/laptop/nixos/bootloader.nix
+    ../../hostsModules/laptop/nixos/networking.nix # firewall, ssh, networkmanager, etc.
   ];
 
 
@@ -67,17 +68,6 @@
   };
   # removes uxterm
   services.xserver.excludePackages = [pkgs.xterm];
-
-
-  #networking.Name = "nixos"; # Define your hostname.
-  #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  #networking.proxy.default = "http://user:password@proxy:port/";
-  #networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Zurich";
@@ -197,7 +187,6 @@
     kdePackages.okular
     kdePackages.dolphin
     gnome-font-viewer
-    wget
     #tree # shows dir in tree # we use eza now
     zsh # better bash
     brightnessctl # control brightness
@@ -205,7 +194,6 @@
     playerctl # controls media player
     blueman # GTK-based Bluetooth Manager
     udiskie # removable disk automounter for udisks
-    networkmanagerapplet # NetworkManager control applet
     cliphist # Wayland clipboard manager
     wl-clipboard # cli copy/past utilities for Wayland
     jp # lightweight and flexible cli JSON parser
@@ -220,7 +208,6 @@
     gruvbox-gtk-theme
     hyprpicker
     powertop
-    inetutils # collections of network programs such as telnet
     python313Packages.pygments # used for ccat (comment of colorize plugin from oh-my-zsh)
     fzf
     jq # json parser used in some scripts
@@ -310,17 +297,6 @@
 
   # to resolve this https://wiki.nixos.org/wiki/Home_Manager#I_cannot_set_GNOME_or_Gtk_themes_via_Home_Manager
   programs.dconf.enable = true;
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
