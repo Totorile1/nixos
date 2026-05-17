@@ -47,20 +47,15 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # use pkgs-unstable if you want the package from the unstable channel
-    #we need to install gnome and kde utils individually as we dont use gnome
     gnome-calculator
     snapshot
     gnome-characters
     #tree # shows dir in tree # we use eza now
     brightnessctl # control brightness
-    cowsay
-    cmatrix
     libreoffice
     powertop
     fzf
     bottom # Cross-platform graphical process/system monitor with a customizable interface
-    cmatrix
     tomato-c # pomodoro timer
     #hyprshot
     mailcap
