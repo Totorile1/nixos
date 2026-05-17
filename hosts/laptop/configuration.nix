@@ -31,8 +31,8 @@
     ../../modules/nixos/windowManager.nix
     ../../modules/nixos/documentation.nix
     ../../modules/nixos/IO.nix
-    ../../modules/fonts.nix
-    ../../modules/latex.nix
+    ../../modules/nixos/fonts.nix
+    ../../modules/nixos/latex.nix
   ];
 
 
