@@ -24,6 +24,7 @@
     ../../hostsModules/laptop/nixos/ollama.nix # llm config
     ../../modules/nixos/mullvad.nix # vpn config
     ../../hostsModules/laptop/nixos/autoUpdate.nix # auto update the flakes. Handles notification via libnotify and matrix-commander-rs
+    ../../hostsModules/laptop/nixos/bootloader.nix
   ];
 
 
@@ -34,11 +35,6 @@
   hardware.bluetooth.enable = true;
 
   qt.enable = true;
-
-  # grub theme
-  boot.loader.grub = {
-    theme = inputs.nixos-grub-themes.packages.${pkgs.system}.nixos; # if you want to use nixos grub theme
-  };
 
   nix.nixPath = [
     "nixpkgs=${inputs.nixpkgs.outPath}"
@@ -71,9 +67,7 @@
   };
   # removes uxterm
   services.xserver.excludePackages = [pkgs.xterm];
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+
 
   #networking.Name = "nixos"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
