@@ -33,10 +33,8 @@
     ../../modules/nixos/IO.nix
     ../../modules/nixos/fonts.nix
     ../../modules/nixos/latex.nix
+    ../../modules/nixos/development.nix
   ];
-
-
-  programs.nix-ld.enable = true; #Run unpatched dynamic binaries on NixOS. For example lets run ./a.out from gcc
 
   qt.enable = true;
 
@@ -122,13 +120,11 @@
     cmatrix
     swww #wallpaper daemon
     socat # Utility for bidirectional data transfer between two independent data channels (used to communicate between hyprland and swww to change wallpapers dinamically)
-    gcc # GNU C compiler
     libreoffice
     gruvbox-gtk-theme
     powertop
     python313Packages.pygments # used for ccat (comment of colorize plugin from oh-my-zsh)
     fzf
-    jq # json parser used in some scripts
     bottom # Cross-platform graphical process/system monitor with a customizable interface
     cmatrix
     tomato-c # pomodoro timer
@@ -143,26 +139,12 @@
     # used for the framework 16 laptop
     framework-tool
     framework-tool-tui
-    (pkgs-unstable.python314.withPackages (ps:
-      with ps; [
-        matplotlib
-        networkx
-        scipy
-      ]))
     fluffychat matrix-commander-rs # matrix client
-    direnv
     # utils for dev
     pkg-config
     gdb
     raylib
     glfw # raylib and some dependecies
-    cling # c interpreter used for coding
-    # lsp
-    clang-tools
-    python311Packages.python-lsp-server
-    ltex-ls-plus
-    pylint
-    black
     # for caelestia
     kdePackages.qtdeclarative # provides qmlls and other things
     quickshell # we have it but adding it there solves "WARN qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: App info not found for 'org.quickshell'")"
