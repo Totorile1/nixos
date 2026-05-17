@@ -40,10 +40,6 @@
     ../../modules/nixos/theme.nix # install theming packages and some quickshell stuff
   ];
 
-  # removes rclone error
-  programs.fuse.userAllowOther =  true;
-  programs.fuse.enable = true;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
