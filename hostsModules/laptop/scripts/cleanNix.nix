@@ -31,7 +31,7 @@ pkgs.writeShellApplication {
     deadnix --edit "$FLAKE_DIR" # removes unused code
     echo "--------------------------------------------------------------"
     echo "statix lints your Nix code to find stylistic issues, bad patterns, and potential mistakes."
-    statix fix "$FLAKE_DIR" --verbose # check other linting issues
+    statix fix "$FLAKE_DIR" # check other linting issues
     echo "--------------------------------------------------------------"
     echo "alejandra formats your Nix code consistently according to a strict, opinionated style."
     alejandra -v "$FLAKE_DIR" # formats the config

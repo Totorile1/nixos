@@ -1,6 +1,5 @@
 # some options are in ../../hostsModules/laptop/nixos/nixUtils.nix
 {
-  pkgs,
   pkgs-unstable,
   inputs,
   ...
