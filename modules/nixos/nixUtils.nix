@@ -1,5 +1,6 @@
 # some options are in ../../hostsModules/laptop/nixos/nixUtils.nix
 {
+  pkgs,
   pkgs-unstable,
   inputs,
   ...
@@ -29,5 +30,7 @@
   alejandra
   vimPluginsUpdater # used for building plugins
   nix-index
+  statix
+  (pkgs.callPackage ../../hostsModules/laptop/scripts/cleanNix.nix {})
   ];
 }
