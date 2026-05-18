@@ -34,7 +34,7 @@ pkgs.writeShellApplication {
     statix fix "$FLAKE_DIR" # check other linting issues
     echo "--------------------------------------------------------------"
     echo "alejandra formats your Nix code consistently according to a strict, opinionated style."
-    alejandra -v "$FLAKE_DIR" # formats the config
+    alejandra "$FLAKE_DIR" # formats the config
     echo "--------------------------------------------------------------"
 
     if sudo /run/current-system/sw/bin/nixos-rebuild switch --flake "$FLAKE" 2> "$ERROR_FILE"; then # use /run/.../bin/ uses the sudoless rule
