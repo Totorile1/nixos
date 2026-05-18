@@ -13,6 +13,14 @@ writeShellApplication {
     libnotify
   ];
   text = ''
+
+# waits for an internet connection. It pings both Google DNS  and Cloudfare dns in case one of them is down
+until ping -c1 -W1 1.1.1.1 >/dev/null 2>&1 || \
+  ping -c1 -W1 8.8.8.8 >/dev/null 2>&1
+do
+  sleep 1
+done
+
 set +e
 
 output=$(rclone lsd kdrive: 2>&1)
