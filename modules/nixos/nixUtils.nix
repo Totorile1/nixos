@@ -31,6 +31,5 @@
     vimPluginsUpdater # used for building plugins
     nix-index
     statix
-    (pkgs.callPackage ../../hostsModules/laptop/scripts/cleanNix.nix {})
   ];
 }
