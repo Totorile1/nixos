@@ -1,24 +1,15 @@
 {
-  config,
-  pkgs,
-  pkgs-unstable,
-  caelestia-shell,
-  lib,
-  ...
+config,
+pkgs,
+pkgs-unstable,
+...
 }: let
-  sisyphe = ../../assets/sisyphe.gif;
-  pepe-music = ../../assets/pepe-music.gif;
+sisyphe = ../../assets/sisyphe.gif;
+pepe-music = ../../assets/pepe-music.gif;
 in {
-  home.activation.reloadCaelestia = # reloads caelestia on rebuild
-    lib.hm.dag.entryAfter [ "reloadSystemd" ] ''
-      pkill caelestia-shell
-      pkill shell
-      caelestia-shell -n
-    '';
   home.file.".local/state/caelestia/wallpaper/path.txt" = { # dummy file. Does nothing. Prevent an error
     enable = true;
     text = "${sisyphe}";
-
   };
   home.file.".face" = {
     # this is were caelestia will search for profiles pictures
