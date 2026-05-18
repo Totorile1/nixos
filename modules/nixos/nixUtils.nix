@@ -28,5 +28,6 @@
   deadnix
   alejandra
   vimPluginsUpdater # used for building plugins
+  nix-index
   ];
 }
