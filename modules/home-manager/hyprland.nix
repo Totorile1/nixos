@@ -1,224 +1,219 @@
-{
-  config,
-  pkgs,
-  pkgs-unstable,
-  ...
-}: let
+{pkgs-unstable, ...}: let
   wallpaper = ../../assets/wallpaper1.jpg;
 in {
-    #refer to https://wiki.hypr.land/Nix/Hyprland-on-Home-Manager/
-    wayland.windowManager.hyprland.enable = true;
-    wayland.windowManager.hyprland.package = pkgs-unstable.hyprland;
-    #hint Electron apps to use on wayland;
-    home.sessionVariables.NIXOS_OZONE_WL = "1";
-    wayland.windowManager.hyprland.plugins = [
-      #pkgs-unstable.hyprlandPlugins.hyprspace # currently broken
-      #pkgs-unstable.hyprlandPlugins.hypr-dynamic-cursors # currently broken
+  #refer to https://wiki.hypr.land/Nix/Hyprland-on-Home-Manager/
+  wayland.windowManager.hyprland.enable = true;
+  wayland.windowManager.hyprland.package = pkgs-unstable.hyprland;
+  #hint Electron apps to use on wayland;
+  home.sessionVariables.NIXOS_OZONE_WL = "1";
+  wayland.windowManager.hyprland.plugins = [
+    #pkgs-unstable.hyprlandPlugins.hyprspace # currently broken
+    #pkgs-unstable.hyprlandPlugins.hypr-dynamic-cursors # currently broken
+  ];
+  wayland.windowManager.hyprland.settings = {
+    "$mod" = "SUPER";
+    "$term" = "kitty";
+    "$editor" = "nvim";
+    "$notes" = "kitty --class \"custom-obsidianvaults\" --name \"Select Obsidian vault\" --hold custom-obsidianvaults";
+    "$file" = "dolphin";
+    "$browser" = "kitty --class \"custom-librewolfprofiles\" --name \"Select LibreWolf profile\" --hold custom-librewolfprofiles";
+    # ▄▀█ █▄░█ █ █▀▄▀█ ▄▀█ ▀█▀ █ █▀█ █▄░█
+    # █▀█ █░▀█ █ █░▀░█ █▀█ ░█░ █ █▄█ █░▀█
+    animations = {
+      enabled = true;
+      bezier = [
+        "wind, 0.05, 0.9, 0.1, 1.05"
+        "winIn, 0.1, 1.1, 0.1, 1.1"
+        "winOut, 0.3, -0.3, 0, 1"
+        "liner, 1, 1, 1, 1"
+      ];
+      animation = [
+        "windows, 1, 6, wind, slide"
+        "windowsIn, 1, 6, winIn, slide"
+        "windowsOut, 1, 5, winOut, slide"
+        "windowsMove, 1, 5, wind, slide"
+        "border, 1, 1, liner"
+        "borderangle, 1, 30, liner, loop"
+        "fade, 1, 10, default"
+        "workspaces, 1, 5, wind"
+      ];
+    };
+
+    # █▀▀ █▄░█ █░█
+    # ██▄ █░▀█ ▀▄▀
+
+    # See https://wiki.hyprland.org/Configuring/Environment-variables/
+    env = [
+      "PATH, $PATH:$scrPath"
+      "XDG_CURRENT_DESKTOP,Hyprland"
+      "XDG_SESSION_TYPE,wayland"
+      "XDG_SESSION_DESKTOP,Hyprland"
+      "QT_QPA_PLATFORM,wayland;xcb"
+      "QT_QPAPLATFORMTHEME,qt6ct"
+      "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+      "MOZ_ENABLE_WAYLAND,1"
+      "GDK_SCALE,1"
     ];
-    wayland.windowManager.hyprland.settings = {
-      "$mod" = "SUPER";
-      "$term" = "kitty";
-      "$editor" = "nvim";
-      "$notes" = "kitty --class \"custom-obsidianvaults\" --name \"Select Obsidian vault\" --hold custom-obsidianvaults";
-      "$file" = "dolphin";
-      "$browser" = "kitty --class \"custom-librewolfprofiles\" --name \"Select LibreWolf profile\" --hold custom-librewolfprofiles";
-      # ▄▀█ █▄░█ █ █▀▄▀█ ▄▀█ ▀█▀ █ █▀█ █▄░█
-      # █▀█ █░▀█ █ █░▀░█ █▀█ ░█░ █ █▄█ █░▀█
-      animations = {
-        enabled = true;
-        bezier = [
-          "wind, 0.05, 0.9, 0.1, 1.05"
-          "winIn, 0.1, 1.1, 0.1, 1.1"
-          "winOut, 0.3, -0.3, 0, 1"
-          "liner, 1, 1, 1, 1"
-        ];
-        animation = [
-          "windows, 1, 6, wind, slide"
-          "windowsIn, 1, 6, winIn, slide"
-          "windowsOut, 1, 5, winOut, slide"
-          "windowsMove, 1, 5, wind, slide"
-          "border, 1, 1, liner"
-          "borderangle, 1, 30, liner, loop"
-          "fade, 1, 10, default"
-          "workspaces, 1, 5, wind"
-        ];
-      };
 
-      # █▀▀ █▄░█ █░█
-      # ██▄ █░▀█ ▀▄▀
+    # █ █▄░█ █▀█ █░█ ▀█▀
+    # █ █░▀█ █▀▀ █▄█ ░█░
 
-      # See https://wiki.hyprland.org/Configuring/Environment-variables/
-      env = [
-        "PATH, $PATH:$scrPath"
-        "XDG_CURRENT_DESKTOP,Hyprland"
-        "XDG_SESSION_TYPE,wayland"
-        "XDG_SESSION_DESKTOP,Hyprland"
-        "QT_QPA_PLATFORM,wayland;xcb"
-        "QT_QPAPLATFORMTHEME,qt6ct"
-        "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
-        "MOZ_ENABLE_WAYLAND,1"
-        "GDK_SCALE,1"
-      ];
+    input = {
+      kb_layout = ["ch"];
+      follow_mouse = 1;
+      sensitivity = 0;
+      force_no_accel = 1;
+    };
 
-      # █ █▄░█ █▀█ █░█ ▀█▀
-      # █ █░▀█ █▀▀ █▄█ ░█░
+    # █▄▀ █▀▀ █▄█ █▄▄ █ █▄░█ █▀▄ █ █▄░█ █▀▀ █▀
+    # █░█ ██▄ ░█░ █▄█ █ █░▀█ █▄▀ █ █░▀█ █▄█ ▄█
+    # caelestia shell drawers toggle dashboard
+    # caelestia shell drawers toggle utilities
 
-      input = {
-        kb_layout = ["ch"];
-        follow_mouse = 1;
-        sensitivity = 0;
-        force_no_accel = 1;
-      };
+    bind = [
+      #hyprland/utility keybindings
+      "$mod, W, togglefloating"
+      "$mod, G, togglegroup"
+      "Alt, Return, fullscreen"
+      "$mod, Left, movefocus, l"
+      "$mod, Right, movefocus, r"
+      "$mod, Up, movefocus, u"
+      "$mod, Down, movefocus, d"
+      "Alt, Tab, movefocus, d"
+      "$mod, 1, workspace, 1"
+      "$mod, 2, workspace, 2"
+      "$mod, 3, workspace, 3"
+      "$mod, 4, workspace, 4"
+      "$mod, 5, workspace, 5"
+      "$mod, 6, workspace, 6"
+      "$mod, 7, workspace, 7"
+      "$mod, 8, workspace, 8"
+      "$mod, 9, workspace, 9"
+      "$mod, 0, workspace, 10"
+      "$mod+Ctrl, Right, workspace, r+1"
+      "$mod+Ctrl, Left, workspace, r-1"
+      "$mod+Ctrl, Doown, workspace, empty"
+      "$mod+Shift, 1, movetoworkspace, 1"
+      "$mod+Shift, 2, movetoworkspace, 2"
+      "$mod+Shift, 3, movetoworkspace, 3"
+      "$mod+Shift, 4, movetoworkspace, 4"
+      "$mod+Shift, 5, movetoworkspace, 5"
+      "$mod+Shift, 6, movetoworkspace, 6"
+      "$mod+Shift, 7, movetoworkspace, 7"
+      "$mod+Shift, 8, movetoworkspace, 8"
+      "$mod+Shift, 9, movetoworkspace, 9"
+      "$mod+Shift, 0, movetoworkspace, 10"
+      "$mod+Ctrl+Alt, Right, movetoworkspace, r+1"
+      "$mod+Ctrl+Alt, Left, movetoworkspace, r-1"
+      #"$mod, Backspace, exec, wlogout -b 4 -T 600 -B 600"
+      "$mod, Backspace, exec, caelestia shell drawers toggle session"
+      "$mod+Shift+Ctrl, Left, movewindow, l"
+      "$mod+Shift+Ctrl, Right, movewindow, r"
+      "$mod+Shift+Ctrl, Up, movewindow, u"
+      "$mod+Shift+Ctrl, Down, movewindow, d"
+      "$mod, mouse_down, workspace, e+1"
+      "$mod, mouse_up, workspace, e-1"
+      "$mod, V, exec, cliphist list | rofi -dmenu| cliphist decode | wl-copy" # copy paste
+      "$mod, B, exec, hyprkeys -bkr | rofi -dmenu"
+      #"$mod, A, tagwindow, noborder" # used to not apply image border
+      "$mod, S, togglespecialworkspace,"
+      "Alt+$mod, S, movetoworkspace, special"
+      # for the scrolling layout
+      "$mod, A, layoutmsg, move -col"
+      "$mod, D, layoutmsg, move +col"
+      #apps keybindings
+      "$mod, T, exec, $term"
+      "$mod, E, exec, $file"
+      "$mod, F, exec, $browser"
+      "$mod, N, exec, $notes"
+      #"$mod+Shift, A, exec, rofi -show drun"
+      "$mod+Shift, A, exec, caelestia shell drawers toggle launcher"
+      "$mod, Q, exec, custom-dontkillsteam"
+      #"Ctrl+Alt, W, exec, pkill waybar || waybar"
+      "Ctrl+Alt, W, exec, caelestia shell drawers toggle sidebar"
+      #"$mod, L, exec, swaylock -eFLK -i ${wallpaper}"
+      "$mod, L, exec, caelestia shell lock lock"
+      #"$mod, F11, exec, hyprshot -m  window"
+      ", F11, exec, caelestia screenshot"
+      #"$mod_SHIFT, S, exec, hyprshot -m region --clipboard only"
+      # "$mod_SHIFT, S, exec, qs ipc call screenshot toggle"
+      "$mod_SHIFT, S, exec, caelestia shell picker open"
+      # framework 16 rgb macropad
+      "Ctrl+$mod, 6, exec, custom-killall" # pos 1 1 killall apps except focused one
+      #"Ctrl+Alt, 7, exec, custom-performance" # pos 2 1 start performance mode
+      "Ctrl+Alt, 7, exec, caelestia shell gameMode toggle"
+      # reloads the autostart programs # pos 3 1
+      # we passed to caelestia-shell and stoped using that
+      /*
+        "Ctrl+$mod, 4, exec, sleep 1 && kitty -o font_size=16 -e sh -c 'custom-weather'"
+      "Ctrl+$mod, 4, exec, sleep 1 && kitty -o font_size=11 -e sh -c 'custom-cowsay'"
+      "Ctrl+$mod, 4, exec, kitty -e 'custom-launch'"
+      "Ctrl+$mod, 4, exec, sleep 1 && kitty -o font_size=5 -e btm --theme gruvbox --disable-click --disable_advanced_kill --enable_cache_memory -g -R -T "
+      "Ctrl+$mod, 4, exec, sleep 1 && kitty -o font_size=1 -e sh -c 'cmatrix -br'"
+      #"Ctrl+Alt, 1, exec, swaync-client -t" # pos 4 1 notification center
+      "Ctrl+Alt, 1, exec, qs ipc call notifications toggle"
+      */
+      "Ctrl+Alt, 1, exec, caelestia shell drawers toggle sidebar"
+      "Ctrl+$mod, 4, exec, caelestia shell notifs toggleDnd"
+      "Ctrl+$mod, 3, exec, pavucontrol" # pos 1 2 audiocontrol
+      "Ctrl+Shift+Alt, 0, exec, kitty --hold --class \"custom-changeAudioOutput\" --name \"Select audio output\" zsh -c \"custom-changeAudioOutput\"" # pos 2 2 change audio output fzf
+      "Ctrl+$mod, 5, exec, gnome-characters" # pos 3 2 special chars
+      "Ctrl+Alt, 8, exec, hyprpicker | tee >(wl-copy) | cliphist store" # pos 4 2 colorpicker
+      "Ctrl+Alt, 0, exec, custom-tomato" # pos 1 3 pomodoro app
+      "Ctrl+Alt, 2, exec, custom-bottom" # pos 2 3 btm (like htop but cleaner)
+      "Ctrl+Alt, 9, exec, anki"
+      # if hyprexpo plugin enabled bind = $mainMod, Space, hyprexpo:expo, toggle
+      # maybe exec sudo framework-tools-tui
 
-      # █▄▀ █▀▀ █▄█ █▄▄ █ █▄░█ █▀▄ █ █▄░█ █▀▀ █▀
-      # █░█ ██▄ ░█░ █▄█ █ █░▀█ █▄▀ █ █░▀█ █▄█ ▄█
-      # caelestia shell drawers toggle dashboard
-      # caelestia shell drawers toggle utilities
-
-      bind = [
-        #hyprland/utility keybindings
-        "$mod, W, togglefloating"
-        "$mod, G, togglegroup"
-        "Alt, Return, fullscreen"
-        "$mod, Left, movefocus, l"
-        "$mod, Right, movefocus, r"
-        "$mod, Up, movefocus, u"
-        "$mod, Down, movefocus, d"
-        "Alt, Tab, movefocus, d"
-        "$mod, 1, workspace, 1"
-        "$mod, 2, workspace, 2"
-        "$mod, 3, workspace, 3"
-        "$mod, 4, workspace, 4"
-        "$mod, 5, workspace, 5"
-        "$mod, 6, workspace, 6"
-        "$mod, 7, workspace, 7"
-        "$mod, 8, workspace, 8"
-        "$mod, 9, workspace, 9"
-        "$mod, 0, workspace, 10"
-        "$mod+Ctrl, Right, workspace, r+1"
-        "$mod+Ctrl, Left, workspace, r-1"
-        "$mod+Ctrl, Doown, workspace, empty"
-        "$mod+Shift, 1, movetoworkspace, 1"
-        "$mod+Shift, 2, movetoworkspace, 2"
-        "$mod+Shift, 3, movetoworkspace, 3"
-        "$mod+Shift, 4, movetoworkspace, 4"
-        "$mod+Shift, 5, movetoworkspace, 5"
-        "$mod+Shift, 6, movetoworkspace, 6"
-        "$mod+Shift, 7, movetoworkspace, 7"
-        "$mod+Shift, 8, movetoworkspace, 8"
-        "$mod+Shift, 9, movetoworkspace, 9"
-        "$mod+Shift, 0, movetoworkspace, 10"
-        "$mod+Ctrl+Alt, Right, movetoworkspace, r+1"
-        "$mod+Ctrl+Alt, Left, movetoworkspace, r-1"
-        #"$mod, Backspace, exec, wlogout -b 4 -T 600 -B 600"
-        "$mod, Backspace, exec, caelestia shell drawers toggle session"
-        "$mod+Shift+Ctrl, Left, movewindow, l"
-        "$mod+Shift+Ctrl, Right, movewindow, r"
-        "$mod+Shift+Ctrl, Up, movewindow, u"
-        "$mod+Shift+Ctrl, Down, movewindow, d"
-        "$mod, mouse_down, workspace, e+1"
-        "$mod, mouse_up, workspace, e-1"
-        "$mod, V, exec, cliphist list | rofi -dmenu| cliphist decode | wl-copy" # copy paste
-        "$mod, B, exec, hyprkeys -bkr | rofi -dmenu"
-        #"$mod, A, tagwindow, noborder" # used to not apply image border
-        "$mod, S, togglespecialworkspace,"
-        "Alt+$mod, S, movetoworkspace, special"
-        # for the scrolling layout
-        "$mod, A, layoutmsg, move -col"
-        "$mod, D, layoutmsg, move +col"
-        #apps keybindings
-        "$mod, T, exec, $term"
-        "$mod, E, exec, $file"
-        "$mod, F, exec, $browser"
-        "$mod, N, exec, $notes"
-        #"$mod+Shift, A, exec, rofi -show drun"
-        "$mod+Shift, A, exec, caelestia shell drawers toggle launcher"
-        "$mod, Q, exec, custom-dontkillsteam"
-        #"Ctrl+Alt, W, exec, pkill waybar || waybar"
-        "Ctrl+Alt, W, exec, caelestia shell drawers toggle sidebar"
-        #"$mod, L, exec, swaylock -eFLK -i ${wallpaper}"
-        "$mod, L, exec, caelestia shell lock lock"
-        #"$mod, F11, exec, hyprshot -m  window"
-        ", F11, exec, caelestia screenshot"
-        #"$mod_SHIFT, S, exec, hyprshot -m region --clipboard only"
-        # "$mod_SHIFT, S, exec, qs ipc call screenshot toggle"
-        "$mod_SHIFT, S, exec, caelestia shell picker open"
-        # framework 16 rgb macropad
-        "Ctrl+$mod, 6, exec, custom-killall" # pos 1 1 killall apps except focused one
-        #"Ctrl+Alt, 7, exec, custom-performance" # pos 2 1 start performance mode
-        "Ctrl+Alt, 7, exec, caelestia shell gameMode toggle"
-        # reloads the autostart programs # pos 3 1
-        # we passed to caelestia-shell and stoped using that
-        /*
-          "Ctrl+$mod, 4, exec, sleep 1 && kitty -o font_size=16 -e sh -c 'custom-weather'"
-        "Ctrl+$mod, 4, exec, sleep 1 && kitty -o font_size=11 -e sh -c 'custom-cowsay'"
-        "Ctrl+$mod, 4, exec, kitty -e 'custom-launch'"
-        "Ctrl+$mod, 4, exec, sleep 1 && kitty -o font_size=5 -e btm --theme gruvbox --disable-click --disable_advanced_kill --enable_cache_memory -g -R -T "
-        "Ctrl+$mod, 4, exec, sleep 1 && kitty -o font_size=1 -e sh -c 'cmatrix -br'"
-        #"Ctrl+Alt, 1, exec, swaync-client -t" # pos 4 1 notification center
-        "Ctrl+Alt, 1, exec, qs ipc call notifications toggle"
-        */
-        "Ctrl+Alt, 1, exec, caelestia shell drawers toggle sidebar"
-        "Ctrl+$mod, 4, exec, caelestia shell notifs toggleDnd"
-        "Ctrl+$mod, 3, exec, pavucontrol" # pos 1 2 audiocontrol
-        "Ctrl+Shift+Alt, 0, exec, kitty --hold --class \"custom-changeAudioOutput\" --name \"Select audio output\" zsh -c \"custom-changeAudioOutput\"" # pos 2 2 change audio output fzf 
-        "Ctrl+$mod, 5, exec, gnome-characters" # pos 3 2 special chars
-        "Ctrl+Alt, 8, exec, hyprpicker | tee >(wl-copy) | cliphist store" # pos 4 2 colorpicker
-        "Ctrl+Alt, 0, exec, custom-tomato" # pos 1 3 pomodoro app
-        "Ctrl+Alt, 2, exec, custom-bottom" # pos 2 3 btm (like htop but cleaner)
-        "Ctrl+Alt, 9, exec, anki"
-        # if hyprexpo plugin enabled bind = $mainMod, Space, hyprexpo:expo, toggle
-        # maybe exec sudo framework-tools-tui
-
-        #plugins keybindings
-        #"$mod, SPACE, overview:toggle, "
-      ];
-      binde = [
-        "$mod+Shift, Right, resizeactive, 30 0"
-        "$mod+Shift, Left, resizeactive, -30, 0"
-        "$mod+Shift, Up, resizeactive, 0 -30"
-        "$mod+Shift, Down, resizeactive,m 0 30"
-      ];
-      bindl = [
-        ", F1, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle" #toggle audio mute
-        ", F5, exec, playerctl play-pause" # media F4-F6
-        ", F4, exec, playerctl previous"
-        ", F6, exec, playerctl next"
-      ];
-      bindel = [
-        ", F2, exec, pactl set-sink-volume @DEFAULT_SINK@ -10%" # decrease volume
-        ", F3, exec, pactl set-sink-volume @DEFAULT_SINK@ +10%" # increase volume
-        ", F7, exec, brightnessctl s 10%-" # decrease brightness
-        ", F8, exec, brightnessctl s +10%" # increase brightness
-      ];
-      bindm = [
-        "$mod, mouse:272, movewindow"
-        "$mod, mouse:273, resizewindow"
-        "$mod, Z, movewindow"
-        "$mod, X, resizewindow"
-      ];
-      # █░░ ▄▀█ █░█ █▄░█ █▀▀ █░█
-      # █▄▄ █▀█ █▄█ █░▀█ █▄▄ █▀█
-      exec-once = [
-        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP" # for XDPH
-        "dbus-update-activation-environment --systemd --all" # for XDPH
-        "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP" # for XDPH
-        "systemctl --user start xdg-desktop-portal-wlr.service"
-        "blueman-applet" # systray app for Bluetooth
-        "udiskie --no-automount --smart-tray" # front-end that allows to manage removable media
-        "nm-applet --indicator" # systray app for Network/wifi
-        #setups clipboard
-        "rm -rf ~/.cache/cliphist/ && wl-paste --type text --watch cliphist store & wl-paste --type image --watch cliphist store"
-        #"wl-paste --type text --watch cliphist store" # clipboard store text data
-        #"wl-paste --type image --watch cliphist store" # clipboard store image data
-        "custom-batterynotify"
-        "custom-batterywarning"
-        #"birdtray" # thunderbird tray app # curently broken
-        #wallpapers/b
-        "swww img ${wallpaper}"
-        "swww-daemon"
-        "sleep 1 && custom-wallpaper"
-        "custom-checkKdrive && custom-mountkdrive" # checks if the remote works and mount it
+      #plugins keybindings
+      #"$mod, SPACE, overview:toggle, "
+    ];
+    binde = [
+      "$mod+Shift, Right, resizeactive, 30 0"
+      "$mod+Shift, Left, resizeactive, -30, 0"
+      "$mod+Shift, Up, resizeactive, 0 -30"
+      "$mod+Shift, Down, resizeactive,m 0 30"
+    ];
+    bindl = [
+      ", F1, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle" #toggle audio mute
+      ", F5, exec, playerctl play-pause" # media F4-F6
+      ", F4, exec, playerctl previous"
+      ", F6, exec, playerctl next"
+    ];
+    bindel = [
+      ", F2, exec, pactl set-sink-volume @DEFAULT_SINK@ -10%" # decrease volume
+      ", F3, exec, pactl set-sink-volume @DEFAULT_SINK@ +10%" # increase volume
+      ", F7, exec, brightnessctl s 10%-" # decrease brightness
+      ", F8, exec, brightnessctl s +10%" # increase brightness
+    ];
+    bindm = [
+      "$mod, mouse:272, movewindow"
+      "$mod, mouse:273, resizewindow"
+      "$mod, Z, movewindow"
+      "$mod, X, resizewindow"
+    ];
+    # █░░ ▄▀█ █░█ █▄░█ █▀▀ █░█
+    # █▄▄ █▀█ █▄█ █░▀█ █▄▄ █▀█
+    exec-once = [
+      "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP" # for XDPH
+      "dbus-update-activation-environment --systemd --all" # for XDPH
+      "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP" # for XDPH
+      "systemctl --user start xdg-desktop-portal-wlr.service"
+      "blueman-applet" # systray app for Bluetooth
+      "udiskie --no-automount --smart-tray" # front-end that allows to manage removable media
+      "nm-applet --indicator" # systray app for Network/wifi
+      #setups clipboard
+      "rm -rf ~/.cache/cliphist/ && wl-paste --type text --watch cliphist store & wl-paste --type image --watch cliphist store"
+      #"wl-paste --type text --watch cliphist store" # clipboard store text data
+      #"wl-paste --type image --watch cliphist store" # clipboard store image data
+      "custom-batterynotify"
+      "custom-batterywarning"
+      #"birdtray" # thunderbird tray app # curently broken
+      #wallpapers/b
+      "swww img ${wallpaper}"
+      "swww-daemon"
+      "sleep 1 && custom-wallpaper"
+      "custom-checkKdrive && custom-mountkdrive" # checks if the remote works and mount it
       #"waybar"
       "custom-gitnotify"
       "custom-checkMatrix" # checks if matrix-commander-rs is connected which is important for other stuff

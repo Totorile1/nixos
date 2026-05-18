@@ -22,15 +22,15 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   environment.systemPackages = with pkgs-unstable; [
-  nixpkgs-review
-  nixfmt-tree
-  treefmt
-  nixd
-  deadnix
-  alejandra
-  vimPluginsUpdater # used for building plugins
-  nix-index
-  statix
-  (pkgs.callPackage ../../hostsModules/laptop/scripts/cleanNix.nix {})
+    nixpkgs-review
+    nixfmt-tree
+    treefmt
+    nixd
+    deadnix
+    alejandra
+    vimPluginsUpdater # used for building plugins
+    nix-index
+    statix
+    (pkgs.callPackage ../../hostsModules/laptop/scripts/cleanNix.nix {})
   ];
 }

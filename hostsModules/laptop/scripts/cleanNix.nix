@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}:
+{pkgs, ...}:
 pkgs.writeShellApplication {
   name = "custom-cleanNix";
 
@@ -34,7 +31,7 @@ pkgs.writeShellApplication {
     alejandra "$FLAKE_DIR" # formats the config
 
     if sudo /run/current-system/sw/bin/nixos-rebuild switch --flake "$FLAKE" 2> "$ERROR_FILE"; then # use /run/.../bin/ uses the sudoless rule
-    
+
       if ! git -C "$FLAKE_DIR" diff --quiet HEAD; then
         git -C "$FLAKE_DIR" add -A
         git -C "$FLAKE_DIR" commit -m "Auto: cleanup-$TIME"
@@ -62,7 +59,7 @@ pkgs.writeShellApplication {
       git -C "$FLAKE_DIR" reset --hard "pre-cleanup-$TIME"
     fi
     git -C "$FLAKE_DIR" tag -d "pre-cleanup-$TIME" # removes the tag
-    
+
     rm -f "$ERROR_FILE"
   '';
 }

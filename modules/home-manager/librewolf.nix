@@ -1,9 +1,5 @@
 # adapted from https://github.com/contre95/dotfiles/blob/main/dotfiles/nixos/programs/librewolf.nix
-{
-  pkgs,
-  config,
-  ...
-}: {
+_: {
   home.sessionVariables = {
     MOZ_ENABLE_WAYLAND = 1;
     MOZ_USE_XINPUT2 = 1;
@@ -310,19 +306,19 @@
           }
           {
             name = "Signs of AI writing";
-            tags = [ "ai" "write"];
+            tags = ["ai" "write"];
             keyword = "AI writing";
             url = "https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing";
           }
           {
             name = "nixpkgs-review-gha";
-            tags = [ "nixpkgs-review" "gha" ];
+            tags = ["nixpkgs-review" "gha"];
             keyword = "nixpkgs-review";
             url = "https://github.com/tomasriveral/nixpkgs-review-gha/actions/workflows/review.yml";
           }
           {
             name = "nixpkgs tracker";
-            tags = [ "nixpkgs" "tracker" ];
+            tags = ["nixpkgs" "tracker"];
             keyword = "nixpkgs tracker";
             url = "https://nixpk.gs/pr-tracker.html";
           }

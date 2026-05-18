@@ -1,12 +1,10 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   # Ensure your script is available system-wide
   environment.systemPackages = [
     (pkgs.callPackage ../scripts/autoUpdate.nix {})
   ];
   users.users.tomasr = {
-    linger = true;  # lingering is required 
+    linger = true; # lingering is required
   };
 
   systemd.user.services.custom-autoupdate = {
@@ -33,7 +31,7 @@
 
   # Systemd USER timer
   systemd.user.timers.custom-autoupdate = {
-    wantedBy = [ "timers.target" ];
+    wantedBy = ["timers.target"];
 
     timerConfig = {
       OnCalendar = "Fri *-*-* 20:00:00"; # runs friday night. If for whatever reason something breaks. I have whole week-end to fix it.

@@ -1,13 +1,9 @@
-{
-config,
-pkgs,
-pkgs-unstable,
-...
-}: let
-sisyphe = ../../assets/sisyphe.gif;
-pepe-music = ../../assets/pepe-music.gif;
+_: let
+  sisyphe = ../../assets/sisyphe.gif;
+  pepe-music = ../../assets/pepe-music.gif;
 in {
-  home.file.".local/state/caelestia/wallpaper/path.txt" = { # dummy file. Does nothing. Prevent an error
+  home.file.".local/state/caelestia/wallpaper/path.txt" = {
+    # dummy file. Does nothing. Prevent an error
     enable = true;
     text = "${sisyphe}";
   };

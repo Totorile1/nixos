@@ -3,10 +3,6 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   # nixd says that those attributes are not used. The are used in the imported file. Do not remove.
-  config,
-  pkgs,
-  pkgs-unstable,
-  libs,
   inputs,
   ...
 }: {
@@ -18,9 +14,11 @@
     #../../modules/nixos/ly.nix
     ../../modules/nixos/ly.nix
     ../../modules/nixos/anki.nix
-    ../../modules/nixos/nixUtils.nix ../../hostsModules/laptop/nixos/nixUtils.nix
+    ../../modules/nixos/nixUtils.nix
+    ../../hostsModules/laptop/nixos/nixUtils.nix
     ../../hostsModules/laptop/nixos/udev.nix
-    ../../modules/nixos/disk.nix ../../hostsModules/laptop/nixos/disk.nix
+    ../../modules/nixos/disk.nix
+    ../../hostsModules/laptop/nixos/disk.nix
     ../../modules/nixos/printer.nix
     ../../hostsModules/laptop/nixos/ollama.nix # llm config
     ../../modules/nixos/mullvad.nix # vpn config
@@ -35,7 +33,8 @@
     ../../modules/nixos/fonts.nix
     ../../modules/nixos/latex.nix
     ../../modules/nixos/development.nix
-    ../../modules/nixos/user.nix ../../hostsModules/laptop/nixos/user.nix
+    ../../modules/nixos/user.nix
+    ../../hostsModules/laptop/nixos/user.nix
     ../../modules/nixos/notifications.nix
     ../../modules/nixos/browser.nix
     ../../modules/nixos/theme.nix # install theming packages and some quickshell stuff
@@ -43,7 +42,7 @@
     ../../modules/nixos/otherUtils.nix
     ../../modules/nixos/office.nix
   ];
-  
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
