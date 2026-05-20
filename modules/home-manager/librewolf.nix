@@ -374,7 +374,7 @@ _: {
           "OpenStreeetMap" = {
             urls = [
               {
-                template = "https://www.openstreetmap";
+                template = "https://www.openstreetmap.org";
                 params = [
                   {
                     name = "q";
