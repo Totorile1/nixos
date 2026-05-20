@@ -322,6 +322,12 @@ _: {
             keyword = "nixpkgs tracker";
             url = "https://nixpk.gs/pr-tracker.html";
           }
+          {
+            name = "fahrlehrer";
+            tags = [ "theorie" "fahrlehrer" "conduite"];
+            keyword = "fahrlehrer24";
+            url = "https://app.fahrlehrer24.ch/";
+          }
         ];
       };
       search = {
@@ -374,7 +380,7 @@ _: {
           "OpenStreeetMap" = {
             urls = [
               {
-                template = "https://www.openstreetmap.org";
+                template = "https://www.openstreetmap";
                 params = [
                   {
                     name = "q";
