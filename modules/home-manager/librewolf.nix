@@ -34,7 +34,7 @@ _: {
       #  "https://metrics.internal.contre.io/d/cUITC74Vksd/podman-revamped?orgId=1&from=2026-02-23T19:29:26.304Z&to=2026-02-23T19:59:26.304Z&timezone=browser&var-Filters=&var-namespace=alloy&var-level=error&var-level=debug&var-level=info&var-level=warn&refresh=5s&kiosk=true"; # disable welcome page
       "browser.newtabpage.enabled" = true; # disable new tab page
       "full-screen-api.ignore-widgets" = true; # fullscreen within window
-      "browser.toolbars.bookmarks.visibility" = "never"; # hide bookmarks toolbar
+      "browser.toolbars.bookmarks.visibility" = "newtab"; # hide bookmarks toolbar; always, never, newtab
       "browser.aboutConfig.showWarning" = false; # disable warning about about:config
       "media.videocontrols.picture-in-picture.video-toggle.enabled" = false; # disable picture in picture button
 
@@ -331,8 +331,6 @@ _: {
           {
             name = "cogito";
             tags = ["cogito" "esprit" "critique"];
-            keyword = "Cogito: l'Esprit critique";
-            url = "app.cogito.fr";
           }
         ];
       };
