@@ -324,7 +324,7 @@ _: {
           }
           {
             name = "fahrlehrer";
-            tags = [ "theorie" "fahrlehrer" "conduite"];
+            tags = ["theorie" "fahrlehrer" "conduite"];
             keyword = "fahrlehrer24";
             url = "https://app.fahrlehrer24.ch/";
           }

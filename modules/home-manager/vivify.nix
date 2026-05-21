@@ -20,7 +20,7 @@
       content.cookies.accept = "never";
     };
     extraConfig = ''
-    config.bind('<Ctrl-L>', 'yank url ;; message-info "URL copied"')
+      config.bind('<Ctrl-L>', 'yank url ;; message-info "URL copied"')
     '';
   };
 }
